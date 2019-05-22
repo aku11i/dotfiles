@@ -1,0 +1,11 @@
+# Clipboard
+bind-key -Tcopy-mode-vi v send -X begin-selection
+bind-key -Tcopy-mode-vi y send -X copy-pipe-and-cancel "clip.exe"
+unbind -T copy-mode-vi Enter
+bind-key -T copy-mode-vi Enter send -X copy-pipe-and-cancel "clip.exe"
+
+# Mouse cursor drag copy
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "clip.exe"
+
+# Default shell
+set-option -g default-shell /home/linuxbrew/.linuxbrew/bin/fish
