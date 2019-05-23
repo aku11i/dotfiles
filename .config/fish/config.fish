@@ -27,6 +27,8 @@ if [ (uname) = "Linux" ]
   set -gx XDG_DATA_DIRS /home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS
 end
 
+set -x EDITOR 'nvim'
+
 # Bobthefish Theme
 # set -g theme_display_git no
 # set -g theme_display_git_untracked no
