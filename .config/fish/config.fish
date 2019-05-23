@@ -121,6 +121,8 @@ if [ (uname) = 'Darwin' ]
   abbr xc7 'open -a /Applications/Xcode\ 7.3.1.app'
   # iA Writer
   abbr ia 'open -a /Applications/iA\ Writer.app'
+  # Yoink
+  abbr yoink 'open -a Yoink'
 end
 
 # Subversion
