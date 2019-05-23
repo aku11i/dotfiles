@@ -21,10 +21,10 @@ end
 
 if [ (uname) = "Linux" ]
   # Linuxbrew
-  set -gx PATH /home/linuxbrew/.linuxbrew/bin $PATH
-  set -gx MANPATH /home/linuxbrew/.linuxbrew/share/man $MANPATH
-  set -gx INFOPATH /home/linuxbrew/.linuxbrew/share/info $INFOPATH
-  set -gx XDG_DATA_DIRS /home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS
+  set -x PATH /home/linuxbrew/.linuxbrew/bin $PATH
+  set -x MANPATH /home/linuxbrew/.linuxbrew/share/man $MANPATH
+  set -x INFOPATH /home/linuxbrew/.linuxbrew/share/info $INFOPATH
+  set -x XDG_DATA_DIRS /home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS
 end
 
 set -x EDITOR 'nvim'
@@ -50,7 +50,7 @@ set -g theme_color_scheme solarized
 # set -g theme_newline_cursor yes
 
 # Node Version Manager
-set -g NVM_DIR "$HOME/.nvm"
+set -x NVM_DIR "$HOME/.nvm"
 [ ! -d "$NVM_DIR" ]; and curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
 # Auto Start Tmux
