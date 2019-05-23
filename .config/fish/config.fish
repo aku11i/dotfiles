@@ -29,6 +29,9 @@ end
 
 set -x EDITOR 'nvim'
 
+# jethrokuan/fzf
+set -x FZF_LEGACY_KEYBINDINGS 1
+
 # Bobthefish Theme
 # set -g theme_display_git no
 # set -g theme_display_git_untracked no
