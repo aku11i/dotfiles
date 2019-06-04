@@ -3,6 +3,9 @@
 
 ## Environment
 
+# Data Folder
+set -g DATA_DIR $HOME/data
+
 # Go
 if test -d $HOME/.go
   set -x GOPATH $HOME/.go
@@ -88,7 +91,7 @@ alias ..... 'cd ../../../../'
 [ which trash >/dev/null 2>&1 ] ;and abbr del 'trash -r'
 
 abbr mkdir 'mkdir -p'
-function mkcd
+function mkcd --description "mkdir & cd"
   [ ! -d $argv ]; and mkdir -p $argv
   cd $argv
 end
@@ -97,6 +100,26 @@ function cd
   builtin cd $argv
   ls -a
 end
+
+function data --description "mkdir & cd ~/$DATA_DIR/YYYY/MM/DD"
+  set now (date "+%Y/%m/%d")
+  if test ! -s $DATA_DIR
+    mkdir $DATA_DIR
+    set mkdir_status $status
+    test $mkdir_status -ne 0; and return $mkdir_status
+  end
+
+  if test ! -s $DATA_DIR/$now
+    mkdir -p $DATA_DIR/$now
+    set mkdir_status $status
+    test $mkdir_status -ne 0; and return $mkdir_status
+  end
+
+  echo $DATA_DIR/$now
+  cd $DATA_DIR/$now
+end
+
+abbr d 'data'
 
 
 if [ (uname -a | grep "Microsoft") ]
