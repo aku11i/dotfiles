@@ -251,3 +251,13 @@ abbr tk 'tmux kill-session -t'
 abbr tK 'tmux kill-server'
 abbr tl 'tmux ls'
 abbr ts 'tmux switch-client -t'
+
+# Vagrant
+abbr vgi 'vagrant init'
+abbr vgs 'vagrant status'
+abbr vgu 'vagrant up'
+abbr vgr 'vagrant reload'
+abbr vgh 'vagrant halt'
+abbr vgS 'vagrant ssh'
+abbr vgp 'vagrant provision'
+abbr vgd 'vagrant destroy'
