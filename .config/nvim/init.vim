@@ -39,6 +39,7 @@ Plug 'tyru/caw.vim'
 Plug 'junegunn/goyo.vim'
 
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'tpope/vim-surround'
 
 " ---- ColorScheme ----
 Plug 'altercation/vim-colors-solarized'
