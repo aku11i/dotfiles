@@ -22,6 +22,11 @@ if test -d $HOME/.cargo
   set -x PATH $HOME/.cargo/bin $PATH
 end
 
+# PHP Composer
+if test -d $HOME/.composer/vendor/bin
+  set -x PATH $HOME/.composer/vendor/bin $PATH
+end
+
 if [ (uname) = "Linux" ]
   # Linuxbrew
   set -x PATH /home/linuxbrew/.linuxbrew/bin $PATH
