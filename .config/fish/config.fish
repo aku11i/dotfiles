@@ -193,6 +193,7 @@ abbr gcb 'git checkout -b'
 
 abbr gc 'git commit'
 abbr gcm 'git commit -m'
+abbr gcf 'git commit --file'
 abbr gca 'git commit --amend'
 
 abbr gp 'git push'
@@ -227,9 +228,9 @@ abbr gm 'git merge'
 abbr gmt 'git mergetool'
 abbr gmn 'git merge --no-ff --no-commit'
 
-abbr gcf 'git config'
-abbr gcfun 'git config user.name'
-abbr gcfum 'git config user.email'
+abbr gC 'git config'
+abbr gCun 'git config user.name'
+abbr gCum 'git config user.email'
 
 # Git Flow
 abbr gF 'git flow'
