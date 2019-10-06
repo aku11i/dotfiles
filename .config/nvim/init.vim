@@ -46,7 +46,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
 " for resize screen
 Plug 'kana/vim-submode'
-" Ctrl + K to comment out a line
+" Toggle comments
 Plug 'tyru/caw.vim'
 
 Plug 'bronson/vim-trailing-whitespace'
@@ -217,8 +217,9 @@ endif
 
 
 if s:plug.is_installed('caw.vim')
-  nmap <C-k> <Plug>(caw:hatpos:toggle)
-  vmap <C-k> <Plug>(caw:hatpos:toggle)
+  " Ctrl + / to toggle comments.
+  nmap <C-_> <Plug>(caw:hatpos:toggle)
+  vmap <C-_> <Plug>(caw:hatpos:toggle)
 endif
 
 if isdirectory(expand('~/.fzf'))
