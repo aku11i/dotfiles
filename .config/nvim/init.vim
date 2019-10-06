@@ -18,6 +18,19 @@ Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ujihisa/unite-colorscheme'
 
+" Language Server
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
+"Prettier
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
 " JavaScript
@@ -60,6 +73,7 @@ endfunction
 " Default Shell
 set sh=fish
 
+set hidden
 set background=dark
 set mouse=a
 set noswapfile
@@ -90,6 +104,7 @@ set wrapscan
 set clipboard=unnamed
 set list
 set listchars=tab:>-,trail:_,extends:<
+set updatetime=500 " Default is 4000
 
 " ---- Key Mappings ----
 noremap ; :
@@ -118,6 +133,23 @@ nnoremap ,dw :<C-u>DeniteCursorWord grep<CR>
 nnoremap ,dW :<C-u>DeniteCursorWord grep .<CR>
 "----
 
+if s:plug.is_installed('coc.nvim')
+  " gd - go to definition of word under cursor
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  " gi - go to implementation
+  nmap <silent> gi <Plug>(coc-implementation)
+  " gr - find references
+  nmap <silent> gr <Plug>(coc-references)
+  " rename the current word in the cursor
+  nmap <leader>cr  <Plug>(coc-rename)
+  nmap <leader>cf  <Plug>(coc-format-selected)
+  vmap <leader>cf  <Plug>(coc-format-selected)
+  " Highlight symbol under cursor on CursorHold
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+  nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>
+  nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
+endif
 
 if s:plug.is_installed('denite.nvim')
   let g:extra_whitespace_ignored_filetypes = ['denite']
