@@ -48,8 +48,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'kana/vim-submode'
 " Ctrl + K to comment out a line
 Plug 'tyru/caw.vim'
-" Distraction-free writing
-Plug 'junegunn/goyo.vim'
 
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-surround'
