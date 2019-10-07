@@ -137,6 +137,7 @@ nnoremap ,dW :<C-u>DeniteCursorWord grep .<CR>
 
 if s:plug.is_installed('coc.nvim')
   " gd - go to definition of word under cursor
+  nmap <silent><C-]> <Plug>(coc-definition)
   nmap <silent> gd <Plug>(coc-definition)
   nmap <silent> gy <Plug>(coc-type-definition)
   " gi - go to implementation
