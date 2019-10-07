@@ -188,6 +188,11 @@ if s:plug.is_installed('deoplete.nvim')
   inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
 endif
 
+if s:plug.is_installed('nerdtree')
+  nnoremap <silent><C-e> :NERDTreeToggle<CR>
+endif
+
+
 if s:plug.is_installed('vim-divicons')
   let g:webdevicons_conceal_nerdtree_brackets = 1
   let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
