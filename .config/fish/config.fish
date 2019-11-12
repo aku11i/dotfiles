@@ -292,6 +292,5 @@ abbr vgp 'vagrant provision'
 abbr vgd 'vagrant destroy'
 
 # Translate Shell
-abbr tr 'trans --no-warn --brief'
 abbr tre 'trans --no-warn --brief :en'
 abbr trj 'trans --no-warn --brief :ja'
