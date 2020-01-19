@@ -39,6 +39,7 @@ set -x EDITOR 'nvim'
 
 # jethrokuan/fzf
 set -x FZF_LEGACY_KEYBINDINGS 1
+which rg > /dev/null 2>&1 && set -x FZF_DEFAULT_COMMAND  'rg --files'
 
 # Bobthefish Theme
 set -g theme_display_git yes
