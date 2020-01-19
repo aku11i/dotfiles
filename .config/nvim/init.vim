@@ -18,6 +18,9 @@ Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ujihisa/unite-colorscheme'
 
+" Fuzzy finder
+Plug 'ctrlpvim/ctrlp.vim'
+
 " File explorer
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -134,6 +137,13 @@ nnoremap ,dG :<C-u>Denite grep .<CR>
 nnoremap ,dw :<C-u>DeniteCursorWord grep<CR>
 nnoremap ,dW :<C-u>DeniteCursorWord grep .<CR>
 "----
+
+if s:plug.is_installed('ctrlp.vim')
+  if executable('ag')
+    let g:ctrlp_use_caching=0
+    let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
+  endif
+endif
 
 if s:plug.is_installed('coc.nvim')
   " gd - go to definition of word under cursor
