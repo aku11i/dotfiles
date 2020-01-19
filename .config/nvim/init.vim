@@ -19,8 +19,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ujihisa/unite-colorscheme'
 
 " Fuzzy finder
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'jremmen/vim-ripgrep'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " File explorer
 Plug 'scrooloose/nerdtree'
@@ -139,14 +139,20 @@ nnoremap ,dw :<C-u>DeniteCursorWord grep<CR>
 nnoremap ,dW :<C-u>DeniteCursorWord grep .<CR>
 "----
 
-if s:plug.is_installed('ctrlp.vim')
-  if executable('rg')
-    let g:ctrlp_use_caching=0
-    let g:ctrlp_user_command = 'rg --files %s'
-  elseif executable('ag')
-    let g:ctrlp_use_caching=0
-    let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
-  endif
+if s:plug.is_installed('fzf.vim')
+  nnoremap <C-p> :Files<Cr>
+
+  function! RipgrepFzf(query, fullscreen)
+    let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+    let initial_command = printf(command_fmt, shellescape(a:query))
+    let reload_command = printf(command_fmt, '{q}')
+    let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+    call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+  endfunction
+
+  command! -nargs=* -bang Grep call RipgrepFzf(<q-args>, <bang>0)
+
+  nnoremap <C-g> :Grep<Cr>
 endif
 
 if s:plug.is_installed('coc.nvim')
