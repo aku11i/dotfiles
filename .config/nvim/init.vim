@@ -20,6 +20,7 @@ Plug 'ujihisa/unite-colorscheme'
 
 " Fuzzy finder
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jremmen/vim-ripgrep'
 
 " File explorer
 Plug 'scrooloose/nerdtree'
@@ -139,7 +140,10 @@ nnoremap ,dW :<C-u>DeniteCursorWord grep .<CR>
 "----
 
 if s:plug.is_installed('ctrlp.vim')
-  if executable('ag')
+  if executable('rg')
+    let g:ctrlp_use_caching=0
+    let g:ctrlp_user_command = 'rg --files %s'
+  elseif executable('ag')
     let g:ctrlp_use_caching=0
     let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
   endif
