@@ -127,7 +127,7 @@ end
 
 abbr d 'data'
 
-
+# open commands
 if [ (uname -a | grep "Microsoft") ]
   abbr cmd 'cmd.exe /c'
   set WINDOWS_OPEN 'cmd.exe /c start'
@@ -140,6 +140,12 @@ else if [ (uname) = "Linux" ]
   abbr o $LINUX_OPEN
 else
   abbr o 'open'
+end
+
+# Docker for Windows
+if [ (uname -a | grep "Microsoft") ]
+  abbr docker docker.exe
+  abbr docker-compose docker-compose.exe
 end
 
 
