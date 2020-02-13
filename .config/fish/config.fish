@@ -60,7 +60,7 @@ set -g theme_newline_cursor no
 
 # Node Version Manager
 set -x NVM_DIR "$HOME/.nvm"
-[ ! -d "$NVM_DIR" ]; and curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+[ ! -d "$NVM_DIR" ]; and curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 
 # Auto Start Tmux
 # if [ -z "$TMUX" -a -z "$STY" ]
