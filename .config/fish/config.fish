@@ -6,6 +6,14 @@
 # Data Folder
 set -g DATA_DIR $HOME/data
 
+# Android
+if [ (uname) = "Darwin" ]
+  if test -d $HOME/Library/Android/sdk
+    set -x ANDROID_HOME $HOME/Library/Android/sdk
+    set -x PATH $ANDROID_HOME/platform-tools $PATH
+  end
+end
+
 # Go
 if test -d $HOME/.go
   set -x GOPATH $HOME/.go
