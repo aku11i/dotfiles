@@ -37,8 +37,6 @@ Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
-"Prettier
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
 " JavaScript
