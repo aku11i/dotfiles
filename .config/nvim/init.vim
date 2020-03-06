@@ -59,6 +59,9 @@ Plug 'tyru/caw.vim'
 
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-surround'
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " ---- ColorScheme ----
 Plug 'altercation/vim-colors-solarized'
