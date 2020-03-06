@@ -140,6 +140,10 @@ nnoremap ,dw :<C-u>DeniteCursorWord grep<CR>
 nnoremap ,dW :<C-u>DeniteCursorWord grep .<CR>
 "----
 
+"File type
+autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
+autocmd bufnewfile,bufread *.jsx set filetype=javascript.jsx
+
 if s:plug.is_installed('fzf.vim')
   nnoremap <C-p> :Files<Cr>
 
