@@ -55,8 +55,13 @@ Plug 'kana/vim-submode'
 " Toggle comments
 Plug 'tyru/caw.vim'
 
+" Text
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-surround'
+
+" Test
+Plug 'janko/vim-test'
+
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
