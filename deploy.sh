@@ -22,4 +22,4 @@ for dotfile in .??* ; do
   deploy $dotfile
 done
 
-chmod +x $HOME/.bin/*
+# chmod +x $HOME/.bin/*
