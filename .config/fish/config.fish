@@ -10,7 +10,12 @@ set -g DATA_DIR $HOME/data
 if [ (uname) = "Darwin" ]
   if test -d $HOME/Library/Android/sdk
     set -x ANDROID_HOME $HOME/Library/Android/sdk
-    set -x PATH $ANDROID_HOME/platform-tools $PATH
+    set -x PATH $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools $PATH
+  end
+else if [ (uname) = "Linux" ]
+  if test -d $HOME/tools/android-sdk
+    set -x ANDROID_HOME $HOME/tools/android-sdk
+    set -x PATH $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools $PATH
   end
 end
 
