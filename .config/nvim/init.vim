@@ -144,6 +144,10 @@ nnoremap ,dG :<C-u>Denite grep .<CR>
 nnoremap ,dw :<C-u>DeniteCursorWord grep<CR>
 nnoremap ,dW :<C-u>DeniteCursorWord grep .<CR>
 
+" Split windows
+nnoremap <C-w>- :sp<CR>
+nnoremap <C-w>\ :vs<CR>
+
 " Switch windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
