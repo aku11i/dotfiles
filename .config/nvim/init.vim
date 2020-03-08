@@ -143,7 +143,12 @@ nnoremap ,dg :<C-u>Denite grep<CR>
 nnoremap ,dG :<C-u>Denite grep .<CR>
 nnoremap ,dw :<C-u>DeniteCursorWord grep<CR>
 nnoremap ,dW :<C-u>DeniteCursorWord grep .<CR>
-"----
+
+" Switch windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 "File type
 autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
