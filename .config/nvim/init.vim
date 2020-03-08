@@ -179,8 +179,10 @@ if s:plug.is_installed('coc.nvim')
   autocmd CursorHold * silent call CocActionAsync('highlight')
   nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>
   nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
-endif
 
+  inoremap <expr> <Tab> pumvisible() ? "\<Down>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
+endif
 
 if s:plug.is_installed('nerdtree')
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
