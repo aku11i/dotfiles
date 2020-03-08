@@ -38,7 +38,7 @@ Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
 " TypeScript
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
 " JavaScript
 Plug 'othree/yajs.vim'
 " JSX
@@ -284,3 +284,7 @@ endif
 "   set background=dark
 "   colorscheme zenburn
 " endif
+
+if s:plug.is_installed('typescript-vim')
+  let g:typescript_indent_disable = 1
+endif
