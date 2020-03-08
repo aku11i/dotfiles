@@ -147,8 +147,6 @@ autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
 autocmd bufnewfile,bufread *.jsx set filetype=javascript.jsx
 
 if s:plug.is_installed('fzf.vim')
-  nnoremap <C-p> :Files<Cr>
-
   function! RipgrepFzf(query, fullscreen)
     let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
     let initial_command = printf(command_fmt, shellescape(a:query))
@@ -159,7 +157,9 @@ if s:plug.is_installed('fzf.vim')
 
   command! -nargs=* -bang Grep call RipgrepFzf(<q-args>, <bang>0)
 
-  nnoremap <C-g> :Grep<Cr>
+  " nnoremap <C-g> :Grep<Cr>
+  nnoremap <C-p> :Files<Cr>
+  nnoremap <C-g> :Buffers<Cr>
 endif
 
 if s:plug.is_installed('coc.nvim')
