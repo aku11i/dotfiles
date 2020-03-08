@@ -14,7 +14,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'ujihisa/unite-colorscheme'
 
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
