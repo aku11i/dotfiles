@@ -14,8 +14,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ujihisa/unite-colorscheme'
 
 " Fuzzy finder
@@ -133,17 +131,6 @@ inoremap <silent> <C-f> <Right>
 inoremap <silent> <C-h> <BS>
 inoremap <silent> <C-d> <Del>
 
-" Denite
-nnoremap ,dB :<C-u>Denite buffer -buffer-name=file<CR>
-nnoremap ,df :<C-u>DeniteBufferDir -buffer-name=files file<CR>
-nnoremap ,db :<C-u>Denite buffer<CR>
-nnoremap ,dr :<C-u>Denite file_old<CR>
-nnoremap ,dR :<C-u>Denite command_history<CR>
-nnoremap ,dg :<C-u>Denite grep<CR>
-nnoremap ,dG :<C-u>Denite grep .<CR>
-nnoremap ,dw :<C-u>DeniteCursorWord grep<CR>
-nnoremap ,dW :<C-u>DeniteCursorWord grep .<CR>
-
 " Split windows
 nnoremap <C-w>- :sp<CR>
 nnoremap <C-w>\ :vs<CR>
@@ -193,40 +180,6 @@ if s:plug.is_installed('coc.nvim')
   nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
 endif
 
-if s:plug.is_installed('denite.nvim')
-  let g:extra_whitespace_ignored_filetypes = ['denite']
-  let g:denite_enable_ignore_case = 1
-  let g:denite_enable_smart_case = 1
-  call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>')
-  call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>')
-
-  if executable('ag')
-    call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-    call denite#custom#var('grep', 'command', ['ag'])
-    call denite#custom#var('grep', 'recursive_opts', [])
-    call denite#custom#var('grep', 'pattern_opt', [])
-    call denite#custom#var('grep', 'default_opts', ['--follow', '--no-group', '--no-color'])
-  endif
-endif
-
-if s:plug.is_installed('deoplete.nvim')
-  " Use deoplete.
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#auto_complete_delay = 0
-  let g:deoplete#auto_complete_start_length = 1
-  let g:deoplete#enable_camel_case = 0
-  let g:deoplete#enable_ignore_case = 0
-  let g:deoplete#enable_refresh_always = 0
-  let g:deoplete#enable_smart_case = 1
-  let g:deoplete#file#enable_buffer_path = 1
-  let g:deoplete#max_list = 10000
-  " <TAB>: completion.
-  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-  inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
-  " <C-h>, <BS>: close popup and delete backword char.
-  inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
-endif
 
 if s:plug.is_installed('nerdtree')
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
