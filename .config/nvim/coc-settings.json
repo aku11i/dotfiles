@@ -8,8 +8,10 @@
     "markdown",
     "Markdown",
     "javascript",
+    "javascript.jsx",
     "javascriptreact",
     "typescript",
+    "typescript.tsx",
     "typescriptreact"
   ]
 }
