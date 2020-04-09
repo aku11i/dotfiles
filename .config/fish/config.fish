@@ -71,6 +71,12 @@ set -g fish_prompt_pwd_dir_length 2
 set -g theme_project_dir_length 1
 set -g theme_newline_cursor no
 
+# System Node.js
+# Add npm bin path to PATH
+if test (which npm) -a -d (npm --global --silent bin 2>/dev/null)
+  set -x PATH (npm --global --silent bin 2>/dev/null) $PATH
+end
+
 # Node Version Manager
 set -x NVM_DIR "$HOME/.nvm"
 [ ! -d "$NVM_DIR" ]; and curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
