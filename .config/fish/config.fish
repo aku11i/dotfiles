@@ -73,8 +73,9 @@ set -g theme_newline_cursor no
 
 # System Node.js
 # Add npm bin path to PATH
-if test (which npm) -a -d (npm --global --silent bin 2>/dev/null)
-  set -x PATH (npm --global --silent bin 2>/dev/null) $PATH
+set -l npm_bin_path (npm --global --silent bin 2>/dev/null)
+if test -e "(which npm)" -a -d "$npm_bin_path"
+  set -x PATH $npm_bin_path $PATH
 end
 
 # Node Version Manager
