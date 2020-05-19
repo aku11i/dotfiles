@@ -26,16 +26,19 @@ USER ${USERNAME}
 ENV PATH $PATH:/home/linuxbrew/.linuxbrew/bin
 
 RUN ./homebrew.sh
+RUN brew tap linuxbrew/xorg
 RUN ./brewfile.sh
 
 RUN ./deploy.sh
 
-# RUN pip install neovim && \
-#     nvim -c PlugInstall -c q -c q
+RUN npm install -g yarn && \
+    pip3 install neovim && \
+    nvim -c PlugInstall -c q -c q
+
+RUN pip3 install powerline-status
 
 RUN fish -c fisher
 
 WORKDIR $HOME
 
 CMD /home/linuxbrew/.linuxbrew/bin/fish
-

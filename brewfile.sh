@@ -34,7 +34,7 @@ brew install \
 
 if test "$(uname)" == "Darwin"; then
   brew install \
-    cocoapods
+    cocoapods \
 
 fi
 
