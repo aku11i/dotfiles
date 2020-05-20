@@ -25,7 +25,7 @@ or [other nerd fonts](https://www.nerdfonts.com/font-downloads)
 Supported Platforms:
 - macOS
 - Linux(tested on Ubuntu)
-- Windows Sub System for Linux
+- Windows Subsystem for Linux
 
 ```sh
 git clone https://github.com/aktriver/dotfiles.git ~/.dotfiles
