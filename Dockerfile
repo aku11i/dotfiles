@@ -22,23 +22,28 @@ RUN chown -R "${USERNAME}" /home/linuxbrew/.linuxbrew
 ENV HOME /home/${USERNAME}
 
 WORKDIR $HOME/.dotfiles
-COPY . .
 
 USER ${USERNAME}
 
-RUN ./deploy.sh
-
+COPY brewfile.sh .
 RUN ./brewfile.sh
 RUN brew cleanup --prune 0
 
-RUN npm install -g yarn && \
-    pip3 install neovim && \
-    nvim --headless -c PlugInstall -c qall && \
-    nvim --headless -c CocUpdateSync -c qall
-
 RUN pip3 install powerline-status
 
+RUN npm install -g yarn && \
+    pip3 install neovim
+
+COPY --chown=${USERNAME}:${USERNAME} .config/nvim $HOME/.config/nvim
+RUN nvim --headless -c PlugInstall -c qall && \
+    nvim --headless -c CocUpdateSync -c qall
+
+COPY --chown=${USERNAME}:${USERNAME} .config/fish $HOME/.config/fish
 RUN fish -c fisher
+
+COPY --chown=${USERNAME}:${USERNAME} . .
+
+RUN ./deploy.sh
 
 WORKDIR $HOME
 
