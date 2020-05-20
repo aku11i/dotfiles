@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM docker.pkg.github.com/homebrew/brew/brew:latest
 
 MAINTAINER aktriver <readonly@akutagawa.dev>
 
@@ -6,7 +6,7 @@ ARG USERNAME=user
 ARG PASSWORD=user
 
 RUN apt update && \
-    apt install -y sudo locales build-essential curl file git && \
+    apt install -y sudo locales && \
     apt clean && rm -rf /var/lib/apt/lists/*
 
 ENV LANG en_US.UTF-8
@@ -17,6 +17,8 @@ RUN useradd -m ${USERNAME} && \
     echo "${USERNAME}:${PASSWORD}" | chpasswd && \
     echo "${USERNAME} ALL=NOPASSWD: ALL" >> /etc/sudoers
 
+RUN chown -R "${USERNAME}" /home/linuxbrew/.linuxbrew
+
 ENV HOME /home/${USERNAME}
 
 WORKDIR $HOME/.dotfiles
@@ -26,11 +28,8 @@ USER ${USERNAME}
 
 RUN ./deploy.sh
 
-ENV PATH $PATH:/home/linuxbrew/.linuxbrew/bin
-
-RUN ./homebrew.sh
 RUN ./brewfile.sh
-RUN brew cleanup -s
+RUN brew cleanup --prune 0
 
 RUN npm install -g yarn && \
     pip3 install neovim && \
@@ -43,4 +42,4 @@ RUN fish -c fisher
 
 WORKDIR $HOME
 
-CMD /home/linuxbrew/.linuxbrew/bin/fish
+CMD fish
