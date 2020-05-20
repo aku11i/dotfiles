@@ -1,0 +1,17 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2  
+    - name: Login Docker Github Registry
+      run: docker login docker.pkg.github.com -u aktriver -p ${{ secrets.GITHUB_TOKEN }}
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag docker.pkg.github.com/aktriver/dotfiles/dotfiles:latest
+    - name: Push the Docker image
+      run: docker push docker.pkg.github.com/aktriver/dotfiles/dotfiles
