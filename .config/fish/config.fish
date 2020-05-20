@@ -1,5 +1,9 @@
-# Fisherman - Plugin Manager
-[ ! -f ~/.config/fish/functions/fisher.fish ]; and curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+# Fisher - Plugin Manager
+if not functions -q fisher
+    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+    fish -c fisher
+end
 
 ## Environment
 
@@ -7,12 +11,12 @@
 set -g DATA_DIR $HOME/data
 
 # Android
-if [ (uname) = "Darwin" ]
+if test (uname) = "Darwin"
   if test -d $HOME/Library/Android/sdk
     set -x ANDROID_HOME $HOME/Library/Android/sdk
     set -x PATH $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools $PATH
   end
-else if [ (uname) = "Linux" ]
+else if test (uname) = "Linux"
   if test -d $HOME/tools/android-sdk
     set -x ANDROID_HOME $HOME/tools/android-sdk
     set -x PATH $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools $PATH
@@ -40,19 +44,21 @@ if test -d $HOME/.composer/vendor/bin
   set -x PATH $HOME/.composer/vendor/bin $PATH
 end
 
-if [ (uname) = "Linux" ]
+if test (uname) = "Linux"
   # Linuxbrew
   set -x PATH /home/linuxbrew/.linuxbrew/bin $PATH
   set -x MANPATH /home/linuxbrew/.linuxbrew/share/man $MANPATH
   set -x INFOPATH /home/linuxbrew/.linuxbrew/share/info $INFOPATH
-  set -x XDG_DATA_DIRS /home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS
+  set -x XDG_DATA_DIRS /home/linuxbrew/.linuxbrew/share $XDG_DATA_DIRS
 end
 
 set -x EDITOR 'nvim'
 
 # jethrokuan/fzf
 set -x FZF_LEGACY_KEYBINDINGS 1
-which rg > /dev/null 2>&1 && set -x FZF_DEFAULT_COMMAND  'rg --files'
+if test -e ""(which rg)
+  set -x FZF_DEFAULT_COMMAND  'rg --files'
+end
 
 # Bobthefish Theme
 set -g theme_display_git yes
@@ -114,11 +120,9 @@ alias ... 'cd ../../'
 alias .... 'cd ../../../'
 alias ..... 'cd ../../../../'
 
-[ which trash >/dev/null 2>&1 ] ;and abbr del 'trash -r'
-
 abbr mkdir 'mkdir -p'
 function mkcd --description "mkdir & cd"
-  [ ! -d $argv ]; and mkdir -p $argv
+  test ! -d "$argv"; and mkdir -p $argv
   cd $argv
 end
 
@@ -129,13 +133,7 @@ end
 
 function data --description "mkdir & cd ~/$DATA_DIR/YYYY/MM/DD"
   set now (date "+%Y/%m/%d")
-  if test ! -s $DATA_DIR
-    mkdir $DATA_DIR
-    set mkdir_status $status
-    test $mkdir_status -ne 0; and return $mkdir_status
-  end
-
-  if test ! -s $DATA_DIR/$now
+  if test ! -s "$DATA_DIR/$now"
     mkdir -p $DATA_DIR/$now
     set mkdir_status $status
     test $mkdir_status -ne 0; and return $mkdir_status
@@ -148,13 +146,13 @@ end
 abbr d 'data'
 
 # open commands
-if [ (uname -a | grep "Microsoft") ]
+if test (uname -a | grep "Microsoft")
   abbr cmd 'cmd.exe /c'
   set WINDOWS_OPEN 'cmd.exe /c start'
   abbr start $WINDOWS_OPEN
   abbr open $WINDOWS_OPEN
   abbr o $WINDOWS_OPEN
-else if [ (uname) = "Linux" ]
+else if test (uname) = "Linux"
   set LINUX_OPEN 'xdg-open 2>/dev/null'
   abbr open $LINUX_OPEN
   abbr o $LINUX_OPEN
@@ -163,7 +161,7 @@ else
 end
 
 # Docker for Windows
-if [ (uname -a | grep "Microsoft") ]
+if test (uname -a | grep "Microsoft")
   abbr docker docker.exe
   abbr docker-compose docker-compose.exe
 end
@@ -174,7 +172,7 @@ abbr v 'vi'
 abbr vi 'nvim'
 
 ## macOS Apps
-if [ (uname) = 'Darwin' ]
+if test (uname) = 'Darwin'
   # Xcode
   abbr xcode 'open -a /Applications/Xcode.app'
   abbr xc731 'open -a /Applications/Xcode\ 7.3.1.app'
