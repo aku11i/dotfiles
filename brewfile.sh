@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if test "$(uname)" == "Linux"; then
+  brew tap linuxbrew/xorg
+fi
+
 brew install \
   coreutils \
   ffmpeg \
