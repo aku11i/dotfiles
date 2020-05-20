@@ -24,18 +24,18 @@ COPY . .
 
 USER ${USERNAME}
 
+RUN ./deploy.sh
+
 ENV PATH $PATH:/home/linuxbrew/.linuxbrew/bin
 
 RUN ./homebrew.sh
-RUN brew tap linuxbrew/xorg
 RUN ./brewfile.sh
 RUN brew cleanup -s
 
-RUN ./deploy.sh
-
 RUN npm install -g yarn && \
     pip3 install neovim && \
-    nvim --headless +PlugInstall +qall
+    nvim --headless -c PlugInstall -c qall && \
+    nvim --headless -c CocUpdateSync -c qall
 
 RUN pip3 install powerline-status
 
