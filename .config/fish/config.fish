@@ -77,17 +77,6 @@ set -g fish_prompt_pwd_dir_length 2
 set -g theme_project_dir_length 1
 set -g theme_newline_cursor no
 
-# System Node.js
-# Add npm bin path to PATH
-set -l npm_bin_path (npm --global --silent bin 2>/dev/null)
-if test -e "(which npm)" -a -d "$npm_bin_path"
-  set -x PATH $npm_bin_path $PATH
-end
-
-# Node Version Manager
-set -x NVM_DIR "$HOME/.nvm"
-[ ! -d "$NVM_DIR" ]; and curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
-
 # Auto Start Tmux
 # if [ -z "$TMUX" -a -z "$STY" ]
 #   which tmux > /dev/null ;and tmux new-session -t "General" ;and exit # 'exit' may not close fish
