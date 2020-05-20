@@ -1,5 +1,7 @@
 # dotfiles
 
+![](https://github.com/aktriver/dotfiles/workflows/Docker%20Image%20CI/badge.svg)
+
 ## Try
 
 ```sh
