@@ -39,7 +39,7 @@ RUN nvim --headless -c PlugInstall -c qall && \
     nvim --headless -c CocUpdateSync -c qall
 
 COPY --chown=${USERNAME}:${USERNAME} .config/fish $HOME/.config/fish
-RUN fish -c fisher
+RUN fish -c exit
 
 COPY --chown=${USERNAME}:${USERNAME} . .
 
