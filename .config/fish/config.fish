@@ -118,6 +118,14 @@ end
 function cd
   builtin cd $argv
   ls -a
+
+  # Switch Node version if .nvmrc exists
+  if test -e ./.nvmrc
+    nvm
+    echo
+    echo "Node.js: "(node -v)
+    echo "NPM    : "(npm -v)
+  end
 end
 
 function data --description "mkdir & cd ~/$DATA_DIR/YYYY/MM/DD"
