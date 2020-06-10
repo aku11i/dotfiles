@@ -199,7 +199,7 @@ abbr gfp 'git fetch --prune'
 
 abbr gs 'git status --short --branch'
 abbr gr 'git reset'
-abbr grh 'git reset HEAD'
+abbr grh 'git reset --hard'
 
 abbr gl 'git log --graph --decorate --oneline'
 abbr glf 'git log --graph --decorate --oneline -p --follow'
@@ -213,6 +213,8 @@ abbr gdc 'git diff --cached'
 abbr gsw 'git switch'
 abbr gsc 'git switch --create'
 abbr gsC 'git switch --force-create'
+
+abbr gco 'git checkout'
 
 abbr gc 'git commit'
 abbr gcm 'git commit -m'
