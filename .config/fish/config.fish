@@ -195,39 +195,39 @@ abbr scm 'svn commit -m'
 abbr g 'git'
 
 abbr gf 'git fetch'
+abbr gfp 'git fetch --prune'
 
-abbr gis 'git status --short --branch'
+abbr gs 'git status --short --branch'
+abbr gr 'git reset'
 abbr grh 'git reset HEAD'
 
 abbr gl 'git log --graph --decorate --oneline'
 abbr glf 'git log --graph --decorate --oneline -p --follow'
 
+abbr ga 'git add'
+abbr gA 'git add --patch'
 
-abbr gia 'git add'
-abbr giA 'git add --patch'
-
-abbr gid 'git diff'
 abbr gd 'git diff'
 abbr gdc 'git diff --cached'
 
-abbr gco 'git checkout'
-abbr gcb 'git checkout -b'
+abbr gsw 'git switch'
+abbr gsc 'git switch --create'
+abbr gsC 'git switch --force-create'
 
 abbr gc 'git commit'
 abbr gcm 'git commit -m'
 abbr gcf 'git commit --file'
+abbr gcF 'git commit --file -'
 abbr gca 'git commit --amend'
 
 abbr gp 'git push'
 abbr gpf 'git push --force'
-abbr gpa 'git push --all'
-abbr gpA 'git push --all; and git push --tags'
 abbr gpt 'git push --tags'
 abbr gpT 'git push ;and git push --tags'
-abbr gpu 'git push --set-upstream origin HEAD'
+abbr gpu 'git push --set-upstream'
+abbr gpU 'git push --set-upstream origin HEAD'
 
 abbr gP 'git pull'
-
 abbr gPp 'git pull ;and git push'
 
 abbr gb 'git branch'
@@ -235,16 +235,10 @@ abbr gbc 'git symbolic-ref --short HEAD' # git branch current
 abbr gbl 'git branch --list'
 abbr gbr 'git branch --remotes'
 abbr gbd 'git branch --delete'
-abbr gbD 'git branch -D'  # force delete
+abbr gbD 'git branch --delete --force'
 
-abbr gr 'git rebase'
-abbr grm 'git rebase master'
-
-abbr gR 'git remote'
-abbr gRl 'git remote --verbose'
-abbr gRa 'git remote add'
-abbr gRA 'git remote add origin'
-abbr gRs 'git remote show'
+abbr gR 'git rebase'
+abbr gRm 'git rebase master'
 
 abbr gm 'git merge'
 abbr gmt 'git mergetool'
@@ -271,26 +265,26 @@ abbr gFss 'git flow support start'
 abbr gFsf 'git flow support finish'
 
 # Git Stash
-abbr gs 'git stash'
-abbr gsS 'git stash save'
-abbr gsp 'git stash pop'
-abbr gsa 'git stash apply'
-abbr gsl 'git stash list'
-abbr gss 'git stash show'
-abbr gsb 'git stash branch'
-abbr gsc 'git stash create'
-abbr gsC 'git stash clear'
-abbr gsd 'git stash drop'
+abbr gS 'git stash'
+abbr gSs 'git stash save'
+abbr gSp 'git stash pop'
+abbr gSa 'git stash apply'
+abbr gSl 'git stash list'
+abbr gSs 'git stash show'
+abbr gSb 'git stash branch'
+abbr gSc 'git stash create'
+abbr gSC 'git stash clear'
+abbr gSd 'git stash drop'
 
 # Git Cherry Pick
-abbr gck 'git cherry-pick'
+abbr gcp 'git cherry-pick'
 
 # Git SVN
-abbr gS 'git svn'
-abbr gSm 'git merge --no-ff --no-commit'
-abbr gSr 'git svn rebase'
-abbr gSd 'git svn dcommit'
-abbr gSl 'git svn log'
+abbr gSV 'git svn'
+abbr gSVm 'git merge --no-ff --no-commit'
+abbr gSVr 'git svn rebase'
+abbr gSVd 'git svn dcommit'
+abbr gSVl 'git svn log'
 
 # tmux
 abbr t 'tmux'
