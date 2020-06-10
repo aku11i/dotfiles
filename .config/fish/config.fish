@@ -86,30 +86,30 @@ set -g theme_newline_cursor no
 ## Aliases
 
 # Global(like) Aliases
-abbr G 'grep'
-abbr L 'less'
-abbr A 'awk'
-abbr S 'sed'
-abbr T 'tail'
-abbr C 'cat'
-abbr V 'vim -'
-abbr NV 'nvim -'
+abbr --add --global G 'grep'
+abbr --add --global L 'less'
+abbr --add --global A 'awk'
+abbr --add --global S 'sed'
+abbr --add --global T 'tail'
+abbr --add --global C 'cat'
+abbr --add --global V 'vim -'
+abbr --add --global NV 'nvim -'
 
 # Util
-abbr l 'ls -1a'
-abbr la 'ls -a'
-abbr l1 'ls -1a'
-abbr ll 'ls -lha'
+abbr --add --global l 'ls -1a'
+abbr --add --global la 'ls -a'
+abbr --add --global l1 'ls -1a'
+abbr --add --global ll 'ls -lha'
 
-abbr rm 'rm -i'
-abbr cp 'cp -ir'
-abbr mv 'mv -i'
+abbr --add --global rm 'rm -i'
+abbr --add --global cp 'cp -ir'
+abbr --add --global mv 'mv -i'
 
 alias ... 'cd ../../'
 alias .... 'cd ../../../'
 alias ..... 'cd ../../../../'
 
-abbr mkdir 'mkdir -p'
+abbr --add --global mkdir 'mkdir -p'
 function mkcd --description "mkdir & cd"
   test ! -d "$argv"; and mkdir -p $argv
   cd $argv
@@ -140,175 +140,175 @@ function data --description "mkdir & cd ~/$DATA_DIR/YYYY/MM/DD"
   cd $DATA_DIR/$now
 end
 
-abbr d 'data'
+abbr --add --global d 'data'
 
 # open commands
 if test (uname -a | grep "Microsoft")
-  abbr cmd 'cmd.exe /c'
+  abbr --add --global cmd 'cmd.exe /c'
   set WINDOWS_OPEN 'cmd.exe /c start'
-  abbr start $WINDOWS_OPEN
-  abbr open $WINDOWS_OPEN
-  abbr o $WINDOWS_OPEN
+  abbr --add --global start $WINDOWS_OPEN
+  abbr --add --global open $WINDOWS_OPEN
+  abbr --add --global o $WINDOWS_OPEN
 else if test (uname) = "Linux"
   set LINUX_OPEN 'xdg-open 2>/dev/null'
-  abbr open $LINUX_OPEN
-  abbr o $LINUX_OPEN
+  abbr --add --global open $LINUX_OPEN
+  abbr --add --global o $LINUX_OPEN
 else
-  abbr o 'open'
+  abbr --add --global o 'open'
 end
 
 # Docker for Windows
 if test (uname -a | grep "Microsoft")
-  abbr docker docker.exe
-  abbr docker-compose docker-compose.exe
+  abbr --add --global docker docker.exe
+  abbr --add --global docker-compose docker-compose.exe
 end
 
 
 # Vim
-abbr v 'vi'
-abbr vi 'nvim'
+abbr --add --global v 'vi'
+abbr --add --global vi 'nvim'
 
 ## macOS Apps
 if test (uname) = 'Darwin'
   # Xcode
-  abbr xcode 'open -a /Applications/Xcode.app'
-  abbr xc731 'open -a /Applications/Xcode\ 7.3.1.app'
-  abbr xc7 'open -a /Applications/Xcode\ 7.3.1.app'
+  abbr --add --global xcode 'open -a /Applications/Xcode.app'
+  abbr --add --global xc731 'open -a /Applications/Xcode\ 7.3.1.app'
+  abbr --add --global xc7 'open -a /Applications/Xcode\ 7.3.1.app'
   # iA Writer
-  abbr ia 'open -a /Applications/iA\ Writer.app'
+  abbr --add --global ia 'open -a /Applications/iA\ Writer.app'
   # Yoink
-  abbr yoink 'open -a Yoink'
+  abbr --add --global yoink 'open -a Yoink'
 end
 
 # Subversion
-abbr s 'svn'
-abbr sb 'svn branch'
-abbr svu 'svn update'
-abbr svt 'svn status'
-abbr svl 'svn log -l 5'
-abbr svd 'svn diff'
-abbr sc 'svn commit'
-abbr scm 'svn commit -m'
+abbr --add --global s 'svn'
+abbr --add --global sb 'svn branch'
+abbr --add --global svu 'svn update'
+abbr --add --global svt 'svn status'
+abbr --add --global svl 'svn log -l 5'
+abbr --add --global svd 'svn diff'
+abbr --add --global sc 'svn commit'
+abbr --add --global scm 'svn commit -m'
 
 
 # Git
-abbr g 'git'
+abbr --add --global g 'git'
 
-abbr gf 'git fetch'
-abbr gfp 'git fetch --prune'
+abbr --add --global gf 'git fetch'
+abbr --add --global gfp 'git fetch --prune'
 
-abbr gs 'git status --short --branch'
-abbr gr 'git reset'
-abbr grh 'git reset --hard'
+abbr --add --global gs 'git status --short --branch'
+abbr --add --global gr 'git reset'
+abbr --add --global grh 'git reset --hard'
 
-abbr gl 'git log --graph --decorate --oneline'
-abbr glf 'git log --graph --decorate --oneline -p --follow'
+abbr --add --global gl 'git log --graph --decorate --oneline'
+abbr --add --global glf 'git log --graph --decorate --oneline -p --follow'
 
-abbr ga 'git add'
-abbr gA 'git add --patch'
+abbr --add --global ga 'git add'
+abbr --add --global gA 'git add --patch'
 
-abbr gd 'git diff'
-abbr gdc 'git diff --cached'
+abbr --add --global gd 'git diff'
+abbr --add --global gdc 'git diff --cached'
 
-abbr gsw 'git switch'
-abbr gsc 'git switch --create'
-abbr gsC 'git switch --force-create'
+abbr --add --global gsw 'git switch'
+abbr --add --global gsc 'git switch --create'
+abbr --add --global gsC 'git switch --force-create'
 
-abbr gco 'git checkout'
+abbr --add --global gco 'git checkout'
 
-abbr gc 'git commit'
-abbr gcm 'git commit -m'
-abbr gcf 'git commit --file'
-abbr gcF 'git commit --file -'
-abbr gca 'git commit --amend'
+abbr --add --global gc 'git commit'
+abbr --add --global gcm 'git commit -m'
+abbr --add --global gcf 'git commit --file'
+abbr --add --global gcF 'git commit --file -'
+abbr --add --global gca 'git commit --amend'
 
-abbr gp 'git push'
-abbr gpf 'git push --force'
-abbr gpt 'git push --tags'
-abbr gpT 'git push ;and git push --tags'
-abbr gpu 'git push --set-upstream'
-abbr gpU 'git push --set-upstream origin HEAD'
+abbr --add --global gp 'git push'
+abbr --add --global gpf 'git push --force'
+abbr --add --global gpt 'git push --tags'
+abbr --add --global gpT 'git push ;and git push --tags'
+abbr --add --global gpu 'git push --set-upstream'
+abbr --add --global gpU 'git push --set-upstream origin HEAD'
 
-abbr gP 'git pull'
-abbr gPp 'git pull ;and git push'
+abbr --add --global gP 'git pull'
+abbr --add --global gPp 'git pull ;and git push'
 
-abbr gb 'git branch'
-abbr gbc 'git symbolic-ref --short HEAD' # git branch current
-abbr gbl 'git branch --list'
-abbr gbr 'git branch --remotes'
-abbr gbd 'git branch --delete'
-abbr gbD 'git branch --delete --force'
+abbr --add --global gb 'git branch'
+abbr --add --global gbc 'git symbolic-ref --short HEAD' # git branch current
+abbr --add --global gbl 'git branch --list'
+abbr --add --global gbr 'git branch --remotes'
+abbr --add --global gbd 'git branch --delete'
+abbr --add --global gbD 'git branch --delete --force'
 
-abbr gR 'git rebase'
-abbr gRm 'git rebase master'
+abbr --add --global gR 'git rebase'
+abbr --add --global gRm 'git rebase master'
 
-abbr gm 'git merge'
-abbr gmt 'git mergetool'
-abbr gmn 'git merge --no-ff --no-commit'
+abbr --add --global gm 'git merge'
+abbr --add --global gmt 'git mergetool'
+abbr --add --global gmn 'git merge --no-ff --no-commit'
 
-abbr gC 'git config'
-abbr gCun 'git config user.name'
-abbr gCum 'git config user.email'
+abbr --add --global gC 'git config'
+abbr --add --global gCun 'git config user.name'
+abbr --add --global gCum 'git config user.email'
 
 # Git Flow
-abbr gF 'git flow'
-abbr gFi 'git flow init'
-abbr gFf 'git flow feature'
-abbr gFfs 'git flow feature start'
-abbr gFff 'git flow feature finish'
-abbr gFr 'git flow release'
-abbr gFrs 'git flow release start'
-abbr gFrf 'git flow release finish'
-abbr gFh 'git flow hotfix'
-abbr gFhs 'git flow hotfix start'
-abbr gFhf 'git flow hotfix finish'
-abbr gFs 'git flow support'
-abbr gFss 'git flow support start'
-abbr gFsf 'git flow support finish'
+abbr --add --global gF 'git flow'
+abbr --add --global gFi 'git flow init'
+abbr --add --global gFf 'git flow feature'
+abbr --add --global gFfs 'git flow feature start'
+abbr --add --global gFff 'git flow feature finish'
+abbr --add --global gFr 'git flow release'
+abbr --add --global gFrs 'git flow release start'
+abbr --add --global gFrf 'git flow release finish'
+abbr --add --global gFh 'git flow hotfix'
+abbr --add --global gFhs 'git flow hotfix start'
+abbr --add --global gFhf 'git flow hotfix finish'
+abbr --add --global gFs 'git flow support'
+abbr --add --global gFss 'git flow support start'
+abbr --add --global gFsf 'git flow support finish'
 
 # Git Stash
-abbr gS 'git stash'
-abbr gSs 'git stash save'
-abbr gSp 'git stash pop'
-abbr gSa 'git stash apply'
-abbr gSl 'git stash list'
-abbr gSs 'git stash show'
-abbr gSb 'git stash branch'
-abbr gSc 'git stash create'
-abbr gSC 'git stash clear'
-abbr gSd 'git stash drop'
+abbr --add --global gS 'git stash'
+abbr --add --global gSs 'git stash save'
+abbr --add --global gSp 'git stash pop'
+abbr --add --global gSa 'git stash apply'
+abbr --add --global gSl 'git stash list'
+abbr --add --global gSs 'git stash show'
+abbr --add --global gSb 'git stash branch'
+abbr --add --global gSc 'git stash create'
+abbr --add --global gSC 'git stash clear'
+abbr --add --global gSd 'git stash drop'
 
 # Git Cherry Pick
-abbr gcp 'git cherry-pick'
+abbr --add --global gcp 'git cherry-pick'
 
 # Git SVN
-abbr gSV 'git svn'
-abbr gSVm 'git merge --no-ff --no-commit'
-abbr gSVr 'git svn rebase'
-abbr gSVd 'git svn dcommit'
-abbr gSVl 'git svn log'
+abbr --add --global gSV 'git svn'
+abbr --add --global gSVm 'git merge --no-ff --no-commit'
+abbr --add --global gSVr 'git svn rebase'
+abbr --add --global gSVd 'git svn dcommit'
+abbr --add --global gSVl 'git svn log'
 
 # tmux
-abbr t 'tmux'
-abbr ta 'tmux attach'
-abbr td 'tmux detach'
-abbr tn 'tmux new-session -t'
-abbr tN 'tmux detach; and tmux new-session -t'
-abbr tk 'tmux kill-session -t'
-abbr tK 'tmux kill-server'
-abbr tl 'tmux ls'
-abbr ts 'tmux switch-client -t'
+abbr --add --global t 'tmux'
+abbr --add --global ta 'tmux attach'
+abbr --add --global td 'tmux detach'
+abbr --add --global tn 'tmux new-session -t'
+abbr --add --global tN 'tmux detach; and tmux new-session -t'
+abbr --add --global tk 'tmux kill-session -t'
+abbr --add --global tK 'tmux kill-server'
+abbr --add --global tl 'tmux ls'
+abbr --add --global ts 'tmux switch-client -t'
 
 # Vagrant
-abbr vgi 'vagrant init'
-abbr vgs 'vagrant status'
-abbr vgu 'vagrant up'
-abbr vgr 'vagrant reload'
-abbr vgh 'vagrant halt'
-abbr vgS 'vagrant ssh'
-abbr vgp 'vagrant provision'
-abbr vgd 'vagrant destroy'
+abbr --add --global vgi 'vagrant init'
+abbr --add --global vgs 'vagrant status'
+abbr --add --global vgu 'vagrant up'
+abbr --add --global vgr 'vagrant reload'
+abbr --add --global vgh 'vagrant halt'
+abbr --add --global vgS 'vagrant ssh'
+abbr --add --global vgp 'vagrant provision'
+abbr --add --global vgd 'vagrant destroy'
 
 # Translate Shell
-abbr tre 'trans --no-warn --brief :en'
-abbr trj 'trans --no-warn --brief :ja'
+abbr --add --global tre 'trans --no-warn --brief :en'
+abbr --add --global trj 'trans --no-warn --brief :ja'
