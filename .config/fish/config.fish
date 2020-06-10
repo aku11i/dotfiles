@@ -85,16 +85,6 @@ set -g theme_newline_cursor no
 
 ## Aliases
 
-# Global(like) Aliases
-abbr --add --global G 'grep'
-abbr --add --global L 'less'
-abbr --add --global A 'awk'
-abbr --add --global S 'sed'
-abbr --add --global T 'tail'
-abbr --add --global C 'cat'
-abbr --add --global V 'vim -'
-abbr --add --global NV 'nvim -'
-
 # Util
 abbr --add --global l 'ls -1a'
 abbr --add --global la 'ls -a'
@@ -320,6 +310,6 @@ gabbr G '| grep'
 gabbr H '| head'
 gabbr T '| tail'
 gabbr L '| less'
-gabbr V '| nvim'
+gabbr V '| nvim -'
 gabbr J '| jq'
 gabbr F '| fx'
