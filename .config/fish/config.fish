@@ -302,16 +302,3 @@ abbr --add --global vgd 'vagrant destroy'
 # Translate Shell
 abbr --add --global tre 'trans --no-warn --brief :en'
 abbr --add --global trj 'trans --no-warn --brief :ja'
-
-## Global Aliases
-if functions -q gabbr
-  gabbr A '; and'
-  gabbr O '; or'
-  gabbr G '| grep'
-  gabbr H '| head'
-  gabbr T '| tail'
-  gabbr L '| less'
-  gabbr V '| nvim -'
-  gabbr J '| jq'
-  gabbr F '| fx'
-end
