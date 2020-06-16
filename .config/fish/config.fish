@@ -133,7 +133,7 @@ end
 abbr --add --global d 'data'
 
 # open commands
-if test (uname -a | grep "Microsoft")
+if test (uname -a | grep --ignore-case "Microsoft")
   abbr --add --global cmd 'cmd.exe /c'
   set WINDOWS_OPEN 'cmd.exe /c start'
   abbr --add --global start $WINDOWS_OPEN
@@ -148,7 +148,7 @@ else
 end
 
 # Docker for Windows
-if test (uname -a | grep "Microsoft")
+if test (uname -a | grep --ignore-case "Microsoft")
   abbr --add --global docker docker.exe
   abbr --add --global docker-compose docker-compose.exe
 end
