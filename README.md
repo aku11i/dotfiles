@@ -7,15 +7,19 @@
 ```sh
 docker pull docker.pkg.github.com/aktriver/dotfiles/dotfiles:latest
 docker run --rm -it docker.pkg.github.com/aktriver/dotfiles/dotfiles:latest
+# container size is about 5 GB.
 ```
 
 ### Recommended Color Scheme
 
 Solarized Dark
 
-### Recommended Font
+### Recommended Fonts
 
-Source Code Pro for Powerline Nerd Font (SauceCodePro Nerd Font)<br>
+- JetBrainsMono Nerd Font<br>
+https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+
+- Source Code Pro for Powerline Nerd Font (SauceCodePro Nerd Font)<br>
 https://github.com/ryanoasis/nerd-fonts/releases/latest/download/SourceCodePro.zip
 
 or [other nerd fonts](https://www.nerdfonts.com/font-downloads)
