@@ -27,12 +27,10 @@ USER ${USERNAME}
 
 COPY brewfile.sh .
 RUN ./brewfile.sh
-RUN brew cleanup --prune 0
 
-RUN pip3 install powerline-status
+RUN pip3 install powerline-status neovim
 
-RUN npm install -g yarn && \
-    pip3 install neovim
+RUN npm install -g yarn
 
 COPY --chown=${USERNAME}:${USERNAME} .config/nvim $HOME/.config/nvim
 RUN nvim --headless -c PlugInstall -c qall && \
@@ -40,6 +38,13 @@ RUN nvim --headless -c PlugInstall -c qall && \
 
 COPY --chown=${USERNAME}:${USERNAME} .config/fish $HOME/.config/fish
 RUN fish -c exit
+
+# Delete install caches
+RUN npm cache verify
+RUN yarn cache clean
+RUN rm -rf ~/.cache/pip
+RUN rm -rf ~/.cache/fisher
+RUN brew cleanup -s --prune 0
 
 COPY --chown=${USERNAME}:${USERNAME} . .
 
