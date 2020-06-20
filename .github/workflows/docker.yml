@@ -15,5 +15,5 @@ jobs:
         registry: docker.pkg.github.com
         username: aktriver
         password: ${{ secrets.GITHUB_TOKEN }}
-        repository: docker.pkg.github.com/aktriver/dotfiles/dotfiles
+        repository: aktriver/dotfiles/dotfiles
         tag_with_ref: true
