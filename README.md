@@ -1,6 +1,6 @@
 # dotfiles
 
-![](https://github.com/aktriver/dotfiles/workflows/Docker%20Image%20CI/badge.svg)
+![](https://github.com/aktriver/dotfiles/workflows/Publish%20to%20docker.pkg.github.com/badge.svg)
 
 ## Try
 
