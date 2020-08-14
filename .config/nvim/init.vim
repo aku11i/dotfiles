@@ -63,6 +63,7 @@ Plug 'tyru/caw.vim'
 " Text
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
 
 " Test
 Plug 'janko/vim-test'
