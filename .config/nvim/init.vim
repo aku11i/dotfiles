@@ -142,6 +142,8 @@ inoremap <silent> <C-h> <BS>
 inoremap <silent> <C-d> <Del>
 
 " Split windows
+set splitbelow
+set splitright
 nnoremap <C-w>- :sp<CR>
 nnoremap <C-w>\ :vs<CR>
 
