@@ -107,6 +107,7 @@ set smartindent
 set showmatch
 set formatoptions+=mM
 set hlsearch
+set ignorecase
 set smartcase
 set incsearch
 set wrapscan
