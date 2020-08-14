@@ -126,8 +126,6 @@ set updatetime=300 " Default is 4000
 
 " ---- Key Mappings ----
 noremap ; :
-nnoremap <C-c> :q<Cr>
-nnoremap <C-s> :w<Cr>
 " Exit Terminal Mode
 tnoremap <silent> <C-[> <C-\><C-n>
 " Open terminal with insert mode
