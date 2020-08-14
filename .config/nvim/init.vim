@@ -26,6 +26,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+" Syntax Highlight
+Plug 'sheerun/vim-polyglot'
+
 " Language Server
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
@@ -38,18 +41,8 @@ Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
-" TypeScript
-Plug 'leafgarland/typescript-vim'
-" JavaScript
-Plug 'othree/yajs.vim'
-" JSX
-Plug 'maxmellon/vim-jsx-pretty'
-" Vue
-Plug 'posva/vim-vue'
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-" fish
-Plug 'dag/vim-fish'
 " Powerline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
