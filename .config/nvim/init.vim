@@ -127,10 +127,6 @@ set updatetime=300 " Default is 4000
 
 " ---- Key Mappings ----
 noremap ; :
-" Exit Terminal Mode
-tnoremap <silent> <C-[> <C-\><C-n>
-" Open terminal with insert mode
-autocmd TermOpen term://* startinsert
 
 " Emacs keymap
 inoremap <silent> <C-a> <HOME>
@@ -157,6 +153,15 @@ nnoremap <C-l> <C-w>l
 "File type
 autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
 autocmd bufnewfile,bufread *.jsx set filetype=javascript.jsx
+
+" Terminal
+" Exit terminal mode with ESC
+tnoremap <silent> <C-[> <C-\><C-n>
+" Open terminal with insert mode
+autocmd TermOpen term://* startinsert
+" Open terminal in minimal split window
+command! -nargs=* T split | resize 15 | terminal <args>
+nnoremap <silent> <leader>t :T<Cr>
 
 if s:plug.is_installed('fzf.vim')
   function! RipgrepFzf(query, fullscreen)
