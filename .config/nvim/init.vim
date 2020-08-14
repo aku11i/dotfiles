@@ -164,9 +164,9 @@ if s:plug.is_installed('fzf.vim')
 
   command! -nargs=* -bang Grep call RipgrepFzf(<q-args>, <bang>0)
 
-  " nnoremap <C-g> :Grep<Cr>
+  nnoremap <C-g> :Grep<Cr>
   nnoremap <C-p> :Files<Cr>
-  nnoremap <C-g> :Buffers<Cr>
+  nnoremap <C-[> :Buffers<Cr>
 endif
 
 if s:plug.is_installed('coc.nvim')
