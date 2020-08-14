@@ -5,12 +5,10 @@ if test "$(uname)" == "Linux"; then
 fi
 
 brew install \
-  coreutils \
   ffmpeg \
   fish \
   fx \
   fzf \
-  gawk \
   ghq \
   gibo \
   git \
@@ -34,6 +32,20 @@ brew install \
   tree \
   zsh \
 
+
+# GNU utils
+brew install \
+  binutils \
+  coreutils \
+  diffutils \
+  findutils \
+  moreutils \
+  gawk \
+  gzip \
+  gnu-tar \
+  gnu-sed \
+  gnu-time \
+  gnu-getopt
 
 
 if test "$(uname)" == "Darwin"; then

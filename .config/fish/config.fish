@@ -54,6 +54,19 @@ if test (uname) = "Linux"
   set -x XDG_DATA_DIRS /home/linuxbrew/.linuxbrew/share $XDG_DATA_DIRS
 end
 
+# Homebrew GNU utils
+add_path /usr/local/opt/binutils/libexec/gnubin
+add_path /usr/local/opt/coreutils/libexec/gnubin
+add_path /usr/local/opt/diffutils/libexec/gnubin
+add_path /usr/local/opt/findutils/libexec/gnubin
+add_path /usr/local/opt/moreutils/libexec/gnubin
+add_path /usr/local/opt/gawk/libexec/gnubin
+add_path /usr/local/opt/gzip/libexec/gnubin
+add_path /usr/local/opt/gnu-tar/libexec/gnubin
+add_path /usr/local/opt/gnu-sed/libexec/gnubin
+add_path /usr/local/opt/gnu-time/libexec/gnubin
+add_path /usr/local/opt/gnu-getopt/libexec/gnubin
+
 set -x EDITOR 'nvim'
 
 # jethrokuan/fzf
