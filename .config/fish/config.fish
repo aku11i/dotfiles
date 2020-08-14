@@ -7,6 +7,14 @@ end
 
 ## Environment
 
+function add_path -d "Add args to \$PATH"
+  for path in $argv
+    if test -d $path
+      set -x PATH $path $PATH
+    end
+  end
+end
+
 # Data Folder
 set -g DATA_DIR $HOME/data
 
@@ -30,19 +38,13 @@ if test -d $HOME/.go
 end
 
 # Flutter
-if test -d $HOME/tools/flutter
-  set -x PATH $HOME/tools/flutter/bin $PATH
-end
+add_path $HOME/tools/flutter/bin
 
 # Rust
-if test -d $HOME/.cargo
-  set -x PATH $HOME/.cargo/bin $PATH
-end
+add_path $HOME/.cargo/bin
 
 # PHP Composer
-if test -d $HOME/.composer/vendor/bin
-  set -x PATH $HOME/.composer/vendor/bin $PATH
-end
+add_path $HOME/.composer/vendor/bin
 
 if test (uname) = "Linux"
   # Linuxbrew
