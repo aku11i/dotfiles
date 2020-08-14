@@ -1,3 +1,6 @@
+" ---- Initialize Settings ----
+set termguicolors
+
 " ---- Vim Plug ----
 " Install vim-plug
 if has('vim_starting')
@@ -67,7 +70,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " ---- ColorScheme ----
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'jnurmine/Zenburn'
 
 call plug#end()
@@ -244,11 +247,9 @@ if s:plug.is_installed('vim-airline-themes')
   let g:airline_theme = 'murmur'
 endif
 
-if s:plug.is_installed('vim-colors-solarized')
-  let g:solarized_termcolors=16
-  let g:solarized_termtrans=1
+if s:plug.is_installed('vim-solarized8')
   set background=dark
-  colorscheme solarized
+  colorscheme solarized8_flat
 endif
 
 " if s:plug.is_installed('Zenburn')
