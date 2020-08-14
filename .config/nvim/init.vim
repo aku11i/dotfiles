@@ -46,6 +46,8 @@ Plug 'othree/yajs.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 " Vue
 Plug 'posva/vim-vue'
+" Prettier
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " fish
 Plug 'dag/vim-fish'
 " Powerline
