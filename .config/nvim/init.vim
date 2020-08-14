@@ -166,7 +166,7 @@ if s:plug.is_installed('fzf.vim')
 
   nnoremap <C-g> :Grep<Cr>
   nnoremap <C-p> :Files<Cr>
-  nnoremap <C-[> :Buffers<Cr>
+  nnoremap <C-t> :Buffers<Cr>
 endif
 
 if s:plug.is_installed('coc.nvim')
