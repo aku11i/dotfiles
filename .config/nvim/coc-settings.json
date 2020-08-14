@@ -12,6 +12,7 @@
     "javascriptreact",
     "typescript",
     "typescript.tsx",
-    "typescriptreact"
+    "typescriptreact",
+    "vue"
   ]
 }

@@ -27,6 +27,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
@@ -40,6 +41,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'othree/yajs.vim'
 " JSX
 Plug 'maxmellon/vim-jsx-pretty'
+" Vue
+Plug 'posva/vim-vue'
 " fish
 Plug 'dag/vim-fish'
 " Powerline
@@ -114,7 +117,7 @@ set wrapscan
 set clipboard=unnamed
 set list
 set listchars=tab:>-,trail:_,extends:<
-set updatetime=500 " Default is 4000
+set updatetime=300 " Default is 4000
 
 " ---- Key Mappings ----
 noremap ; :
