@@ -130,6 +130,8 @@ nnoremap <C-c> :q<Cr>
 nnoremap <C-s> :w<Cr>
 " Exit Terminal Mode
 tnoremap <silent> <C-[> <C-\><C-n>
+" Open terminal with insert mode
+autocmd TermOpen term://* startinsert
 
 " Emacs keymap
 inoremap <silent> <C-a> <HOME>
