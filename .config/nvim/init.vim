@@ -194,6 +194,7 @@ endif
 if s:plug.is_installed('coc.nvim')
   nmap <silent><C-]> <Plug>(coc-definition)
   nmap <silent><Leader>r  <Plug>(coc-rename)
+  nnoremap K :call <SID>show_documentation()<CR>
 
   nnoremap [Coc] <Nop>
   nmap <Leader>c [Coc]
@@ -210,13 +211,14 @@ if s:plug.is_installed('coc.nvim')
   " Show documentation in preview window
   function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
     else
       call CocActionAsync('doHover')
     endif
   endfunction
 
   " Highlight symbol and show documentation under cursor on CursorHold
-  autocmd CursorHold * silent call CocActionAsync('highlight') | call <SID>show_documentation()
+  autocmd CursorHold * silent call CocActionAsync('highlight')
 
   " Tab completion
   inoremap <expr> <Tab> pumvisible() ? "\<Down>" : "\<Tab>"
