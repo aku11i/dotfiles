@@ -65,6 +65,9 @@ Plug 'janko/vim-test'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+" Discord Status
+Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins'}
+
 " ---- ColorScheme ----
 Plug 'lifepillar/vim-solarized8'
 Plug 'jnurmine/Zenburn'
