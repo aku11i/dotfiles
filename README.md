@@ -2,31 +2,32 @@
 
 ![](https://github.com/aktriver/dotfiles/workflows/Publish%20to%20docker.pkg.github.com/badge.svg)
 
-## Try
+## Try on Docker
 
 ```sh
 docker pull docker.pkg.github.com/aktriver/dotfiles/dotfiles:latest
 docker run --rm -it docker.pkg.github.com/aktriver/dotfiles/dotfiles:latest
-# container size is about 5 GB.
+# container size is over 5 GB.
 ```
 
-### Recommended Color Scheme
+### Recommended Terminal Color Scheme
 
 Solarized Dark
 
 ### Recommended Fonts
 
 - JetBrainsMono Nerd Font<br>
-https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+  https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
 
 - Source Code Pro for Powerline Nerd Font (SauceCodePro Nerd Font)<br>
-https://github.com/ryanoasis/nerd-fonts/releases/latest/download/SourceCodePro.zip
+  https://github.com/ryanoasis/nerd-fonts/releases/latest/download/SourceCodePro.zip
 
 or [other nerd fonts](https://www.nerdfonts.com/font-downloads)
 
 ## Install
 
 Supported Platforms:
+
 - macOS
 - Linux(tested on Ubuntu)
 - Windows Subsystem for Linux
@@ -74,4 +75,3 @@ cd ~/.dotfiles
 [.tmux.conf](./.tmux.conf)
 
 - [Powerline](https://github.com/powerline/powerline) - statusline plugin
-
