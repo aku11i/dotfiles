@@ -57,6 +57,9 @@ Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
 
+" Terminal
+Plug 'kassio/neoterm'
+
 " Test
 Plug 'janko/vim-test'
 
@@ -157,8 +160,8 @@ tnoremap <silent> <C-[> <C-\><C-n>
 " Open terminal with insert mode
 autocmd TermOpen term://* startinsert
 " Open terminal in minimal split window
-command! -nargs=* T split | resize 15 | terminal <args>
-nnoremap <silent> <leader>t :T<Cr>
+command! -nargs=* Term split | resize 15 | terminal <args>
+nnoremap <silent> <leader>t :Term<Cr>
 
 " Resize window
 nnoremap <M-j> <C-w>-
@@ -266,5 +269,4 @@ endif
 "   set background=dark
 "   colorscheme zenburn
 " endif
-"
-"
+
