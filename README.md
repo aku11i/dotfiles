@@ -12,7 +12,9 @@ docker run --rm -it docker.pkg.github.com/aktriver/dotfiles/dotfiles:latest
 
 ### Recommended Terminal Color Scheme
 
-Solarized Dark
+[Rigel](https://github.com/rigellute/rigel)
+
+~~Solarized Dark~~
 
 ### Recommended Fonts
 
