@@ -192,6 +192,12 @@ if isdirectory(expand('~/.fzf'))
 endif
 
 
+if s:plug.is_installed('vim-polyglot')
+  let g:vim_markdown_conceal = 0
+  let g:vim_markdown_strikethrough = 1
+endif
+
+
 if s:plug.is_installed('coc.nvim')
   nmap <silent><C-]> <Plug>(coc-definition)
   nmap <silent><Leader>r  <Plug>(coc-rename)
