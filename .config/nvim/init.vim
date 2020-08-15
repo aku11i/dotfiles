@@ -150,10 +150,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-"File type
-autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
-autocmd bufnewfile,bufread *.jsx set filetype=javascript.jsx
-
 " Terminal
 " Exit terminal mode with ESC
 tnoremap <silent> <C-[> <C-\><C-n>
@@ -196,23 +192,33 @@ endif
 
 
 if s:plug.is_installed('coc.nvim')
-  " gd - go to definition of word under cursor
   nmap <silent><C-]> <Plug>(coc-definition)
-  nmap <silent> gd <Plug>(coc-definition)
-  nmap <silent> gy <Plug>(coc-type-definition)
-  " gi - go to implementation
-  nmap <silent> gi <Plug>(coc-implementation)
-  " gr - find references
-  nmap <silent> gr <Plug>(coc-references)
-  " rename the current word in the cursor
-  nmap <leader>cr  <Plug>(coc-rename)
-  nmap <leader>cf  <Plug>(coc-format-selected)
-  vmap <leader>cf  <Plug>(coc-format-selected)
-  " Highlight symbol under cursor on CursorHold
-  autocmd CursorHold * silent call CocActionAsync('highlight')
-  nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>
-  nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
+  nmap <silent><Leader>r  <Plug>(coc-rename)
 
+  nnoremap [Coc] <Nop>
+  nmap <Leader>c [Coc]
+  nmap [Coc]d <Plug>(coc-definition)
+  nmap [Coc]t <Plug>(coc-type-definition)
+  nmap [Coc]i <Plug>(coc-implementation)
+  nmap [Coc]r <Plug>(coc-references)
+  nmap [Coc]f  <Plug>(coc-format-selected)
+  vmap [Coc]f  <Plug>(coc-format-selected)
+  nnoremap [Coc]o  :<C-u>CocList outline<cr>
+  nnoremap [Coc]s  :<C-u>CocList -I symbols<cr>
+  nnoremap [Coc]k :call <SID>show_documentation()<CR>
+
+  " Show documentation in preview window
+  function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+    else
+      call CocActionAsync('doHover')
+    endif
+  endfunction
+
+  " Highlight symbol and show documentation under cursor on CursorHold
+  autocmd CursorHold * silent call CocActionAsync('highlight') | call <SID>show_documentation()
+
+  " Tab completion
   inoremap <expr> <Tab> pumvisible() ? "\<Down>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
 endif
