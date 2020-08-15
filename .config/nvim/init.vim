@@ -195,6 +195,8 @@ if s:plug.is_installed('coc.nvim')
   nmap <silent><C-]> <Plug>(coc-definition)
   nmap <silent><Leader>r  <Plug>(coc-rename)
   nnoremap K :call <SID>show_documentation()<CR>
+  nmap [g <Plug>(coc-diagnostic-prev)
+  nmap ]g <Plug>(coc-diagnostic-next)
 
   nnoremap [Coc] <Nop>
   nmap <Leader>c [Coc]
@@ -204,6 +206,8 @@ if s:plug.is_installed('coc.nvim')
   nmap [Coc]r <Plug>(coc-references)
   nmap [Coc]f  <Plug>(coc-format-selected)
   vmap [Coc]f  <Plug>(coc-format-selected)
+  nmap [Coc]p <Plug>(coc-diagnostic-prev)
+  nmap [Coc]n <Plug>(coc-diagnostic-next)
   nnoremap [Coc]o  :<C-u>CocList outline<cr>
   nnoremap [Coc]s  :<C-u>CocList -I symbols<cr>
   nnoremap [Coc]k :call <SID>show_documentation()<CR>
