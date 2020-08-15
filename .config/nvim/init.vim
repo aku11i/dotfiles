@@ -70,9 +70,10 @@ Plug 'airblade/vim-gitgutter'
 " Discord Status
 Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins'}
 
-" ---- ColorScheme ----
+" ColorScheme
 Plug 'lifepillar/vim-solarized8'
 Plug 'jnurmine/Zenburn'
+Plug 'Rigellute/rigel'
 
 call plug#end()
 
@@ -271,10 +272,18 @@ if s:plug.is_installed('vim-airline-themes')
 endif
 
 
-if s:plug.is_installed('vim-solarized8')
+if s:plug.is_installed('rigel')
   set background=dark
-  colorscheme solarized8_flat
+  let g:rigel_airline = 1
+  let g:airline_theme = 'rigel'
+  colorscheme rigel
 endif
+
+
+" if s:plug.is_installed('vim-solarized8')
+"   set background=dark
+"   colorscheme solarized8_flat
+" endif
 
 
 " if s:plug.is_installed('Zenburn')
