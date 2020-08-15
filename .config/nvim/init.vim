@@ -175,7 +175,7 @@ nnoremap <M-a> <C-w>_<C-w><Bar>
 
 if s:plug.is_installed('fzf.vim')
   function! RipgrepFzf(query, fullscreen)
-    let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+    let command_fmt = 'rg --hidden --column --line-number --no-heading --color=always --smart-case %s || true'
     let initial_command = printf(command_fmt, shellescape(a:query))
     let reload_command = printf(command_fmt, '{q}')
     let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
@@ -187,6 +187,11 @@ if s:plug.is_installed('fzf.vim')
   nnoremap <C-g> :Grep<Cr>
   nnoremap <C-p> :Files<Cr>
   nnoremap <C-t> :Buffers<Cr>
+endif
+
+
+if isdirectory(expand('~/.fzf'))
+  set rtp+=~/.fzf
 endif
 
 
@@ -240,11 +245,6 @@ if s:plug.is_installed('caw.vim')
   " Ctrl + / to toggle comments.
   nmap <C-_> <Plug>(caw:hatpos:toggle)
   vmap <C-_> <Plug>(caw:hatpos:toggle)
-endif
-
-
-if isdirectory(expand('~/.fzf'))
-  set rtp+=~/.fzf
 endif
 
 
