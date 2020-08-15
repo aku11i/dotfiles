@@ -48,8 +48,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " EditorConfig
 Plug 'editorconfig/editorconfig-vim'
-" for resize screen
-Plug 'kana/vim-submode'
 " Toggle comments
 Plug 'tyru/caw.vim'
 
@@ -139,8 +137,10 @@ set splitbelow
 set splitright
 nnoremap <C-w>- :sp<CR>
 nnoremap <C-w>\ :vs<CR>
+nnoremap <M--> :sp<CR>
+nnoremap <M-\> :vs<CR>
 
-" Switch windows
+" Move window
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -159,6 +159,16 @@ autocmd TermOpen term://* startinsert
 command! -nargs=* T split | resize 15 | terminal <args>
 nnoremap <silent> <leader>t :T<Cr>
 
+" Resize window
+nnoremap <M-j> <C-w>-
+nnoremap <M-k> <C-w>+
+nnoremap <M-l> <C-w>>
+nnoremap <M-h> <C-w><
+" Reset window
+nnoremap <M-r> <C-w>=
+" Maximize window
+nnoremap <M-a> <C-w>_<C-w><Bar>
+
 if s:plug.is_installed('fzf.vim')
   function! RipgrepFzf(query, fullscreen)
     let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
@@ -174,6 +184,7 @@ if s:plug.is_installed('fzf.vim')
   nnoremap <C-p> :Files<Cr>
   nnoremap <C-t> :Buffers<Cr>
 endif
+
 
 if s:plug.is_installed('coc.nvim')
   " gd - go to definition of word under cursor
@@ -197,6 +208,7 @@ if s:plug.is_installed('coc.nvim')
   inoremap <expr> <S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
 endif
 
+
 if s:plug.is_installed('nerdtree')
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
 endif
@@ -219,50 +231,38 @@ if s:plug.is_installed('vim-divicons')
 endif
 
 
-if s:plug.is_installed('vim-submode')
-  function Submode()
-    call submode#enter_with('bufmove', 'n', '', '<C-w><S-l>', '<C-w>>')
-    call submode#enter_with('bufmove', 'n', '', '<C-w><S-h>', '<C-w><')
-    call submode#enter_with('bufmove', 'n', '', '<C-w><S-j>', '<C-w>+')
-    call submode#enter_with('bufmove', 'n', '', '<C-w><S-k>', '<C-w>-')
-    call submode#map('bufmove', 'n', '', '<S-l>', '<C-w>>')
-    call submode#map('bufmove', 'n', '', '<S-h>', '<C-w><')
-    call submode#map('bufmove', 'n', '', '<S-j>', '<C-w>+')
-    call submode#map('bufmove', 'n', '', '<S-k>', '<C-w>-')
-  endfunction
-  autocmd VimEnter * nested call Submode()
-endif
-
-
 if s:plug.is_installed('caw.vim')
   " Ctrl + / to toggle comments.
   nmap <C-_> <Plug>(caw:hatpos:toggle)
   vmap <C-_> <Plug>(caw:hatpos:toggle)
 endif
 
+
 if isdirectory(expand('~/.fzf'))
   set rtp+=~/.fzf
 endif
+
 
 if s:plug.is_installed('vim-airline')
   let g:airline_powerline_fonts = 1
   set laststatus=2
 endif
 
+
 if s:plug.is_installed('vim-airline-themes')
   let g:airline_theme = 'murmur'
 endif
+
 
 if s:plug.is_installed('vim-solarized8')
   set background=dark
   colorscheme solarized8_flat
 endif
 
+
 " if s:plug.is_installed('Zenburn')
 "   set background=dark
 "   colorscheme zenburn
 " endif
-
-if s:plug.is_installed('typescript-vim')
-  let g:typescript_indent_disable = 1
-endif
+"
+"
