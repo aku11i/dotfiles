@@ -247,6 +247,10 @@ if s:plug.is_installed('defx.nvim')
     autocmd VimEnter * execute 'Defx'
   endif
 
+  " Auto refresh
+  autocmd BufWritePost * call defx#redraw()
+  autocmd BufEnter * call defx#redraw()
+
   nnoremap <silent> <Leader>e :<C-u> Defx <CR>
   nnoremap <silent> <C-t> :<C-u> Defx <CR>
 
