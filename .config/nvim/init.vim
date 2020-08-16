@@ -13,17 +13,14 @@ endif
 
 " ---- Plugins ----
 call plug#begin('~/.local/share/nvim/plugged')
-" Icon font
-Plug 'ryanoasis/vim-devicons'
-
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " Fuzzy finder
 Plug 'liuchengxu/vim-clap'
 
 " File explorer
-Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'kristijanhusak/defx-icons'
+Plug 'kristijanhusak/defx-git'
 
 " Syntax Highlight
 Plug 'sheerun/vim-polyglot'
@@ -242,26 +239,82 @@ if s:plug.is_installed('coc.nvim')
 endif
 
 
-if s:plug.is_installed('nerdtree')
-  nnoremap <silent><C-e> :NERDTreeToggle<CR>
-  let NERDTreeShowHidden = 1
-endif
+if s:plug.is_installed('defx.nvim')
+  let loaded_netrwPlugin = 1
+  nnoremap <silent> <Leader>e :<C-u> Defx <CR>
 
+  call defx#custom#option('_', {
+      \ 'winwidth': 30,
+      \ 'split': 'vertical',
+      \ 'direction': 'topleft',
+      \ 'show_ignored_files': 1,
+      \ 'buffer_name': 'explorer',
+      \ 'toggle': 1,
+      \ 'resume': 1,
+      \ 'columns': 'indent:git:icons:filename:mark',
+      \ })
 
-if s:plug.is_installed('vim-divicons')
-  let g:webdevicons_conceal_nerdtree_brackets = 1
-  let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+  autocmd FileType defx call s:defx_my_settings()
+  function! s:defx_my_settings() abort
+    " Define mappings
+    nnoremap <silent><buffer><expr> <CR>
+    \ defx#do_action('drop')
+    nnoremap <silent><buffer><expr> c
+    \ defx#do_action('copy')
+    nnoremap <silent><buffer><expr> m
+    \ defx#do_action('move')
+    nnoremap <silent><buffer><expr> p
+    \ defx#do_action('paste')
+    nnoremap <silent><buffer><expr> l
+    \ defx#do_action('open_tree')
+    nnoremap <silent><buffer><expr> h
+    \ defx#do_action('close_tree')
+    nnoremap <silent><buffer><expr> E
+    \ defx#do_action('open', 'vsplit')
+    nnoremap <silent><buffer><expr> P
+    \ defx#do_action('preview')
+    nnoremap <silent><buffer><expr> o
+    \ defx#do_action('open_or_close_tree')
+    nnoremap <silent><buffer><expr> t
+    \ defx#do_action('open','tabnew')
+    nnoremap <silent><buffer><expr> K
+    \ defx#do_action('new_directory')
+    nnoremap <silent><buffer><expr> N
+    \ defx#do_action('new_file')
+    nnoremap <silent><buffer><expr> M
+    \ defx#do_action('new_multiple_files')
+    nnoremap <silent><buffer><expr> d
+    \ defx#do_action('remove')
+    nnoremap <silent><buffer><expr> r
+    \ defx#do_action('rename')
+    nnoremap <silent><buffer><expr> !
+    \ defx#do_action('execute_command')
+    nnoremap <silent><buffer><expr> yy
+    \ defx#do_action('yank_path')
+    nnoremap <silent><buffer><expr> .
+    \ defx#do_action('toggle_ignored_files')
+    nnoremap <silent><buffer><expr> ~
+    \ defx#do_action('cd')
+    nnoremap <silent><buffer><expr> u
+    \ defx#do_action('cd', ['..'])
+    nnoremap <silent><buffer><expr> q
+    \ defx#do_action('quit')
+    nnoremap <silent><buffer><expr> <Space>
+    \ defx#do_action('toggle_select') . 'j'
+    nnoremap <silent><buffer><expr> *
+    \ defx#do_action('toggle_select_all')
+    nnoremap <silent><buffer><expr> j
+    \ line('.') == line('$') ? 'gg' : 'j'
+    nnoremap <silent><buffer><expr> k
+    \ line('.') == 1 ? 'G' : 'k'
+    nnoremap <silent><buffer><expr> <C-l>
+    \ defx#do_action('redraw')
+    nnoremap <silent><buffer><expr> <C-g>
+    \ defx#do_action('print')
+    nnoremap <silent><buffer><expr> C
+    \ defx#do_action('change_vim_cwd')
+  endfunction
 
-  let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-  let g:DevIconsEnableFoldersOpenClose = 1
-  let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
-  let g:DevIconsDefaultFolderOpenSymbol = ''
-  " file-icons
-  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
-  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
-  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
-  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
-  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
 endif
 
 
