@@ -19,8 +19,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " Fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'liuchengxu/vim-clap'
 
 " File explorer
 Plug 'scrooloose/nerdtree'
@@ -135,6 +134,9 @@ set updatetime=300 " Default is 4000
 " ---- Key Mappings ----
 noremap ; :
 
+" Use spacebar as leader key
+let mapleader = "\<Space>"
+
 " Emacs keymap
 inoremap <silent> <C-a> <HOME>
 inoremap <silent> <C-e> <END>
@@ -180,20 +182,14 @@ nnoremap <M-r> <C-w>=
 " Maximize window
 nnoremap <M-a> <C-w>_<C-w><Bar>
 
-if s:plug.is_installed('fzf.vim')
-  function! RipgrepFzf(query, fullscreen)
-    let command_fmt = 'rg --hidden --column --line-number --no-heading --color=always --smart-case %s || true'
-    let initial_command = printf(command_fmt, shellescape(a:query))
-    let reload_command = printf(command_fmt, '{q}')
-    let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-    call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
-  endfunction
 
-  command! -nargs=* -bang Grep call RipgrepFzf(<q-args>, <bang>0)
-
-  nnoremap <C-g> :Grep<Cr>
-  nnoremap <C-p> :Files<Cr>
-  nnoremap <C-t> :Buffers<Cr>
+if s:plug.is_installed('vim-clap')
+  nnoremap <leader>f :Clap grep<Cr>
+  vmap <leader>f :Clap grep ++query=@visual<Cr>
+  nnoremap <leader>p :Clap files<Cr>
+  nnoremap <leader>b :Clap buffers<Cr>
+  nnoremap <leader>l :Clap blines<Cr>
+  nnoremap <leader>h :Clap history<Cr>
 endif
 
 
