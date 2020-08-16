@@ -4,7 +4,7 @@ set termguicolors
 " ---- Vim Plug ----
 " Install vim-plug
 if has('vim_starting')
-  set rtp+=~/.vim/plugged/vim-plug
+  set rtp+=~/.local/share/nvim/site/autoload/plug.vim
   if !filereadable(expand('~/.local/share/nvim/site/autoload/plug.vim'))
     echo 'install vim-plug...'
     call system('curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
@@ -205,11 +205,6 @@ if s:plug.is_installed('vim-clap')
   nnoremap <leader>h :Clap history<Cr>
 
   let g:clap_layout = { 'relative': 'editor', 'width': '60%', 'height': '60%', 'row': '20%', 'col': '20%' }
-endif
-
-
-if isdirectory(expand('~/.fzf'))
-  set rtp+=~/.fzf
 endif
 
 
