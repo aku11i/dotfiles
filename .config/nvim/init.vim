@@ -188,6 +188,8 @@ if s:plug.is_installed('vim-clap')
   nnoremap <leader>b :Clap buffers<Cr>
   nnoremap <leader>l :Clap blines<Cr>
   nnoremap <leader>h :Clap history<Cr>
+
+  let g:clap_layout = { 'relative': 'editor', 'width': '60%', 'height': '60%', 'row': '20%', 'col': '20%' }
 endif
 
 
