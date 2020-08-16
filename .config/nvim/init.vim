@@ -41,13 +41,20 @@ Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
+
+" Styled Components
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
 " Powerline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 " EditorConfig
 Plug 'editorconfig/editorconfig-vim'
+
 " Toggle comments
 Plug 'tyru/caw.vim'
 
