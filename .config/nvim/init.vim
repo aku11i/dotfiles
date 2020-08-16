@@ -11,6 +11,7 @@ if has('vim_starting')
   end
 endif
 
+
 " ---- Plugins ----
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -90,45 +91,52 @@ function! s:plug.is_installed(name)
   return has_key(self.plugs, a:name) ? isdirectory(self.plugs[a:name].dir) : 0
 endfunction
 
+
 " ---- Vim Settings ----
 
 " Default Shell
 set sh=fish
 
+" Appearance
+set title
 set hidden
 set background=dark
-set mouse=a
-set noswapfile
-set nobackup
-set noundofile
 set cmdheight=2
 set laststatus=2
-set title
-set wildmenu
-set backspace=indent,eol,start
 set showcmd
-syntax enable
-filetype plugin indent on
-set ruler
-set encoding=utf-8
 set number
 set cursorline
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=0
-set smartindent
+set ruler
+set list
+set listchars=tab:>-,trail:_,extends:<
 set showmatch
+syntax enable
+
+set encoding=utf-8
+set mouse=a
+set wildmenu
+set backspace=indent,eol,start
+set smartindent
+set updatetime=300 " Default is 4000
+set clipboard=unnamed
 set formatoptions+=mM
-set hlsearch
+filetype plugin indent on
+
+set noswapfile
+set nobackup
+set noundofile
+
+"Search
 set ignorecase
 set smartcase
 set incsearch
+set hlsearch
 set wrapscan
-set clipboard=unnamed
-set list
-set listchars=tab:>-,trail:_,extends:<
-set updatetime=300 " Default is 4000
+
 
 " ---- Key Mappings ----
 noremap ; :
@@ -136,7 +144,14 @@ noremap ; :
 " Use spacebar as leader key
 let mapleader = "\<Space>"
 
-" Emacs keymap
+" Delete current buffer
+nnoremap <silent> <leader>w :bdelete<CR>
+
+" Quit
+nnoremap <silent> <leader>q :q<Cr>
+
+
+" ---- Emacs keymap ----
 inoremap <silent> <C-a> <HOME>
 inoremap <silent> <C-e> <END>
 inoremap <silent> <C-n> <Down>
@@ -146,7 +161,9 @@ inoremap <silent> <C-f> <Right>
 inoremap <silent> <C-h> <BS>
 inoremap <silent> <C-d> <Del>
 
-" Split windows
+
+" ---- Windows ----
+" Split
 set splitbelow
 set splitright
 nnoremap <C-w>- :sp<CR>
@@ -154,19 +171,11 @@ nnoremap <C-w>\ :vs<CR>
 nnoremap <M--> :sp<CR>
 nnoremap <M-\> :vs<CR>
 
-" Move window
+" Move
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" Terminal
-" Exit terminal mode with ESC
-" tnoremap <silent> <C-[> <C-\><C-n>
-" Exit terminal mode with type '\\'
-tnoremap <silent> \\ <C-\><C-n>
-" Open terminal with insert mode
-" autocmd TermOpen term://* startinsert
 
 " Resize window
 nnoremap <M-j> <C-w>-
@@ -178,11 +187,17 @@ nnoremap <M-r> <C-w>=
 " Maximize window
 nnoremap <M-a> <C-w>_<C-w><Bar>
 
-" Buffer
-" Delete current buffer
-nnoremap <silent> <leader>w :bdelete<CR>
+
+" ---- Terminal ----
+" Exit terminal mode with ESC
+" tnoremap <silent> <C-[> <C-\><C-n>
+" Exit terminal mode with '\\'
+tnoremap <silent> \\ <C-\><C-n>
+" Open terminal in insert mode
+" autocmd TermOpen term://* startinsert
 
 
+" ---- Plugins ----
 if s:plug.is_installed('neoterm')
   nnoremap <silent> <C-t> :Ttoggle<Cr>
   nnoremap <silent> <leader>to :Topen<Cr>
@@ -340,6 +355,7 @@ if s:plug.is_installed('caw.vim')
   nmap <C-_> <Plug>(caw:hatpos:toggle)
   vmap <C-_> <Plug>(caw:hatpos:toggle)
 endif
+
 
 if s:plug.is_installed('goyo.vim')
   let g:goyo_width = "70%"
