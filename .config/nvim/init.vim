@@ -69,6 +69,7 @@ Plug 'kassio/neoterm'
 
 " Test
 Plug 'janko/vim-test'
+Plug 'voldikss/vim-floaterm'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -160,7 +161,9 @@ nnoremap <C-l> <C-w>l
 
 " Terminal
 " Exit terminal mode with ESC
-tnoremap <silent> <C-[> <C-\><C-n>
+" tnoremap <silent> <C-[> <C-\><C-n>
+" Exit terminal mode with type '\\'
+tnoremap <silent> \\ <C-\><C-n>
 " Open terminal with insert mode
 autocmd TermOpen term://* startinsert
 " Open terminal in minimal split window
@@ -263,6 +266,12 @@ if s:plug.is_installed('vim-divicons')
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
+endif
+
+
+if s:plug.is_installed('vim-floaterm')
+  " lazygit
+  nnoremap <silent> <leader>g :FloatermNew --height=0.9 --width=0.9 --name=lazygit --autoclose=2 lazygit<CR>
 endif
 
 
