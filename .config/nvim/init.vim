@@ -204,8 +204,8 @@ if s:plug.is_installed('coc.nvim')
   nmap <silent><C-]> <Plug>(coc-definition)
   nmap <silent><Leader>r  <Plug>(coc-rename)
   nnoremap K :call <SID>show_documentation()<CR>
-  nmap [g <Plug>(coc-diagnostic-prev)
-  nmap ]g <Plug>(coc-diagnostic-next)
+  nmap <C-p> <Plug>(coc-diagnostic-prev)
+  nmap <C-n> <Plug>(coc-diagnostic-next)
 
   nnoremap [Coc] <Nop>
   nmap <Leader>c [Coc]
