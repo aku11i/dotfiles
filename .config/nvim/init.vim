@@ -166,10 +166,7 @@ nnoremap <C-l> <C-w>l
 " Exit terminal mode with type '\\'
 tnoremap <silent> \\ <C-\><C-n>
 " Open terminal with insert mode
-autocmd TermOpen term://* startinsert
-" Open terminal in minimal split window
-command! -nargs=* Term split | resize 15 | terminal <args>
-nnoremap <silent> <leader>t :Term<Cr>
+" autocmd TermOpen term://* startinsert
 
 " Resize window
 nnoremap <M-j> <C-w>-
@@ -181,12 +178,29 @@ nnoremap <M-r> <C-w>=
 " Maximize window
 nnoremap <M-a> <C-w>_<C-w><Bar>
 
+" Buffer
+" Delete current buffer
+nnoremap <silent> <leader>w :bdelete<CR>
+
+
+if s:plug.is_installed('neoterm')
+  nnoremap <silent> <C-t> :Ttoggle<Cr>
+  nnoremap <silent> <leader>to :Topen<Cr>
+  nnoremap <silent> <leader>tc :Tclose<Cr>
+  nnoremap <silent> <leader>tw :Tclose!<Cr>
+  nnoremap <silent> <leader>tt :Tnew<Cr>
+  nnoremap <silent> <leader>tn :Tnext<Cr>
+  nnoremap <silent> <leader>tp :Tprevious<Cr>
+  nnoremap <silent> <leader>tl :Tclear<Cr>
+endif
+
 
 if s:plug.is_installed('vim-clap')
   nnoremap <leader>f :Clap grep<Cr>
   vmap <leader>f :Clap grep ++query=@visual<Cr>
   nnoremap <leader>p :Clap files<Cr>
   nnoremap <leader>b :Clap buffers<Cr>
+  nnoremap <leader><TAB> :Clap buffers<Cr>
   nnoremap <leader>l :Clap blines<Cr>
   nnoremap <leader>h :Clap history<Cr>
 
@@ -256,7 +270,7 @@ if s:plug.is_installed('defx.nvim')
   autocmd BufEnter * call defx#redraw()
 
   nnoremap <silent> <Leader>e :<C-u> Defx <CR>
-  nnoremap <silent> <C-t> :<C-u> Defx <CR>
+  nnoremap <silent> <C-e> :<C-u> Defx <CR>
 
   call defx#custom#option('_', {
       \ 'winwidth': 30,
