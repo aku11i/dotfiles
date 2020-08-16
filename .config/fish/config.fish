@@ -295,6 +295,11 @@ abbr --add --global gSVr 'git svn rebase'
 abbr --add --global gSVd 'git svn dcommit'
 abbr --add --global gSVl 'git svn log'
 
+# lazygit
+abbr --add --global lg 'lazygit'
+# lazydocker
+abbr --add --global ld 'lazydocker'
+
 # tmux
 abbr --add --global t 'tmux'
 abbr --add --global ta 'tmux attach'
