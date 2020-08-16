@@ -55,7 +55,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tyru/caw.vim'
 
 " Text
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
