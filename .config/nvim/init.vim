@@ -261,7 +261,7 @@ if s:plug.is_installed('defx.nvim')
   " Disable netrw
   let loaded_netrwPlugin = 1
   " Open defx on launch
-  if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
+  if argc() == 0 || argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
     autocmd VimEnter * execute 'Defx'
   endif
 
@@ -270,16 +270,14 @@ if s:plug.is_installed('defx.nvim')
   autocmd BufEnter * call defx#redraw()
 
   nnoremap <silent> <Leader>e :<C-u> Defx <CR>
-  nnoremap <silent> <C-e> :<C-u> Defx <CR>
+
+  " Show defx view on split
+  nnoremap <C-w>- :sp \| Defx<CR>
+  nnoremap <C-w>\ :vs \| Defx<CR>
 
   call defx#custom#option('_', {
-      \ 'winwidth': 30,
-      \ 'split': 'vertical',
-      \ 'direction': 'topleft',
       \ 'show_ignored_files': 1,
       \ 'buffer_name': 'explorer',
-      \ 'toggle': 1,
-      \ 'resume': 1,
       \ 'columns': 'indent:git:icons:filename:mark',
       \ })
 
@@ -287,7 +285,7 @@ if s:plug.is_installed('defx.nvim')
   function! s:defx_my_settings() abort
     " Define mappings
     nnoremap <silent><buffer><expr> <CR>
-    \ defx#do_action('drop')
+    \ defx#do_action('open')
     nnoremap <silent><buffer><expr> c
     \ defx#do_action('copy')
     nnoremap <silent><buffer><expr> m
@@ -301,7 +299,7 @@ if s:plug.is_installed('defx.nvim')
     nnoremap <silent><buffer><expr> o
     \ defx#is_directory() ?
     \ defx#do_action('open_or_close_tree') :
-    \ defx#do_action('drop')
+    \ defx#do_action('open')
     nnoremap <silent><buffer><expr> t
     \ defx#do_action('open','tabnew')
     nnoremap <silent><buffer><expr> F
