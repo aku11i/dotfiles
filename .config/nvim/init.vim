@@ -281,7 +281,9 @@ if s:plug.is_installed('defx.nvim')
     nnoremap <silent><buffer><expr> h
     \ defx#do_action('close_tree')
     nnoremap <silent><buffer><expr> o
-    \ defx#do_action('open_or_close_tree')
+    \ defx#is_directory() ?
+    \ defx#do_action('open_or_close_tree') :
+    \ defx#do_action('drop')
     nnoremap <silent><buffer><expr> t
     \ defx#do_action('open','tabnew')
     nnoremap <silent><buffer><expr> F
