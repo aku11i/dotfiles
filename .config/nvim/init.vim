@@ -59,13 +59,14 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
+Plug 'junegunn/goyo.vim'
 
 " Terminal
 Plug 'kassio/neoterm'
+Plug 'voldikss/vim-floaterm'
 
 " Test
 Plug 'janko/vim-test'
-Plug 'voldikss/vim-floaterm'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -331,6 +332,12 @@ if s:plug.is_installed('caw.vim')
   " Ctrl + / to toggle comments.
   nmap <C-_> <Plug>(caw:hatpos:toggle)
   vmap <C-_> <Plug>(caw:hatpos:toggle)
+endif
+
+if s:plug.is_installed('goyo.vim')
+  let g:goyo_width = "70%"
+  " Ctrl + Enter to toggle Goyo
+  nnoremap <silent> <C-CR> :Goyo<CR>
 endif
 
 
