@@ -28,16 +28,6 @@ Plug 'sheerun/vim-polyglot'
 
 " Language Server
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
-Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
 
 " Styled Components
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -229,6 +219,20 @@ endif
 
 
 if s:plug.is_installed('coc.nvim')
+  let g:coc_global_extensions = [
+        \ 'coc-snippets',
+        \ 'coc-tsserver',
+        \ 'coc-vetur',
+        \ 'coc-prettier',
+        \ 'coc-eslint',
+        \ 'coc-tslint',
+        \ 'coc-html',
+        \ 'coc-css',
+        \ 'coc-lists',
+        \ 'coc-highlight',
+        \ 'coc-omnisharp',
+        \ ]
+
   nmap <silent><C-]> <Plug>(coc-definition)
   nmap <silent><Leader>r  <Plug>(coc-rename)
   nnoremap K :call <SID>show_documentation()<CR>
