@@ -231,6 +231,7 @@ if s:plug.is_installed('coc.nvim')
         \ 'coc-lists',
         \ 'coc-highlight',
         \ 'coc-omnisharp',
+        \ 'coc-yaml',
         \ ]
 
   nmap <silent><C-]> <Plug>(coc-definition)
