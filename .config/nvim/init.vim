@@ -289,6 +289,7 @@ if s:plug.is_installed('defx.nvim')
       \ 'show_ignored_files': 1,
       \ 'buffer_name': 'explorer',
       \ 'columns': 'indent:git:icons:filename:mark',
+      \ 'resume': 1,
       \ })
 
   autocmd FileType defx call s:defx_my_settings()
