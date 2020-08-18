@@ -140,7 +140,6 @@ nnoremap <silent> <leader>w :bdelete<CR>
 " Quit
 nnoremap <silent> <leader>q :q<Cr>
 
-
 " ---- Emacs keymap ----
 inoremap <silent> <C-a> <HOME>
 inoremap <silent> <C-e> <END>
@@ -185,6 +184,11 @@ nnoremap <M-a> <C-w>_<C-w><Bar>
 tnoremap <silent> \\ <C-\><C-n>
 " Open terminal in insert mode
 " autocmd TermOpen term://* startinsert
+
+
+" ---- Others ----
+" Open PDF file with other application
+autocmd BufRead *.pdf execute('!open %') | execute('bdelete')
 
 
 " ---- Plugins ----
