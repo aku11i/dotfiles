@@ -192,6 +192,11 @@ autocmd BufRead *.pdf execute('!open %') | execute('bdelete')
 
 
 " ---- Plugins ----
+if s:plug.is_installed('vim-easymotion')
+  nmap <leader><leader> <Plug>(easymotion-overwin-f)
+endif
+
+
 if s:plug.is_installed('neoterm')
   nnoremap <silent> <C-t> :Ttoggle<Cr>
   nnoremap <silent> <leader>to :Topen<Cr>
