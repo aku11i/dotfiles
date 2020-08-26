@@ -276,6 +276,12 @@ if s:plug.is_installed('coc.nvim')
 endif
 
 
+if s:plug.is_installed('vim-gitgutter')
+  nmap ]g <Plug>(GitGutterNextHunk)
+  nmap [g <Plug>(GitGutterPrevHunk)
+endif
+
+
 if s:plug.is_installed('defx.nvim')
   " Disable netrw
   let loaded_netrwPlugin = 1
