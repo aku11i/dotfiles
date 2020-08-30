@@ -51,6 +51,7 @@ Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/goyo.vim'
+Plug 'knsh14/vim-github-link'
 
 " Terminal
 Plug 'kassio/neoterm'
