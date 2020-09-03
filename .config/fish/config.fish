@@ -203,9 +203,14 @@ abbr --add --global gf 'git fetch'
 abbr --add --global gfp 'git fetch --prune'
 
 abbr --add --global gs 'git status --short --branch'
-abbr --add --global gr 'git reset'
-abbr --add --global grh 'git reset --hard'
-abbr --add --global grH 'git reset HEAD'
+
+abbr --add --global gR 'git reset'
+abbr --add --global gRH 'git reset HEAD'
+abbr --add --global gR1 'git reset HEAD~1'
+abbr --add --global gR2 'git reset HEAD~2'
+abbr --add --global gR3 'git reset HEAD~3'
+abbr --add --global gR4 'git reset HEAD~4'
+abbr --add --global gR5 'git reset HEAD~5'
 
 abbr --add --global gl 'git log --graph --decorate --oneline'
 abbr --add --global glf 'git log --graph --decorate --oneline -p --follow'
@@ -222,6 +227,11 @@ abbr --add --global gsc 'git switch --create'
 abbr --add --global gsC 'git switch --force-create'
 
 abbr --add --global gco 'git checkout'
+
+abbr --add --global gr 'git rebase'
+abbr --add --global gri 'git rebase --interactive'
+abbr --add --global grc 'git rebase --continue'
+abbr --add --global gra 'git rebase --abort'
 
 abbr --add --global gc 'git commit'
 abbr --add --global gcm 'git commit -m'
@@ -252,6 +262,7 @@ abbr --add --global gRm 'git rebase master'
 abbr --add --global gm 'git merge'
 abbr --add --global gmt 'git mergetool'
 abbr --add --global gmn 'git merge --no-ff --no-commit'
+abbr --add --global gma 'git merge --abort'
 
 abbr --add --global gC 'git config'
 abbr --add --global gCun 'git config user.name'
