@@ -168,6 +168,8 @@ if test (uname -a | grep --ignore-case "Microsoft")
   abbr --add --global docker-compose docker-compose.exe
 end
 
+# Node.js
+abbr --add --global npr 'npm run'
 
 # Vim
 abbr --add --global v 'vi'
