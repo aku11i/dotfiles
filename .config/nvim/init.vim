@@ -188,8 +188,14 @@ tnoremap <silent> \\ <C-\><C-n>
 
 
 " ---- Others ----
-" Open PDF file with other application
-autocmd BufRead *.pdf execute('!open %') | execute('bdelete')
+if executable('pdftotext')
+  " Convert PDF file to text
+  autocmd BufRead *.pdf :enew | 0read !pdftotext -layout -nopgbrk "#" -
+  autocmd BufRead *.pdf setlocal readonly nolist
+else
+  " Open PDF file with other application
+  autocmd BufRead *.pdf execute('!open %') | execute('bdelete')
+endif
 
 
 " ---- Plugins ----
