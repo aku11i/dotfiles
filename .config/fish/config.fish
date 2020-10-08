@@ -32,8 +32,8 @@ else if test (uname) = "Linux"
 end
 
 # Go
-if test -d $HOME/.go
-  set -x GOPATH $HOME/.go
+set -x GOPATH $HOME/.go
+if test -d $GOPATH/bin
   set -x PATH $GOPATH/bin $PATH
 end
 
