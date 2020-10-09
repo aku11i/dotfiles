@@ -1,6 +1,8 @@
 #!/bin/bash
 cd `dirname $0`
 
+set -e
+
 function deploy() {
   if test -f "$1"; then
     src=$(pwd)/$1
