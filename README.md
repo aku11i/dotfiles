@@ -13,7 +13,6 @@ docker run --rm -it docker.pkg.github.com/aktriver/dotfiles/dotfiles:latest
 ### Recommended Terminal Color Scheme
 
 [Rigel](https://github.com/rigellute/rigel)
-~~Solarized Dark~~
 
 ### Recommended Fonts
 
@@ -21,12 +20,12 @@ docker run --rm -it docker.pkg.github.com/aktriver/dotfiles/dotfiles:latest
   https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
 - Source Code Pro for Powerline Nerd Font (SauceCodePro Nerd Font)<br>
   https://github.com/ryanoasis/nerd-fonts/releases/latest/download/SourceCodePro.zip
+
 or [other nerd fonts](https://www.nerdfonts.com/font-downloads)
 
 ## Install
 
 Supported Platforms:
-
 - macOS
 - Linux(tested on Ubuntu/Debian)
 - Windows Subsystem for Linux
