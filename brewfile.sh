@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if test "$(uname)" == "Linux"; then
+if test $(uname) = "Linux"; then
   brew tap linuxbrew/xorg
 fi
 
