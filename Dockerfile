@@ -1,54 +1,32 @@
-FROM docker.pkg.github.com/homebrew/brew/brew:latest
-
-MAINTAINER aktriver <readonly@akutagawa.dev>
-
-ARG USERNAME=user
-ARG PASSWORD=user
-
-RUN apt update && \
-    apt install -y sudo locales && \
-    apt clean && rm -rf /var/lib/apt/lists/*
+FROM homebrew/brew:latest
 
 ENV LANG en_US.UTF-8
-RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
-    /usr/sbin/locale-gen
-
-RUN useradd -m ${USERNAME} && \
-    echo "${USERNAME}:${PASSWORD}" | chpasswd && \
-    echo "${USERNAME} ALL=NOPASSWD: ALL" >> /etc/sudoers
-
-RUN chown -R "${USERNAME}" /home/linuxbrew/.linuxbrew
-
-ENV HOME /home/${USERNAME}
+ENV HOME /root
 
 WORKDIR $HOME/.dotfiles
 
-USER ${USERNAME}
+RUN apt update && \
+    apt install -y locales && \
+    apt clean && rm -rf /var/lib/apt/lists/* && \
+    echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
+    /usr/sbin/locale-gen
 
 COPY brewfile.sh .
-RUN ./brewfile.sh
+RUN ./brewfile.sh && \
+    brew cleanup -s --prune 0 && \
+    rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/homebrew
 
-RUN pip3 install powerline-status neovim
+COPY . .
 
-RUN npm install -g yarn
-
-COPY --chown=${USERNAME}:${USERNAME} .config/nvim $HOME/.config/nvim
-RUN nvim --headless -c PlugInstall -c qall && \
-    nvim --headless -c CocUpdateSync -c qall
-
-COPY --chown=${USERNAME}:${USERNAME} .config/fish $HOME/.config/fish
-RUN fish -c exit
-
-# Delete install caches
-RUN npm cache verify
-RUN yarn cache clean
-RUN rm -rf ~/.cache/pip
-RUN rm -rf ~/.cache/fisher
-RUN brew cleanup -s --prune 0
-
-COPY --chown=${USERNAME}:${USERNAME} . .
-
-RUN ./deploy.sh
+RUN ./deploy.sh && \
+    npm install -g yarn && \
+    pip3 install powerline-status neovim && \
+    nvim --headless -c PlugInstall -c qall && \
+    nvim --headless -c CocUpdateSync -c qall && \
+    fish -c exit && \
+    npm cache verify && \
+    yarn cache clean && \
+    rm -rf ~/.cache
 
 WORKDIR $HOME
 

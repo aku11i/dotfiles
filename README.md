@@ -7,7 +7,7 @@
 ```sh
 docker pull docker.pkg.github.com/aktriver/dotfiles/dotfiles:latest
 docker run --rm -it docker.pkg.github.com/aktriver/dotfiles/dotfiles:latest
-# container size is over 5 GB.
+# container size is several GB.
 ```
 
 ### Recommended Terminal Color Scheme
