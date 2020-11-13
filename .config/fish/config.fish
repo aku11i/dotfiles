@@ -145,7 +145,7 @@ function data --description "mkdir & cd ~/$DATA_DIR/YYYY/MM/DD"
   cd $DATA_DIR/$now
 end
 
-abbr --add --global d 'data'
+abbr --add --global D 'data'
 
 # open commands
 if test (uname -a | grep --ignore-case "Microsoft")
@@ -161,6 +161,11 @@ else if test (uname) = "Linux"
 else
   abbr --add --global o 'open'
 end
+
+# Docker
+abbr --add --global d 'docker'
+# Docker Compose
+abbr --add --global dc 'docker-compose'
 
 # Docker for Windows
 if test (uname -a | grep --ignore-case "Microsoft")
