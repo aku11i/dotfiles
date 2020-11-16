@@ -7,6 +7,7 @@ if test $(uname) = "Linux"; then
 fi
 
 brew install \
+  gcc \
   ffmpeg \
   fish \
   fx \
