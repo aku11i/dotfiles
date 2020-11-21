@@ -18,6 +18,9 @@ end
 # Homebrew(Apple Silicon)
 add_path /opt/homebrew/bin
 
+# User scripts
+add_path $HOME/.bin
+
 # Data Folder
 set -g DATA_DIR $HOME/data
 
