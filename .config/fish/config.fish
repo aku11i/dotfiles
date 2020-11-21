@@ -110,9 +110,10 @@ abbr --add --global rm 'rm -i'
 abbr --add --global cp 'cp -ir'
 abbr --add --global mv 'mv -i'
 
-alias ... 'cd ../../'
-alias .... 'cd ../../../'
-alias ..... 'cd ../../../../'
+abbr .. 'cd ../'
+abbr ... 'cd ../../'
+abbr .... 'cd ../../../'
+abbr ..... 'cd ../../../../'
 
 abbr --add --global mkdir 'mkdir -p'
 function mkcd --description "mkdir & cd"
