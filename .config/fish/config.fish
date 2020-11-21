@@ -15,6 +15,9 @@ function add_path -d "Add args to \$PATH"
   end
 end
 
+# Homebrew(Apple Silicon)
+add_path /opt/homebrew/bin
+
 # Data Folder
 set -g DATA_DIR $HOME/data
 
