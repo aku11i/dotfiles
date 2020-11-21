@@ -72,6 +72,8 @@ add_path /usr/local/opt/gnu-tar/libexec/gnubin
 add_path /usr/local/opt/gnu-sed/libexec/gnubin
 add_path /usr/local/opt/gnu-time/libexec/gnubin
 add_path /usr/local/opt/gnu-getopt/libexec/gnubin
+# Prioritize /usr/bin/uname over /usr/local/opt/coreutils/libexec/gnubin/uname
+abbr uname '/usr/bin/uname'
 
 set -x EDITOR 'nvim'
 
