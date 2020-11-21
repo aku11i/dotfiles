@@ -1,0 +1,3 @@
+#!/bin/sh
+
+arch -arm64e /bin/sh -c "$*"
