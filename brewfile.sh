@@ -34,6 +34,7 @@ brew install \
   translate-shell \
   tree \
   zsh \
+  lab \
 
 
 # GNU utils
