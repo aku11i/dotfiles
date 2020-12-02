@@ -37,6 +37,9 @@ else if test (uname) = "Linux"
   end
 end
 
+# Java
+add_path /usr/local/opt/openjdk/bin
+
 # Go
 set -x GOPATH $HOME/.go
 if test -d $GOPATH/bin
