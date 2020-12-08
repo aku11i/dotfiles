@@ -39,6 +39,7 @@ end
 
 # Java
 add_path /usr/local/opt/openjdk/bin
+add_path /home/linuxbrew/.linuxbrew/opt/openjdk/bin
 
 # Go
 set -x GOPATH $HOME/.go
