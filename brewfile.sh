@@ -2,10 +2,6 @@
 
 set -e
 
-if test $(uname) = "Linux"; then
-  brew tap linuxbrew/xorg
-fi
-
 brew install \
   gcc \
   ffmpeg \
