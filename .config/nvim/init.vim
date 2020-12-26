@@ -24,6 +24,7 @@ Plug 'kristijanhusak/defx-icons'
 Plug 'kristijanhusak/defx-git'
 
 " Syntax Highlight
+let g:polyglot_disabled = ['markdown']
 Plug 'sheerun/vim-polyglot'
 
 " Language Server
@@ -224,11 +225,6 @@ if s:plug.is_installed('vim-clap')
   nnoremap <leader>h :Clap history<Cr>
 
   let g:clap_layout = { 'relative': 'editor', 'width': '80%', 'height': '80%', 'row': '10%', 'col': '10%' }
-endif
-
-
-if s:plug.is_installed('vim-polyglot')
-  let g:polyglot_disabled = ['markdown']
 endif
 
 
