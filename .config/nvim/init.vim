@@ -52,6 +52,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/goyo.vim'
 Plug 'knsh14/vim-github-link'
+Plug 'voldikss/vim-translator'
 
 " Terminal
 Plug 'kassio/neoterm'
@@ -387,6 +388,11 @@ if s:plug.is_installed('goyo.vim')
   let g:goyo_width = "70%"
   " Ctrl + Enter to toggle Goyo
   nnoremap <silent> <C-CR> :Goyo<CR>
+endif
+
+
+if s:plug.is_installed('vim-translator')
+  let g:translator_target_lang = "ja"
 endif
 
 
