@@ -236,7 +236,6 @@ if s:plug.is_installed('coc.nvim')
         \ 'coc-svelte',
         \ 'coc-prettier',
         \ 'coc-eslint',
-        \ 'coc-tslint',
         \ 'coc-html',
         \ 'coc-css',
         \ 'coc-lists',
