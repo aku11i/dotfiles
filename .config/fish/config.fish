@@ -147,7 +147,9 @@ function cd
   builtin cd $argv
   ls -a
 
-  test -e ./.nvmrc ;and use_nvmrc
+  if test -e ./.nvmrc
+    use_nvmrc
+  end
 end
 
 function data --description "mkdir & cd ~/$DATA_DIR/YYYY/MM/DD"
