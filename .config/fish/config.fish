@@ -95,7 +95,9 @@ if test -e ""(which rg)
 end
 
 # Switch node version from .nvmrc
-test -e ./.nvmrc ;and use_nvmrc
+if test -e ./.nvmrc
+  use_nvmrc
+end
 
 # Bobthefish Theme
 set -g theme_display_git yes
