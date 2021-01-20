@@ -5,6 +5,13 @@ if not functions -q fisher
     fish -c fisher update
 end
 
+function use_nvmrc -d "Switch Node version if .nvmrc exists"
+  nvm install
+  echo
+  echo "Node.js: "(node -v)
+  echo "NPM    : "(npm -v)
+end
+
 ## Environment
 
 function add_path -d "Add args to \$PATH"
@@ -87,6 +94,9 @@ if test -e ""(which rg)
   set -x FZF_DEFAULT_COMMAND  'rg --files --hidden'
 end
 
+# Switch node version from .nvmrc
+test -e ./.nvmrc ;and use_nvmrc
+
 # Bobthefish Theme
 set -g theme_display_git yes
 set -g theme_display_git_untracked yes
@@ -137,13 +147,7 @@ function cd
   builtin cd $argv
   ls -a
 
-  # Switch Node version if .nvmrc exists
-  if test -e ./.nvmrc
-    nvm
-    echo
-    echo "Node.js: "(node -v)
-    echo "NPM    : "(npm -v)
-  end
+  test -e ./.nvmrc ;and use_nvmrc
 end
 
 function data --description "mkdir & cd ~/$DATA_DIR/YYYY/MM/DD"
