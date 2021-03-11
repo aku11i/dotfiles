@@ -11,8 +11,14 @@ RUN apt update && \
     echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
     /usr/sbin/locale-gen
 
-COPY brewfile.sh .
-RUN ./brewfile.sh && \
+RUN brew install \
+      fish \
+      fzf \
+      git \
+      neovim \
+      node \
+      python \
+      tmux && \
     brew cleanup -s --prune 0 && \
     rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/homebrew
 
