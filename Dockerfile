@@ -29,7 +29,7 @@ RUN ./deploy.sh && \
     pip3 install powerline-status neovim && \
     nvim --headless -c PlugInstall -c qall && \
     nvim --headless -c CocUpdateSync -c qall && \
-    fish -c exit && \
+    fish -c "fisher update" && \
     npm cache verify && \
     yarn cache clean && \
     rm -rf ~/.cache
