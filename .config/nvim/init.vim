@@ -55,6 +55,9 @@ Plug 'junegunn/goyo.vim'
 Plug 'knsh14/vim-github-link'
 Plug 'voldikss/vim-translator'
 
+" Edit browser textarea content
+Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
+
 " Terminal
 Plug 'kassio/neoterm'
 Plug 'voldikss/vim-floaterm'
