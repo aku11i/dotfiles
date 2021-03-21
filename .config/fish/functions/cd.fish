@@ -8,10 +8,7 @@ function cd -d "Overrides buildin cd command"
   ls -a
 
   if test -e ./.nvmrc
-    # Switch node version
+    # Switch the node version to specified by .nvmrc
     fnm use --install-if-missing
-    echo
-    echo "Node.js: "(node -v)
-    echo "npm    : "(npm -v)
   end
 end
