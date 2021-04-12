@@ -1,6 +1,7 @@
 function brew -d ""
   if test (/usr/bin/uname) != "Darwin"
-    brew $argv
+    set brew (which brew)
+    "$brew" $argv
   else if test (/usr/bin/uname -m) = "arm64"
     echo 'Apple Silicon: /opt/homebrew/bin/brew'
     /opt/homebrew/bin/brew $argv
