@@ -21,6 +21,7 @@ brew install \
   lazygit \
   neovim \
   node \
+  fnm \
   python \
   ripgrep \
   rsync \
