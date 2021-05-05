@@ -3,7 +3,7 @@ abbr ... 'cd ../../'
 abbr .... 'cd ../../../'
 abbr ..... 'cd ../../../../'
 
-function cd -d "Overrides buildin cd command"
+function cd -d "Overrides builtin cd command"
   builtin cd $argv
   ls -a
 
