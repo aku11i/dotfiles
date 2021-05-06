@@ -191,6 +191,9 @@ tnoremap <silent> \\ <C-\><C-n>
 
 " ---- Others ----
 if executable('pdftotext')
+  " https://github.com/jalan/pdftotext
+  " pip3 install pdftotext
+
   " Convert PDF file to text
   autocmd BufRead *.pdf :enew | 0read !pdftotext -layout -nopgbrk "#" -
   autocmd BufRead *.pdf setlocal readonly nolist
