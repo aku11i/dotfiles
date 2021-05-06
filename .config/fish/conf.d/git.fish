@@ -1,6 +1,9 @@
 # lazygit
 abbr --add --global lg 'lazygit'
 
+# glab
+abbr --add --global gl 'glab'
+
 # Aliases
 
 # Git
@@ -19,8 +22,8 @@ abbr --add --global gR3 'git reset HEAD~3'
 abbr --add --global gR4 'git reset HEAD~4'
 abbr --add --global gR5 'git reset HEAD~5'
 
-abbr --add --global gl 'git log --graph --decorate --oneline'
-abbr --add --global glf 'git log --graph --decorate --oneline -p --follow'
+abbr --add --global gg 'git log --graph --decorate --oneline'
+abbr --add --global ggf 'git log --graph --decorate --oneline -p --follow'
 
 abbr --add --global ga 'git add'
 abbr --add --global gA 'git add .'
