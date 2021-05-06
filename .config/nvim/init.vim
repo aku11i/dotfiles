@@ -294,10 +294,6 @@ endif
 if s:plug.is_installed('defx.nvim')
   " Disable netrw
   let loaded_netrwPlugin = 1
-  " Open defx on launch
-  if argc() == 0 || argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
-    autocmd VimEnter * execute 'Defx'
-  endif
 
   " Auto refresh
   autocmd BufWritePost * call defx#redraw()
