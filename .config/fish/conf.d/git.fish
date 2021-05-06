@@ -26,7 +26,7 @@ abbr --add --global gg 'git log --graph --decorate --oneline'
 abbr --add --global ggf 'git log --graph --decorate --oneline -p --follow'
 
 abbr --add --global ga 'git add'
-abbr --add --global gA 'git add .'
+abbr --add --global ga. 'git add .'
 abbr --add --global gap 'git add --patch'
 
 abbr --add --global gd 'git diff'
