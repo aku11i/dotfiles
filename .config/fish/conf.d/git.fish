@@ -60,8 +60,8 @@ abbr --add --global gPp 'git pull ;and git push'
 
 abbr --add --global gb 'git branch'
 abbr --add --global gbc 'git symbolic-ref --short HEAD' # git branch current
-abbr --add --global gbl 'git branch --list'
-abbr --add --global gbr 'git branch --remotes'
+abbr --add --global gbl 'git branch --list --sort=-authordate'
+abbr --add --global gbr 'git branch --remotes --sort=-authordate'
 abbr --add --global gbd 'git branch --delete'
 abbr --add --global gbD 'git branch --delete --force'
 abbr --add --global gbm 'git branch --move'
