@@ -52,7 +52,7 @@ abbr --add --global gca 'git commit --amend'
 abbr --add --global gp 'git push'
 abbr --add --global gpf 'git push --force'
 abbr --add --global gpt 'git push --tags'
-abbr --add --global gpT 'git push ;and git push --tags'
+abbr --add --global gpT 'git push --follow-tags'
 abbr --add --global gpu 'git push --set-upstream origin HEAD'
 
 abbr --add --global gP 'git pull'
