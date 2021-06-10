@@ -1,11 +1,11 @@
 # dotfiles
 
-## Install
+## Installation
 
 Supported Platforms:
 - macOS
-- Linux(tested on Ubuntu/Debian)
-- Windows Subsystem for Linux
+- Ubuntu / Debian
+- Windows Subsystem for Linux (Ubuntu)
 
 ```sh
 git clone https://github.com/aktriver/dotfiles.git ~/.dotfiles
