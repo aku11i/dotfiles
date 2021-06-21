@@ -2,10 +2,12 @@
 
 set -e
 
-brew cask install
+brew install --cask \
+  alacritty \
   alfred \
   android-studio \
   appcleaner \
+  bartender \
   docker \
   firefox \
   google-chrome \
@@ -16,11 +18,8 @@ brew cask install
   keyboardcleantool \
   kindle \
   macvim \
-  postman \
-  sequel-pro \
-  sourcetree \
+  microsoft-edge \
   the-unarchiver \
-  vagrant \
+  vimr \
   visual-studio-code \
-  vivaldi \
 
