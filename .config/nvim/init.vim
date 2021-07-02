@@ -16,7 +16,8 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Fuzzy finder
-Plug 'liuchengxu/vim-clap'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " File explorer
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -221,16 +222,13 @@ if s:plug.is_installed('neoterm')
 endif
 
 
-if s:plug.is_installed('vim-clap')
-  nnoremap <leader>f :Clap grep<Cr>
-  vmap <leader>f :Clap grep ++query=@visual<Cr>
-  nnoremap <leader>p :Clap files<Cr>
-  nnoremap <leader>b :Clap buffers<Cr>
-  nnoremap <leader><TAB> :Clap buffers<Cr>
-  nnoremap <leader>l :Clap blines<Cr>
-  nnoremap <leader>h :Clap history<Cr>
-
-  let g:clap_layout = { 'relative': 'editor', 'width': '80%', 'height': '80%', 'row': '10%', 'col': '10%' }
+if s:plug.is_installed('fzf.vim')
+  nnoremap <leader>f :Rg<Cr>
+  vmap <leader>f :Rg<Cr>
+  nnoremap <leader>p :Files<Cr>
+  nnoremap <leader><TAB> :Buffers<Cr>
+  nnoremap <Leader>/ :Rg<Space>
+  nnoremap <Leader>h :BCommits<Cr>
 endif
 
 
