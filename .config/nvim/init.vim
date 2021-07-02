@@ -300,9 +300,13 @@ if s:plug.is_installed('defx.nvim')
   autocmd BufWritePost * call defx#redraw()
   autocmd BufEnter * call defx#redraw()
 
-  nnoremap <silent> <Leader>e :<C-u> Defx <CR>
+  nnoremap <silent> <Leader>e :<C-u> Defx -search=`expand('%:p')` <CR>
 
-  " Show defx view on split
+  " Start Defx when Vim is started without file arguments.
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | Defx | endif
+
+  " Show defx view when split window is opened
   nnoremap <C-w>- :sp \| Defx<CR>
   nnoremap <C-w>\ :vs \| Defx<CR>
 
@@ -310,14 +314,12 @@ if s:plug.is_installed('defx.nvim')
       \ 'show_ignored_files': 1,
       \ 'buffer_name': 'explorer',
       \ 'columns': 'indent:git:icons:filename:mark',
-      \ 'resume': 1,
+      \ 'resume': 0,
       \ })
 
   autocmd FileType defx call s:defx_my_settings()
   function! s:defx_my_settings() abort
     " Define mappings
-    nnoremap <silent><buffer><expr> <CR>
-    \ defx#do_action('open')
     nnoremap <silent><buffer><expr> c
     \ defx#do_action('copy')
     nnoremap <silent><buffer><expr> m
@@ -328,12 +330,16 @@ if s:plug.is_installed('defx.nvim')
     \ defx#do_action('open_tree')
     nnoremap <silent><buffer><expr> h
     \ defx#do_action('close_tree')
+    nnoremap <silent><buffer><expr> <CR>
+    \ defx#is_directory() ?
+    \ defx#do_action('open_or_close_tree') :
+    \ defx#do_action('open')
     nnoremap <silent><buffer><expr> o
     \ defx#is_directory() ?
     \ defx#do_action('open_or_close_tree') :
     \ defx#do_action('open')
     nnoremap <silent><buffer><expr> t
-    \ defx#do_action('open','tabnew')
+    \ defx#do_action('multi', ['quit',['open','tabnew']])
     nnoremap <silent><buffer><expr> F
     \ defx#do_action('new_directory')
     nnoremap <silent><buffer><expr> N
