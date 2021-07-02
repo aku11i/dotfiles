@@ -31,9 +31,6 @@ Plug 'sheerun/vim-polyglot'
 " Language Server
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
-" Styled Components
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
