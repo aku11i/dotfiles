@@ -246,6 +246,8 @@ if s:plug.is_installed('coc.nvim')
         \ 'coc-highlight',
         \ 'coc-omnisharp',
         \ 'coc-yaml',
+        \ 'coc-tailwindcss',
+        \ 'coc-styled-components',
         \ ]
 
   nmap <silent><C-]> <Plug>(coc-definition)
