@@ -135,11 +135,18 @@ noremap ; :
 " Use spacebar as leader key
 let mapleader = "\<Space>"
 
-" Delete current buffer
-nnoremap <silent> <leader>w :bdelete<CR>
-
 " Quit
 nnoremap <silent> <leader>q :q<Cr>
+
+" Buffer controls
+nnoremap <silent> { :bprev<Cr>
+nnoremap <silent> } :bnext<Cr>
+
+nnoremap <silent> <leader>[ :bprev<Cr>
+nnoremap <silent> <leader>] :bnext<Cr>
+
+nnoremap <silent> <leader>w :bdelete<CR>
+nnoremap <silent> <leader>W :bdelete!<CR>
 
 " ---- Emacs keymap ----
 inoremap <silent> <C-a> <HOME>
@@ -398,6 +405,7 @@ endif
 
 if s:plug.is_installed('vim-airline')
   let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 1
   set laststatus=2
 endif
 
