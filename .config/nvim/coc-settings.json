@@ -1,5 +1,4 @@
 {
-  "prettier.requireConfig": true,
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
