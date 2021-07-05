@@ -57,7 +57,6 @@ Plug 'voldikss/vim-translator'
 Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
 
 " Terminal
-Plug 'kassio/neoterm'
 Plug 'voldikss/vim-floaterm'
 
 " Test
@@ -186,8 +185,6 @@ nnoremap <M-a> <C-w>_<C-w><Bar>
 
 
 " ---- Terminal ----
-" Exit terminal mode with ESC
-" tnoremap <silent> <C-[> <C-\><C-n>
 " Exit terminal mode with '\\'
 tnoremap <silent> \\ <C-\><C-n>
 " Open terminal in insert mode
@@ -214,15 +211,15 @@ if s:plug.is_installed('vim-easymotion')
 endif
 
 
-if s:plug.is_installed('neoterm')
-  nnoremap <silent> <C-t> :Ttoggle<Cr>
-  nnoremap <silent> <leader>to :Topen<Cr>
-  nnoremap <silent> <leader>tc :Tclose<Cr>
-  nnoremap <silent> <leader>tw :Tclose!<Cr>
-  nnoremap <silent> <leader>tt :Tnew<Cr>
-  nnoremap <silent> <leader>tn :Tnext<Cr>
-  nnoremap <silent> <leader>tp :Tprevious<Cr>
-  nnoremap <silent> <leader>tl :Tclear<Cr>
+if s:plug.is_installed('vim-floaterm')
+  let g:floaterm_width = 0.9
+  let g:floaterm_height = 0.9
+  let g:floaterm_autoinsert = v:false
+  nnoremap <silent> <C-t> :FloatermToggle<Cr>
+  nnoremap <silent> <leader>tt :FloatermNew<Cr>
+  nnoremap <silent> <leader>t] :FloatermNext<Cr>
+  nnoremap <silent> <leader>t[ :FloatermPrev<Cr>
+  nnoremap <silent> <leader>tw :FloatermKill<Cr>
 endif
 
 
