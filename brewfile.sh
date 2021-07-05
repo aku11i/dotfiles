@@ -3,55 +3,27 @@
 set -e
 
 brew install \
-  gcc \
-  ffmpeg \
-  fish \
-  fx \
-  fzf \
-  ghq \
-  gibo \
-  git \
-  git-flow \
-  git-lfs \
-  htop \
-  hub \
+  ffmpeg fish fnm fx fzf \
+  gcc ghq gibo git git-flow git-lfs \
+  htop hub \
   imagemagick \
   jq \
-  lazydocker \
-  lazygit \
-  neovim \
-  node \
-  fnm \
+  lab lazydocker lazygit \
+  neovim node \
   python \
-  ripgrep \
-  rsync \
-  tig \
-  tmux \
-  tokei \
-  translate-shell \
-  tree \
-  zsh \
-  lab \
+  ripgrep rsync \
+  tig tmux tokei translate-shell tree \
+  zsh
 
 
 # GNU utils
 brew install \
-  binutils \
-  coreutils \
-  diffutils \
-  findutils \
-  moreutils \
-  gawk \
-  gzip \
-  gnu-tar \
-  gnu-sed \
-  gnu-time \
-  gnu-getopt
+  binutils coreutils diffutils findutils moreutils \
+  gawk gzip gnu-tar gnu-sed gnu-time gnu-getopt
 
 
 if test "$(uname)" == "Darwin"; then
   brew install \
-    cocoapods \
-
+    cocoapods
 fi
 
