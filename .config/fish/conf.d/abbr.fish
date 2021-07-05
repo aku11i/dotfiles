@@ -1,7 +1,13 @@
 abbr --add --global l 'ls -1a'
 abbr --add --global la 'ls -a'
-abbr --add --global l1 'ls -1a'
 abbr --add --global ll 'ls -lha'
+
+if which lsd > /dev/null
+  abbr --add --global ls 'lsd'
+  abbr --add --global l 'lsd -1a'
+  abbr --add --global la 'lsd -a'
+  abbr --add --global ll 'lsd -lha'
+end
 
 abbr --add --global cp 'cp -ir'
 abbr --add --global mv 'mv -i'

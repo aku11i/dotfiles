@@ -3,14 +3,15 @@
 set -e
 
 brew install \
-  ffmpeg fish fnm fx fzf \
-  gcc ghq gibo git git-flow git-lfs \
+  bat \
+  fd ffmpeg fish fnm fx fzf \
+  gcc ghq gibo git git-delta git-flow git-lfs gron \
   htop hub \
   imagemagick \
   jq \
-  lab lazydocker lazygit \
+  lab lazydocker lazygit lsd \
   neovim node \
-  python \
+  pastel python \
   ripgrep rsync \
   tig tmux tokei translate-shell tree \
   zsh
