@@ -226,7 +226,7 @@ endif
 if s:plug.is_installed('fzf.vim')
   nnoremap <leader>f :Rg<Cr>
   vmap <leader>f :Rg<Cr>
-  nnoremap <leader>p :Files<Cr>
+  nnoremap <leader>p :GFiles<Cr>
   nnoremap <leader><TAB> :Buffers<Cr>
   nnoremap <Leader>/ :Rg<Space>
   nnoremap <Leader>h :BCommits<Cr>
