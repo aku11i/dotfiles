@@ -5,14 +5,14 @@ set -e
 brew install \
   bat \
   fd ffmpeg fish fnm fx fzf \
-  gcc ghq gibo git git-delta git-flow git-lfs gron \
+  gcc gh ghq gibo git git-delta git-flow git-lfs glab gron \
   htop hub \
   imagemagick \
   jq \
   lab lazydocker lazygit lsd \
   neovim node \
   pastel python \
-  ripgrep rsync \
+  rbenv ripgrep rsync rust \
   tig tmux tokei translate-shell tree \
   zsh
 
