@@ -375,12 +375,6 @@ if s:plug.is_installed('defx.nvim')
 endif
 
 
-if s:plug.is_installed('vim-floaterm')
-  " lazygit
-  nnoremap <silent> <leader>g :FloatermNew --height=0.9 --width=0.9 --name=lazygit --autoclose=2 lazygit<CR>
-endif
-
-
 if s:plug.is_installed('caw.vim')
   " Ctrl + / to toggle comments.
   nmap <C-_> <Plug>(caw:hatpos:toggle)
