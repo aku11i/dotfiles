@@ -5,7 +5,12 @@ abbr ..... 'cd ../../../../'
 
 function cd -d "Overrides builtin cd command"
   builtin cd $argv
-  ls -a
+
+  if which lsd > /dev/null
+    lsd -a
+  else
+    ls -a
+  end
 
   if test -e ./.nvmrc
     # Switch the node version to specified by .nvmrc
