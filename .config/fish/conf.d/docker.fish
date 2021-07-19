@@ -1,7 +1,7 @@
 # Docker
 abbr --add --global d 'docker'
 # Docker Compose
-abbr --add --global dc 'docker-compose'
+abbr --add --global dc 'docker compose'
 
 # Docker for Windows
 if test (uname -a | grep --ignore-case "Microsoft")
