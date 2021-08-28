@@ -3,6 +3,7 @@
 ## Installation
 
 Supported Platforms:
+
 - macOS
 - Ubuntu / Debian
 - Windows Subsystem for Linux (Ubuntu)
@@ -19,7 +20,8 @@ cd ~/.dotfiles
 
 ## Recommended Terminal Color Scheme
 
-[Rigel](https://github.com/rigellute/rigel)
+- Solarized Dark
+- [Rigel](https://github.com/rigellute/rigel)
 
 ## Recommended Fonts
 
@@ -29,5 +31,3 @@ cd ~/.dotfiles
   https://github.com/ryanoasis/nerd-fonts/releases/latest/download/SourceCodePro.zip
 
 or [other nerd fonts](https://www.nerdfonts.com/font-downloads)
-
-
