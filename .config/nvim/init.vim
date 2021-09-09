@@ -71,6 +71,9 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'jnurmine/Zenburn'
 Plug 'Rigellute/rigel'
 
+" Time tracking
+Plug 'wakatime/vim-wakatime'
+
 call plug#end()
 
 let s:plug = {
