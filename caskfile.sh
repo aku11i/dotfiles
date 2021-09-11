@@ -4,14 +4,12 @@ set -e
 
 brew install --cask \
   alacritty \
-  alfred \
+  alt-tab \
   android-studio \
   appcleaner \
   bartender \
   docker \
   firefox \
-  google-chrome \
-  hyperswitch \
   imageoptim \
   iterm2 \
   karabiner-elements \
@@ -19,6 +17,7 @@ brew install --cask \
   kindle \
   macvim \
   microsoft-edge \
+  raycast \
   the-unarchiver \
   vimr \
   visual-studio-code \
