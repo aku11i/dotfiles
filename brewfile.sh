@@ -5,11 +5,11 @@ set -e
 brew install \
   bat \
   fd ffmpeg fish fnm fx fzf \
-  gcc gh ghq gibo git git-delta git-flow git-lfs glab gron \
-  htop hub \
+  gcc gh ghq gibo git git-delta git-flow git-lfs glab go gron \
+  htop \
   imagemagick \
   jq \
-  lab lazydocker lazygit lsd \
+  lazydocker lazygit lsd \
   neovim node \
   pastel python \
   rbenv ripgrep rsync rust \
