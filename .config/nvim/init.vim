@@ -25,8 +25,7 @@ Plug 'kristijanhusak/defx-icons'
 Plug 'kristijanhusak/defx-git'
 
 " Syntax Highlight
-let g:polyglot_disabled = ['markdown']
-Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Language Server
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -289,6 +288,19 @@ if s:plug.is_installed('coc.nvim')
   " Tab completion
   inoremap <expr> <Tab> pumvisible() ? "\<Down>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
+endif
+
+if s:plug.is_installed('nvim-treesitter')
+lua <<EOF
+  require'nvim-treesitter.configs'.setup {
+    ensure_installed = "maintained",
+    -- ignore_install = { "javascript" },
+    highlight = {
+      enable = true,
+      -- disable = { "c", "rust" },
+    },
+  }
+EOF
 endif
 
 
