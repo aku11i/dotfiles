@@ -133,6 +133,9 @@ set wrapscan
 " ---- Key Mappings ----
 noremap ; :
 
+" Hide search lighlights
+nnoremap <ESC><ESC> :nohl<CR>
+
 " Use spacebar as leader key
 let mapleader = "\<Space>"
 
