@@ -1,7 +1,7 @@
 # Homebrew
 if test (uname) = "Darwin"
   # Apple Silicon
-  fish_add_path /opt/homebrew/bin
+  fish_add_path --path /opt/homebrew/bin
 end
 
 
