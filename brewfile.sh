@@ -8,7 +8,7 @@ brew install \
   gcc gh ghq gibo git git-delta git-flow git-lfs glab go gron \
   htop \
   imagemagick \
-  jq \
+  jenv jq \
   lazydocker lazygit lsd \
   neovim node \
   pastel python \
