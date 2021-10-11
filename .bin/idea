@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if test -d "/Applications/IntelliJ IDEA.app"; then
+  open -na "IntelliJ IDEA.app" --args "$@"
+elif test -d "/Applications/IntelliJ IDEA CE.app"; then
+  open -na "IntelliJ IDEA CE.app" --args "$@"
+else
+  echo '"IntelliJ IDEA" is not found.'
+  exit 1
+fi
