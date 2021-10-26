@@ -5,7 +5,7 @@ if test (which fnm)
   # Load
   fnm env | source
 
-  if test -f .nvmrc
+  if test -e ./.nvmrc; or test -e ./.node-version
     # Switch the node version to specified by .nvmrc
     fnm use --install-if-missing > /dev/null
   end
