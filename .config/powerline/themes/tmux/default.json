@@ -2,13 +2,6 @@
   "segments": {
     "right": [
       {
-        "function": "powerline.segments.common.wthr.weather",
-        "args": {
-          "location_query": "tokyo, japan",
-          "unit": "C"
-        }
-      },
-      {
         "function": "powerline.segments.common.bat.battery"
       },
       {
