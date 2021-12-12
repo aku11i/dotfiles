@@ -24,4 +24,8 @@ for dotfile in .??* ; do
   deploy $dotfile
 done
 
-# chmod +x $HOME/.bin/*
+if test -d "$(pwd)/tpm"; then
+  mkdir -p $HOME/.tmux/plugins
+  ln -svnf "$(pwd)/tpm" "$HOME/.tmux/plugins/tpm"
+fi
+
