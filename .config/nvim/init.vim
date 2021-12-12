@@ -1,6 +1,16 @@
 " ---- Initialize Settings ----
 set termguicolors
 
+
+" https://github.com/sindresorhus/dark-mode
+" brew install dark-mode
+if system('which dark-mode') != ''
+  let dark = trim(system('dark-mode status')) == 'on'
+  exe 'set background=' . (dark ? 'dark' : 'light')
+else
+  set background=dark
+end
+
 " ---- Vim Plug ----
 " Install vim-plug
 if has('vim_starting')
@@ -69,6 +79,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lifepillar/vim-solarized8'
 Plug 'jnurmine/Zenburn'
 Plug 'Rigellute/rigel'
+Plug 'aku11i/vim-auto-color-switcher', { 'branch': 'support-neovim', 'do': 'make' }
 
 " Time tracking
 Plug 'wakatime/vim-wakatime'
@@ -92,7 +103,6 @@ set sh=fish
 " Appearance
 set title
 set hidden
-set background=dark
 set cmdheight=2
 set laststatus=2
 set showcmd
@@ -433,8 +443,8 @@ endif
 
 
 if s:plug.is_installed('vim-solarized8')
-  set background=dark
   colorscheme solarized8_flat
+  let g:airline_theme = 'solarized'
 endif
 
 
@@ -442,4 +452,3 @@ endif
 "   set background=dark
 "   colorscheme zenburn
 " endif
-
