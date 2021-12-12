@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -eu
+
+# Generate GIF image from movie file
+
+DEFAULT_SCALE=900
+DEFAULT_FPS=12
+
+if [ "$#" -ne 1 ]; then
+    echo "Error: Invalid arguments"
+    echo "Usage: gif <input> [scale] [fps]"
+    exit 1
+fi
+
+input="$1"
+scale="${2:-$DEFAULT_SCALE}"
+fps="${3:-$DEFAULT_FPS}"
+output="${input%.*}.gif" # input の拡張子を gif に変更する
+
+ffmpeg -i "${input}" -vf "palettegen" -y /tmp/palette.png
+
+ffmpeg -i "${input}" -i /tmp/palette.png \
+        -lavfi "fps=${fps},scale=${scale}:-1:flags=lanczos [x]; [x][1:v] paletteuse=dither=bayer:bayer_scale=5:diff_mode=rectangle" \
+        -y "${output}"
+
+echo ""
+echo "${output}"
