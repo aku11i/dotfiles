@@ -61,6 +61,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'junegunn/goyo.vim'
 Plug 'knsh14/vim-github-link'
 Plug 'voldikss/vim-translator'
+Plug 'AndrewRadev/linediff.vim'
 
 " Edit browser textarea content
 Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
