@@ -86,7 +86,7 @@ if has('mac')
 endif
 
 " Time tracking
-Plug 'wakatime/vim-wakatime'
+" Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 
