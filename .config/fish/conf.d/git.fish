@@ -1,6 +1,3 @@
-# lazygit
-abbr --add --global lg 'lazygit'
-
 # glab
 abbr --add --global gl 'glab'
 
