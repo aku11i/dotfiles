@@ -20,8 +20,7 @@ cd ~/.dotfiles
 
 ## Recommended Terminal Color Scheme
 
-- Solarized Dark
-- [Rigel](https://github.com/rigellute/rigel)
+- [Solarized](https://ethanschoonover.com/solarized/) (Both dark and light theme is supported.)
 
 ## Recommended Fonts
 
