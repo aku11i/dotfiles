@@ -8,9 +8,9 @@ function delta
   end
 
   if which dark-mode >/dev/null && test (dark-mode status) = "on"
-    {$delta}
+    {$delta} $argv
   else
-    {$delta} --light
+    {$delta} --light  $argv
   end
 end
 

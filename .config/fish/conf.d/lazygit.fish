@@ -10,8 +10,8 @@ function lazygit
   end
 
   if which dark-mode >/dev/null && test (dark-mode status) = "on"
-    {$lazygit}
+    {$lazygit} $argv
   else
-    {$lazygit} --use-config-file ~/.config/lazygit/light.yml
+    {$lazygit} --use-config-file ~/.config/lazygit/light.yml  $argv
   end
 end
