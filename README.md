@@ -20,7 +20,7 @@ cd ~/.dotfiles
 
 ## Recommended Terminal Color Scheme
 
-- [Solarized](https://ethanschoonover.com/solarized/) (Both dark and light theme is supported.)
+- [Solarized](https://ethanschoonover.com/solarized/) (Both dark and light themes are supported.)
 
 ## Recommended Fonts
 
