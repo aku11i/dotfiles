@@ -80,7 +80,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lifepillar/vim-solarized8'
 Plug 'jnurmine/Zenburn'
 Plug 'Rigellute/rigel'
-Plug 'kat0h/vim-auto-color-switcher', { 'do': 'make' }
+
+if has('mac')
+  Plug 'kat0h/vim-auto-color-switcher', { 'do': 'make' }
+endif
 
 " Time tracking
 Plug 'wakatime/vim-wakatime'
