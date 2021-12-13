@@ -79,7 +79,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lifepillar/vim-solarized8'
 Plug 'jnurmine/Zenburn'
 Plug 'Rigellute/rigel'
-Plug 'aku11i/vim-auto-color-switcher', { 'branch': 'support-neovim', 'do': 'make' }
+Plug 'kat0h/vim-auto-color-switcher', { 'do': 'make' }
 
 " Time tracking
 Plug 'wakatime/vim-wakatime'
