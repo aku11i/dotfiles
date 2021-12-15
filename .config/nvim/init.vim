@@ -247,7 +247,8 @@ if s:plug.is_installed('fzf.vim')
   nnoremap <leader>f :Rg<Cr>
   vmap <leader>f :Rg<Cr>
   nnoremap <leader>p :Files<Cr>
-  nnoremap <leader><TAB> :Buffers<Cr>
+  nnoremap <leader>b :Buffers<Cr>
+  nnoremap <leader><TAB> :History<Cr>
   nnoremap <Leader>/ :Rg<Space>
   nnoremap <Leader>h :BCommits<Cr>
 endif
