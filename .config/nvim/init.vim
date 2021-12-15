@@ -268,6 +268,7 @@ if s:plug.is_installed('coc.nvim')
         \ 'coc-yaml',
         \ 'coc-tailwindcss',
         \ 'coc-styled-components',
+        \ 'coc-java',
         \ ]
 
   nmap <silent><C-]> <Plug>(coc-definition)
