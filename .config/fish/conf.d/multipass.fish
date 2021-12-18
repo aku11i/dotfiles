@@ -1,0 +1,3 @@
+# multipass
+
+abbr mp 'multipass'
