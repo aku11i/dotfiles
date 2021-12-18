@@ -4,7 +4,6 @@ set -e
 
 brew install \
   bat \
-  dark-mode \
   fd ffmpeg fish fnm fx fzf \
   gcc gh ghq gibo git git-delta git-flow git-lfs glab go gron \
   htop \
@@ -26,6 +25,7 @@ brew install \
 
 if test "$(uname)" == "Darwin"; then
   brew install \
-    cocoapods
+    cocoapods \
+    dark-mode
 fi
 
