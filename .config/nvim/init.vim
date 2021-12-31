@@ -68,7 +68,6 @@ Plug 'janko/vim-test'
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 
 " Font
 Plug 'lambdalisue/nerdfont.vim'
@@ -270,6 +269,7 @@ if s:plug.is_installed('coc.nvim')
         \ 'coc-tailwindcss',
         \ 'coc-styled-components',
         \ 'coc-java',
+        \ 'coc-git',
         \ ]
 
   nmap <silent><C-]> <Plug>(coc-definition)
@@ -304,9 +304,18 @@ if s:plug.is_installed('coc.nvim')
   " Highlight symbol and show documentation under cursor on CursorHold
   autocmd CursorHold * silent call CocActionAsync('highlight')
 
-  " Tab completion
+  " Select sugestion
   inoremap <expr> <Tab> pumvisible() ? "\<Down>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
+  inoremap <expr> <C-n> pumvisible() ? "\<Down>" : "\<C-n>"
+  inoremap <expr> <C-p> pumvisible() ? "\<Up>" : "\<C-p>"
+
+  " Git
+  nmap [g <Plug>(coc-git-prevchunk)
+  nmap ]g <Plug>(coc-git-nextchunk)
+
+  command! GitCopyUrl :CocCommand git.copyUrl
+  command! GitOpenUrlInBrowser :CocCommand git.browserOpen
 endif
 
 if s:plug.is_installed('nvim-treesitter')
@@ -320,12 +329,6 @@ lua <<EOF
     },
   }
 EOF
-endif
-
-
-if s:plug.is_installed('vim-gitgutter')
-  nmap ]g <Plug>(GitGutterNextHunk)
-  nmap [g <Plug>(GitGutterPrevHunk)
 endif
 
 
