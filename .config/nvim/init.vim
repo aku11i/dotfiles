@@ -349,7 +349,7 @@ if s:plug.is_installed('fern.vim')
   endfunction
 
   function! s:on_buf_win_enter()
-    if &filetype != 'fern' && &filetype != ''
+    if &filetype != 'fern' && &filetype!= 'gitcommit' && &filetype != ''
       execute "Fern . -drawer -stay -reveal=%"
     endif
   endfunction
