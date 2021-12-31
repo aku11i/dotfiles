@@ -1,16 +1,6 @@
 " ---- Initialize Settings ----
 set termguicolors
 
-
-" https://github.com/sindresorhus/dark-mode
-" brew install dark-mode
-if system('which dark-mode') != ''
-  let dark = trim(system('dark-mode status')) == 'on'
-  exe 'set background=' . (dark ? 'dark' : 'light')
-else
-  set background=dark
-end
-
 " ---- Vim Plug ----
 " Install vim-plug
 if has('vim_starting')
@@ -90,9 +80,9 @@ Plug 'Rigellute/rigel'
 Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 
-if has('mac')
-  Plug 'kat0h/vim-auto-color-switcher', { 'do': 'make' }
-endif
+" if has('mac')
+"   Plug 'kat0h/vim-auto-color-switcher', { 'do': 'make' }
+" endif
 
 " Time tracking
 " Plug 'wakatime/vim-wakatime'
