@@ -340,7 +340,7 @@ endif
 if s:plug.is_installed('fern.vim')
   let g:fern#default_hidden = 1
 
-  nnoremap <silent> <Leader>e :Fern . -drawer -toggle -stay -reveal=% <CR>
+  nnoremap <silent> <Leader>e :Fern . -drawer -reveal=% <CR>
 
   function! s:init_fern() abort
     nmap <buffer> <CR> <Plug>(fern-action-open-or-expand)
@@ -349,12 +349,13 @@ if s:plug.is_installed('fern.vim')
   endfunction
 
   function! s:on_buf_win_enter()
-    if &filetype != 'fern' && &filetype!= 'gitcommit' && &filetype != ''
+    if &filetype != 'fern' && &filetype!= 'gitcommit'
       execute "Fern . -drawer -stay -reveal=%"
     endif
   endfunction
 
   augroup fern-custom
+    autocmd! *
     autocmd FileType fern call s:init_fern()
     autocmd BufWinEnter * ++nested call s:on_buf_win_enter()
   augroup END
