@@ -399,18 +399,18 @@ if s:plug.is_installed('vim-airline-themes')
 endif
 
 
-" if s:plug.is_installed('rigel')
-"   set background=dark
-"   let g:rigel_airline = 1
-"   let g:airline_theme = 'rigel'
-"   colorscheme rigel
-" endif
-
-
-if s:plug.is_installed('vim-solarized8')
-  colorscheme solarized8_flat
-  let g:airline_theme = 'solarized'
+if s:plug.is_installed('rigel')
+  set background=dark
+  let g:rigel_airline = 1
+  let g:airline_theme = 'rigel'
+  colorscheme rigel
 endif
+
+
+" if s:plug.is_installed('vim-solarized8')
+"   colorscheme solarized8_flat
+"   let g:airline_theme = 'solarized'
+" endif
 
 
 " if s:plug.is_installed('Zenburn')
