@@ -30,9 +30,13 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " File explorer
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'kristijanhusak/defx-icons'
-Plug 'kristijanhusak/defx-git'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+if has('nvim')
+  Plug 'antoinemadec/FixCursorHold.nvim'
+endif
+
 
 " Syntax Highlight
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -75,6 +79,9 @@ Plug 'janko/vim-test'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
+" Font
+Plug 'lambdalisue/nerdfont.vim'
 
 " ColorScheme
 Plug 'lifepillar/vim-solarized8'
@@ -330,83 +337,31 @@ if s:plug.is_installed('vim-gitgutter')
 endif
 
 
-if s:plug.is_installed('defx.nvim')
-  " Disable netrw
-  let loaded_netrwPlugin = 1
+if s:plug.is_installed('fern.vim')
+  let g:fern#default_hidden = 1
 
-  " Auto refresh
-  autocmd BufWritePost * call defx#redraw()
-  autocmd BufEnter * call defx#redraw()
+  nnoremap <silent> <Leader>e :Fern . -drawer -toggle -stay -reveal=% <CR>
 
-  nnoremap <silent> <Leader>e :<C-u> Defx -search=`expand('%:p')` <CR>
-
-  " Start Defx when Vim is started without file arguments.
-  autocmd StdinReadPre * let s:std_in=1
-  autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | Defx | endif
-
-  " Show defx view when split window is opened
-  nnoremap <C-w>- :sp \| Defx<CR>
-  nnoremap <C-w>\ :vs \| Defx<CR>
-
-  call defx#custom#option('_', {
-      \ 'show_ignored_files': 1,
-      \ 'buffer_name': 'explorer',
-      \ 'columns': 'indent:git:icons:filename:mark',
-      \ 'resume': 0,
-      \ })
-
-  autocmd FileType defx call s:defx_my_settings()
-  function! s:defx_my_settings() abort
-    " Define mappings
-    nnoremap <silent><buffer><expr> c
-    \ defx#do_action('copy')
-    nnoremap <silent><buffer><expr> m
-    \ defx#do_action('move')
-    nnoremap <silent><buffer><expr> p
-    \ defx#do_action('paste')
-    nnoremap <silent><buffer><expr> l
-    \ defx#do_action('open_tree')
-    nnoremap <silent><buffer><expr> h
-    \ defx#do_action('close_tree')
-    nnoremap <silent><buffer><expr> <CR>
-    \ defx#is_directory() ?
-    \ defx#do_action('open_or_close_tree') :
-    \ defx#do_action('open')
-    nnoremap <silent><buffer><expr> o
-    \ defx#is_directory() ?
-    \ defx#do_action('open_or_close_tree') :
-    \ defx#do_action('open')
-    nnoremap <silent><buffer><expr> t
-    \ defx#do_action('multi', ['quit',['open','tabnew']])
-    nnoremap <silent><buffer><expr> F
-    \ defx#do_action('new_directory')
-    nnoremap <silent><buffer><expr> N
-    \ defx#do_action('new_file')
-    nnoremap <silent><buffer><expr> M
-    \ defx#do_action('new_multiple_files')
-    nnoremap <silent><buffer><expr> D
-    \ defx#do_action('remove')
-    nnoremap <silent><buffer><expr> r
-    \ defx#do_action('rename')
-    nnoremap <silent><buffer><expr> yy
-    \ defx#do_action('yank_path')
-    nnoremap <silent><buffer><expr> .
-    \ defx#do_action('toggle_ignored_files')
-    nnoremap <silent><buffer><expr> ~
-    \ defx#do_action('cd')
-    nnoremap <silent><buffer><expr> u
-    \ defx#do_action('cd', ['..'])
-    nnoremap <silent><buffer><expr> q
-    \ defx#do_action('quit')
-    nnoremap <silent><buffer><expr> <Tab>
-    \ defx#do_action('toggle_select') . 'j'
-    nnoremap <silent><buffer><expr> *
-    \ defx#do_action('toggle_select_all')
-    nnoremap <silent><buffer><expr> R
-    \ defx#do_action('redraw')
-    nnoremap <silent><buffer><expr> C
-    \ defx#do_action('change_vim_cwd')
+  function! s:init_fern() abort
+    nmap <buffer> <CR> <Plug>(fern-action-open-or-expand)
+    nmap <buffer> o <Plug>(fern-action-open-or-expand)
+    nmap <buffer> <C-l> <C-W>l
   endfunction
+
+  function! s:on_buf_win_enter()
+    if &filetype != 'fern' && &filetype != ''
+      execute "Fern . -drawer -stay -reveal=%"
+    endif
+  endfunction
+
+  augroup fern-custom
+    autocmd FileType fern call s:init_fern()
+    autocmd BufWinEnter * ++nested call s:on_buf_win_enter()
+  augroup END
+endif
+
+if s:plug.is_installed('fern-renderer-nerdfont.vim')
+  let g:fern#renderer = "nerdfont"
 endif
 
 
