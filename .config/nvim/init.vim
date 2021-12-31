@@ -87,6 +87,8 @@ Plug 'lambdalisue/nerdfont.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'jnurmine/Zenburn'
 Plug 'Rigellute/rigel'
+Plug 'arcticicestudio/nord-vim'
+Plug 'cocopon/iceberg.vim'
 
 if has('mac')
   Plug 'kat0h/vim-auto-color-switcher', { 'do': 'make' }
@@ -414,4 +416,18 @@ endif
 " if s:plug.is_installed('Zenburn')
 "   set background=dark
 "   colorscheme zenburn
+" endif
+
+
+" if s:plug.is_installed('nord-vim')
+"   set background=dark
+"   let g:airline_theme = 'nord'
+"   colorscheme nord
+" endif
+
+
+" if s:plug.is_installed('iceberg.vim')
+"   set background=dark
+"   let g:airline_theme = 'iceberg'
+"   colorscheme iceberg
 " endif
