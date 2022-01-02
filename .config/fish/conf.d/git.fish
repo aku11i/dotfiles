@@ -1,6 +1,3 @@
-# glab
-abbr --add --global gl 'glab'
-
 # Aliases
 
 # Git
