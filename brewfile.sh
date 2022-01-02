@@ -13,6 +13,7 @@ brew install \
   neovim node \
   pastel python \
   rbenv ripgrep rsync rust \
+  starship \
   tig tmux tokei translate-shell tree \
   zsh
 
