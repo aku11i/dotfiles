@@ -33,6 +33,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Language Server
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'liuchengxu/vista.vim'
 
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -318,6 +319,26 @@ if s:plug.is_installed('coc.nvim')
   command! GitCopyUrl :CocCommand git.copyUrl
   command! GitOpenUrlInBrowser :CocCommand git.browserOpen
 endif
+
+
+if s:plug.is_installed('vista.vim')
+  let g:vista#renderer#enable_icon = 1
+  let g:airline#extensions#vista#enabled = 1
+  let g:vista_stay_on_open = 0 " set 0 to stay
+
+  nnoremap <silent> <leader>l :Vista!!<Cr>
+  nnoremap <silent> <leader>o :Vista finder<Cr>
+
+  if s:plug.is_installed('coc.nvim')
+    let g:vista_default_executive = 'coc'
+  endif
+
+  augroup vista-custom
+    autocmd! *
+    autocmd BufWinEnter * ++nested :Vista
+  augroup END
+endif
+
 
 if s:plug.is_installed('nvim-treesitter')
 lua <<EOF
