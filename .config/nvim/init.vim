@@ -62,6 +62,7 @@ Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
 
 " Terminal
 Plug 'voldikss/vim-floaterm'
+Plug 'kassio/neoterm'
 
 " Test
 Plug 'janko/vim-test'
