@@ -324,7 +324,6 @@ endif
 if s:plug.is_installed('vista.vim')
   let g:vista#renderer#enable_icon = 1
   let g:airline#extensions#vista#enabled = 1
-  let g:vista_stay_on_open = 0 " set 0 to stay
 
   nnoremap <silent> <leader>l :Vista!!<Cr>
   nnoremap <silent> <leader>o :Vista finder<Cr>
@@ -332,11 +331,6 @@ if s:plug.is_installed('vista.vim')
   if s:plug.is_installed('coc.nvim')
     let g:vista_default_executive = 'coc'
   endif
-
-  augroup vista-custom
-    autocmd! *
-    autocmd BufWinEnter * ++nested :Vista
-  augroup END
 endif
 
 
@@ -357,7 +351,7 @@ endif
 if s:plug.is_installed('fern.vim')
   let g:fern#default_hidden = 1
 
-  nnoremap <silent> <Leader>e :Fern . -drawer -reveal=% <CR>
+  nnoremap <silent> <Leader>e :Fern . -drawer -reveal=% -toggle <CR>
 
   function! s:init_fern() abort
     nmap <buffer> <CR> <Plug>(fern-action-open-or-expand)
@@ -365,16 +359,10 @@ if s:plug.is_installed('fern.vim')
     nmap <buffer> <C-l> <C-W>l
   endfunction
 
-  function! s:on_buf_win_enter()
-    if &filetype != 'fern' && &filetype!= 'gitcommit'
-      execute "Fern . -drawer -stay -reveal=%"
-    endif
-  endfunction
-
   augroup fern-custom
     autocmd! *
     autocmd FileType fern call s:init_fern()
-    autocmd BufWinEnter * ++nested call s:on_buf_win_enter()
+    autocmd BufWinEnter * ++nested execute "FernDo -stay :FernReveal " . @%
   augroup END
 endif
 
