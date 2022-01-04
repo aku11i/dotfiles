@@ -16,6 +16,7 @@
   "scss.lint.unknownAtRules": "ignore",
   "git.addGBlameToVirtualText": true,
   "git.urlMode": "permalink",
+  "java.home": "/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/",
   "languageserver": {
     "tailwind-lsp": {
       "command": "tailwindcss-language-server",
