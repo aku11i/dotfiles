@@ -14,7 +14,7 @@ brew install --cask \
   iterm2 \
   karabiner-elements \
   keyboardcleantool \
-  kindle \
+  krisp \
   macvim \
   microsoft-edge \
   raycast \
