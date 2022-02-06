@@ -1,10 +1,19 @@
 #!/bin/sh
 
-if test -d "/Applications/IntelliJ IDEA.app"; then
-  open -na "IntelliJ IDEA.app" --args "$@"
-elif test -d "/Applications/IntelliJ IDEA CE.app"; then
-  open -na "IntelliJ IDEA CE.app" --args "$@"
-else
-  echo '"IntelliJ IDEA" is not found.'
-  exit 1
-fi
+args=$@
+
+function launch() {
+  path=$1
+  test ! -d "$path" && return
+
+  open -na "$path" --args "$args"
+  exit 0
+}
+
+launch "/Applications/IntelliJ IDEA.app"
+launch "$HOME/Applications/JetBrains Toolbox/IntelliJ IDEA.app"
+launch "/Applications/IntelliJ IDEA CE.app"
+launch "$HOME/Applications/JetBrains Toolbox/IntelliJ IDEA Community Edition.app"
+
+echo '"IntelliJ IDEA" is not found.'
+exit 1
