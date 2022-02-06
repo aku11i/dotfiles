@@ -10,10 +10,8 @@ brew install --cask \
   bartender \
   docker \
   firefox \
-  imageoptim \
   iterm2 \
   karabiner-elements \
-  keyboardcleantool \
   krisp \
   macvim \
   microsoft-edge \
