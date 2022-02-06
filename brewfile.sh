@@ -3,6 +3,7 @@
 set -e
 
 brew install \
+  awscli \
   bat \
   fd ffmpeg fish fnm fx fzf \
   gcc gh ghq gibo git git-delta git-flow git-lfs glab go gron \
