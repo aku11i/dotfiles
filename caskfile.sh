@@ -11,6 +11,7 @@ brew install --cask \
   docker \
   firefox \
   iterm2 \
+  jetbrains-toolbox \
   karabiner-elements \
   krisp \
   macvim \
