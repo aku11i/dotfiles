@@ -8,6 +8,8 @@ abbr --add --global gfp 'git fetch --prune'
 
 abbr --add --global gs 'git status --short --branch'
 
+abbr --add --global gl 'git log --oneline -10'
+
 abbr --add --global gR 'git reset'
 abbr --add --global gRH 'git reset HEAD'
 abbr --add --global gR1 'git reset HEAD~1'
