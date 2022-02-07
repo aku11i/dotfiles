@@ -116,3 +116,12 @@ abbr --add --global gSVm 'git merge --no-ff --no-commit'
 abbr --add --global gSVr 'git svn rebase'
 abbr --add --global gSVd 'git svn dcommit'
 abbr --add --global gSVl 'git svn log'
+
+# FZF combination
+function ghf
+  if test "$argv" = "pr checkout"
+    gh pr checkout (gh pr list | fzf | awk '{print $1}')
+    return
+  end
+end
+
