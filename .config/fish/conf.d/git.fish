@@ -120,7 +120,8 @@ abbr --add --global gSVl 'git svn log'
 # FZF combination
 function ghf
   if test "$argv" = "pr checkout"
-    gh pr checkout (gh pr list | fzf | awk '{print $1}')
+    set searchOption "is:pr is:open sort:updated-desc"
+    gh pr checkout (gh pr list --search "$searchOption" | fzf | awk '{print $1}')
     return
   end
 end
