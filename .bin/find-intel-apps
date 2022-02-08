@@ -1,6 +1,6 @@
 #!/bin/bash
 
-find /Applications -type d -name "*.app" -maxdepth 2 | while read app; do
+find /Applications ~/Applications -type d -name "*.app" -maxdepth 2 | while read app; do
   name=$(basename "$app" ".app")
   path="$app/Contents/MacOS/$name"
 
