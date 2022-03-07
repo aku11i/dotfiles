@@ -11,7 +11,7 @@ function launch() {
 }
 
 launch "/Applications/IntelliJ IDEA.app"
-launch "$HOME/Applications/JetBrains Toolbox/IntelliJ IDEA.app"
+launch "$HOME/Applications/JetBrains Toolbox/IntelliJ IDEA Ultimate.app"
 launch "/Applications/IntelliJ IDEA CE.app"
 launch "$HOME/Applications/JetBrains Toolbox/IntelliJ IDEA Community Edition.app"
 
