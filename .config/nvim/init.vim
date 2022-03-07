@@ -1,6 +1,16 @@
 " ---- Initialize Settings ----
 set termguicolors
 
+
+" https://github.com/sindresorhus/dark-mode
+" brew install dark-mode
+if system('which dark-mode') != ''
+  let dark = trim(system('dark-mode status')) == 'on'
+  exe 'set background=' . (dark ? 'dark' : 'light')
+else
+  set background=dark
+end
+
 " ---- Vim Plug ----
 " Install vim-plug
 if has('vim_starting')
@@ -81,9 +91,9 @@ Plug 'Rigellute/rigel'
 Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 
-" if has('mac')
-"   Plug 'kat0h/vim-auto-color-switcher', { 'do': 'make' }
-" endif
+if has('mac')
+  Plug 'kat0h/vim-auto-color-switcher', { 'do': 'make' }
+endif
 
 " Time tracking
 " Plug 'wakatime/vim-wakatime'
@@ -402,18 +412,18 @@ if s:plug.is_installed('vim-airline-themes')
 endif
 
 
-if s:plug.is_installed('rigel')
-  set background=dark
-  let g:rigel_airline = 1
-  let g:airline_theme = 'rigel'
-  colorscheme rigel
-endif
-
-
-" if s:plug.is_installed('vim-solarized8')
-"   colorscheme solarized8_flat
-"   let g:airline_theme = 'solarized'
+" if s:plug.is_installed('rigel')
+"   set background=dark
+"   let g:rigel_airline = 1
+"   let g:airline_theme = 'rigel'
+"   colorscheme rigel
 " endif
+
+
+if s:plug.is_installed('vim-solarized8')
+  colorscheme solarized8_flat
+  let g:airline_theme = 'solarized'
+endif
 
 
 " if s:plug.is_installed('Zenburn')
