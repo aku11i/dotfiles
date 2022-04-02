@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -eu
+
+input="$1"
+output="${input%.*}.mp4" # input の拡張子を変更する
+
+ffmpeg -i "${input}" "${output}"
+
+echo ""
+echo "${output}"
