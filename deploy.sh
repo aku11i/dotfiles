@@ -19,7 +19,7 @@ function deploy() {
 }
 
 for dotfile in .??* ; do
-  [[ $dotfile == .git* ]] && continue
+  [[ $dotfile == .git* ]] && [[ $dotfile != *.gitconfig ]] && continue
   [[ $dotfile == .DS_Store ]] && continue
   deploy $dotfile
 done

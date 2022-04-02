@@ -1,0 +1,8 @@
+[user]
+	name = Shuhei Akutagawa
+	email = shuhei.akutagawa+github@gmail.com
+
+[includeIf "gitdir:~/ghq/github.com/newspicks/"]
+	path = ~/ghq/github.com/newspicks/.gitconfig
+[includeIf "gitdir:~/ghq/github.com/alpdr/"]
+	path = ~/ghq/github.com/alpdr/.gitconfig
