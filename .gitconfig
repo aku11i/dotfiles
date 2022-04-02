@@ -1,6 +1,8 @@
 [user]
 	name = Shuhei Akutagawa
 	email = shuhei.akutagawa+github@gmail.com
+[init]
+	defaultBranch = main
 
 [includeIf "gitdir:~/ghq/github.com/newspicks/"]
 	path = ~/ghq/github.com/newspicks/.gitconfig
