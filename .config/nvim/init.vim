@@ -344,7 +344,13 @@ endif
 if s:plug.is_installed('nvim-treesitter')
 lua <<EOF
   require'nvim-treesitter.configs'.setup {
-    ensure_installed = "maintained",
+    ensure_installed = {
+      "bash", "c", "c_sharp", "clojure", "cpp", "css", "dart", "dockerfile",
+      "fish", "go", "gomod", "graphql", "html", "http", "java", "javascript",
+      "jsdoc", "json", "kotlin", "lua", "make", "markdown", "nix", "ocaml",
+      "python", "ruby", "rust", "scss", "svelte", "swift", "toml", "tsx",
+      "typescript", "vim", "vue", "yaml",
+    },
     -- ignore_install = { "javascript" },
     highlight = {
       enable = true,
