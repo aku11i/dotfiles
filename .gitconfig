@@ -4,6 +4,9 @@
 [init]
 	defaultBranch = main
 
+[include]
+	path = .gitconfig.local
+
 [includeIf "gitdir:~/ghq/github.com/newspicks/"]
 	path = ~/ghq/github.com/newspicks/.gitconfig
 [includeIf "gitdir:~/ghq/github.com/alpdr/"]
