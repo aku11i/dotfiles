@@ -13,7 +13,7 @@ brew install \
   lazydocker lazygit lsd \
   neovim node \
   pastel python \
-  rbenv ripgrep rsync rust \
+  rbenv ripgrep rsync rustup-init \
   starship \
   tig tmux tokei translate-shell tree \
   zsh
