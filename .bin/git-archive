@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -eu
+
+git branch --move archived/$(git rev-parse --abbrev-ref HEAD)
