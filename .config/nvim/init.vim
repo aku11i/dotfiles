@@ -313,10 +313,22 @@ if s:plug.is_installed('coc.nvim')
   autocmd CursorHold * silent call CocActionAsync('highlight')
 
   " Select sugestion
-  inoremap <expr> <Tab> pumvisible() ? "\<Down>" : "\<Tab>"
-  inoremap <expr> <S-Tab> pumvisible() ? "\<Up>" : "\<S-Tab>"
-  inoremap <expr> <C-n> pumvisible() ? "\<Down>" : "\<C-n>"
-  inoremap <expr> <C-p> pumvisible() ? "\<Up>" : "\<C-p>"
+  inoremap <silent><expr> <C-n> coc#pum#visible() ? coc#pum#next(1) : "\<C-n>"
+  inoremap <silent><expr> <C-p> coc#pum#visible() ? coc#pum#prev(1) : "\<C-p>"
+  inoremap <silent><expr> <down> coc#pum#visible() ? coc#pum#next(0) : "\<down>"
+  inoremap <silent><expr> <up> coc#pum#visible() ? coc#pum#prev(0) : "\<up>"
+  inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(0) : "\<Tab>"
+  inoremap <silent><expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(0) : "\<S-Tab>"
+  inoremap <silent><expr> <ESC> coc#pum#visible() ? coc#pum#cancel() : "\<ESC>"
+  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+  " Scroll suggestion
+  inoremap <silent><expr> <C-f> coc#pum#visible() ? coc#pum#scroll(1) : "\<C-e>"
+  inoremap <silent><expr> <C-b> coc#pum#visible() ? coc#pum#scroll(0) : "\<C-y>"
+
+  " Scroll help
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 
   " Git
   nmap [g <Plug>(coc-git-prevchunk)

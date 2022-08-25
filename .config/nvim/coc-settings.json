@@ -1,6 +1,8 @@
 {
+  "$schema": "https://raw.githubusercontent.com/neoclide/coc.nvim/master/data/schema.json",
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
+  "suggest.snippetsSupport": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "json",
