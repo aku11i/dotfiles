@@ -275,7 +275,6 @@ if s:plug.is_installed('coc.nvim')
         \ 'coc-highlight',
         \ 'coc-omnisharp',
         \ 'coc-yaml',
-        \ 'coc-tailwindcss',
         \ 'coc-styled-components',
         \ 'coc-java',
         \ 'coc-git',
