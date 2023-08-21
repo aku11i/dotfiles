@@ -2,4 +2,4 @@
 
 set -eu
 
-git branch --move archived/$(git rev-parse --abbrev-ref HEAD)
+git branch --move --force archived/$(git rev-parse --abbrev-ref HEAD)
