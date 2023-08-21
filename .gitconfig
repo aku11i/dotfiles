@@ -5,6 +5,7 @@
 	defaultBranch = main
 [pull]
 	ff = only
+	rebase = true
 
 [include]
 	path = .gitconfig.local
