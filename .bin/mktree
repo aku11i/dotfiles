@@ -1,0 +1,13 @@
+#!/bin/bash
+
+file=/tmp/gtree_draft_$(gdate +%s%3N)
+
+cat <<EOF > "${file}"
+- root
+  - child
+  - child
+EOF
+
+nvim "${file}"
+cat "${file}" | gtree output --two-spaces | pbcopy
+cat "${file}" | gtree output --two-spaces
