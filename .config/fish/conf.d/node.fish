@@ -13,3 +13,8 @@ end
 
 # Aliases
 abbr --add --global npr 'npm run'
+# pnpm
+abbr --add --global pn 'pnpm'
+abbr --add --global pni 'pnpm install'
+abbr --add --global pnr 'pnpm run'
+abbr --add --global pnx 'pnpm exec'
