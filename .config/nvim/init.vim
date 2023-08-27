@@ -358,11 +358,11 @@ lua <<EOF
     ensure_installed = {
       "bash", "c", "c_sharp", "clojure", "cpp", "css", "dart", "dockerfile",
       "fish", "go", "gomod", "graphql", "html", "http", "java", "javascript",
-      "jsdoc", "json", "kotlin", "lua", "make", "markdown", "nix", "ocaml",
+      "jsdoc", "kotlin", "lua", "make", "markdown", "nix", "ocaml",
       "python", "ruby", "rust", "scss", "svelte", "swift", "toml", "tsx",
       "typescript", "vim", "vue", "yaml",
     },
-    -- ignore_install = { "javascript" },
+    ignore_install = { "json" },
     highlight = {
       enable = true,
       -- disable = { "c", "rust" },
