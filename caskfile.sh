@@ -11,7 +11,6 @@ brew install --cask \
   firefox \
   iterm2 \
   karabiner-elements \
-  krisp \
   macvim \
   raycast \
   the-unarchiver \
