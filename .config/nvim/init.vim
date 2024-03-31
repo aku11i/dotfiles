@@ -278,6 +278,7 @@ if s:plug.is_installed('coc.nvim')
         \ 'coc-styled-components',
         \ 'coc-java',
         \ 'coc-git',
+        \ 'coc-go',
         \ ]
 
   nmap <silent><C-]> <Plug>(coc-definition)
