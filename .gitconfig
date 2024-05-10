@@ -14,3 +14,7 @@
 	path = ~/ghq/github.com/newspicks/.gitconfig
 [includeIf "gitdir:~/ghq/github.com/alpdr/"]
 	path = ~/ghq/github.com/alpdr/.gitconfig
+[includeIf "gitdir:~/ghq/github.com/uzabase/"]
+	path = ~/ghq/github.com/uzabase/.gitconfig
+[includeIf "gitdir:~/ghq/github.com/uzabase-its/"]
+	path = ~/ghq/github.com/uzabase-its/.gitconfig
