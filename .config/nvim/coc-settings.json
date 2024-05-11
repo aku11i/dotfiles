@@ -6,5 +6,6 @@
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
   "git.addGBlameToVirtualText": true,
+  "sumneko-lua.enableNvimLuaDev": true,
   "java.home": "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/"
 }
