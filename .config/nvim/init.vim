@@ -263,7 +263,6 @@ endif
 
 if s:plug.is_installed('coc.nvim')
   let g:coc_global_extensions = [
-        \ 'coc-snippets',
         \ 'coc-tsserver',
         \ 'coc-vetur',
         \ 'coc-svelte',
@@ -271,14 +270,15 @@ if s:plug.is_installed('coc.nvim')
         \ 'coc-eslint',
         \ 'coc-html',
         \ 'coc-css',
+        \ 'coc-json',
         \ 'coc-lists',
         \ 'coc-highlight',
-        \ 'coc-omnisharp',
         \ 'coc-yaml',
         \ 'coc-styled-components',
         \ 'coc-java',
         \ 'coc-git',
         \ 'coc-go',
+        \ 'coc-deno',
         \ ]
 
   nmap <silent><C-]> <Plug>(coc-definition)
