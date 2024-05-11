@@ -279,6 +279,7 @@ if s:plug.is_installed('coc.nvim')
         \ 'coc-git',
         \ 'coc-go',
         \ 'coc-deno',
+        \ 'coc-lua',
         \ ]
 
   nmap <silent><C-]> <Plug>(coc-definition)
