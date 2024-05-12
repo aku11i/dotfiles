@@ -82,11 +82,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'lambdalisue/nerdfont.vim'
 
 " ColorScheme
+Plug 'tribela/vim-transparent'
 Plug 'lifepillar/vim-solarized8'
 Plug 'jnurmine/Zenburn'
 Plug 'Rigellute/rigel'
 Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
+Plug 'haishanh/night-owl.vim'
 
 if has('mac')
   Plug 'kat0h/vim-auto-color-switcher', { 'do': 'make' }
@@ -423,9 +425,9 @@ if s:plug.is_installed('vim-airline')
 endif
 
 
-if s:plug.is_installed('vim-airline-themes')
-  let g:airline_theme = 'murmur'
-endif
+" if s:plug.is_installed('vim-airline-themes')
+"   let g:airline_theme = 'murmur'
+" endif
 
 
 " if s:plug.is_installed('rigel')
@@ -436,10 +438,10 @@ endif
 " endif
 
 
-if s:plug.is_installed('vim-solarized8')
-  colorscheme solarized8_flat
-  let g:airline_theme = 'solarized'
-endif
+" if s:plug.is_installed('vim-solarized8')
+"   colorscheme solarized8_flat
+"   let g:airline_theme = 'solarized'
+" endif
 
 
 " if s:plug.is_installed('Zenburn')
@@ -450,10 +452,13 @@ endif
 
 " if s:plug.is_installed('nord-vim')
 "   set background=dark
-"   let g:airline_theme = 'nord'
 "   colorscheme nord
 " endif
 
+if s:plug.is_installed('night-owl.vim')
+  set background=dark
+  colorscheme night-owl
+endif
 
 " if s:plug.is_installed('iceberg.vim')
 "   set background=dark

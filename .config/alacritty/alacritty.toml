@@ -1,0 +1,6 @@
+import = [
+  "~/.config/alacritty/config.toml",
+  # "~/.config/alacritty/theme_default.toml",
+  "~/.config/alacritty/theme_transparent.toml",
+]
+
