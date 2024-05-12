@@ -13,6 +13,4 @@ function theme -d "Set terminal theme"
   end
 end
 
-# complete -c theme -a 'nord night-owl' -d 'Choose a theme'
-
 complete -c theme -xa "nord night-owl" -d "Available themes"
