@@ -3,5 +3,5 @@ return {
 	config = function()
 		vim.cmd("colorscheme night-owl")
 	end,
-	enabled = true,
+	enabled = false,
 }

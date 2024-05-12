@@ -16,6 +16,7 @@ vim.g.coc_global_extensions = {
 	"coc-go",
 	"coc-deno",
 	"coc-sumneko-lua",
+	"coc-stylua",
 }
 
 return {
