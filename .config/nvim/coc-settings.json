@@ -7,5 +7,6 @@
   "scss.lint.unknownAtRules": "ignore",
   "git.addGBlameToVirtualText": true,
   "sumneko-lua.enableNvimLuaDev": true,
-  "java.home": "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/"
+  "java.home": "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/",
+  "svelte.enable-ts-plugin": false
 }

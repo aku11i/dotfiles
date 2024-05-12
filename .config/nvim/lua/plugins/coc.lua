@@ -63,6 +63,8 @@ return {
 		-- nnoremap [Coc]s  :<C-u>CocList -I symbols<cr>
 		vim.keymap.set("n", "[Coc]s", ":<C-u>CocList -I symbols<CR>", { noremap = true })
 		vim.keymap.set("n", "[Coc]k", show_documentation, { noremap = true })
+		vim.keymap.set("n", "[Coc].", "<Plug>(coc-fix-current)", { noremap = true })
+		vim.keymap.set("n", "<Leader>.", "<Plug>(coc-fix-current)", { noremap = true })
 
 		-- Highlight symbol and show documentation under cursor on CursorHold
 		vim.api.nvim_create_autocmd("CursorHold", {
