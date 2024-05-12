@@ -21,7 +21,7 @@ vim.o.listchars = "tab:>-,trail:_,extends:<"
 vim.o.showmatch = true
 
 -- Enable syntax highlighting
-vim.cmd "syntax enable"
+vim.cmd("syntax enable")
 
 -- Global options
 vim.o.encoding = "utf-8"
@@ -44,13 +44,8 @@ vim.o.hlsearch = true
 vim.o.wrapscan = true
 
 -- Enable filetype plugins and indentation
-vim.cmd "filetype plugin indent on"
+vim.cmd("filetype plugin indent on")
 
 -- Set options
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-
--- Terminal autocmd
-vim.cmd [[
-  autocmd TermOpen term://* startinsert
-]]

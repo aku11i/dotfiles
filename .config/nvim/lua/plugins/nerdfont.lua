@@ -1,3 +1,3 @@
 return {
-  "lambdalisue/nerdfont.vim",
+	"lambdalisue/nerdfont.vim",
 }

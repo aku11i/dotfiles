@@ -1,4 +1,4 @@
 return {
-  "prettier/vim-prettier",
-  build = "yarn install",
+	"prettier/vim-prettier",
+	build = "yarn install",
 }

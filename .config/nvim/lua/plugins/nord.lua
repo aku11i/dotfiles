@@ -1,3 +1,3 @@
 return {
-  "arcticicestudio/nord-vim",
+	"arcticicestudio/nord-vim",
 }
