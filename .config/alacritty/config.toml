@@ -7,7 +7,7 @@ LANG = "en_US.UTF-8"
 opacity = 1
 decorations = "Buttonless"
 
-padding = { x = 0, y = 8 }
+padding = { x = 0, y = 0 }
 
 # blur = true
 
