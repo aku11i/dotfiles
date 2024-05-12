@@ -1,0 +1,6 @@
+import = [
+  "~/.config/alacritty/themes/themes/nord.toml",
+]
+
+[window]
+opacity = 1

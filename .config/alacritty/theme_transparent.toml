@@ -1,0 +1,6 @@
+import = [
+  "~/.config/alacritty/themes/themes/night_owl.toml",
+]
+
+[window]
+opacity = 0.7

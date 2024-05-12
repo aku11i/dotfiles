@@ -1,0 +1,23 @@
+[env]
+TERM = "xterm-256color"
+LC_CTYPE = "en_US.UTF-8"
+LANG = "en_US.UTF-8"
+
+[window]
+opacity = 1
+decorations = "Buttonless"
+
+padding = { x = 0, y = 8 }
+
+# blur = true
+
+startup_mode = "Maximized"
+
+[font]
+size = 16.0
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
