@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 
 -- Key mappings
-vim.keymap.set('', ';', ':', { noremap = true })
+vim.keymap.set('n', ';', ':', { noremap = true })
 vim.keymap.set('n', '<ESC><ESC>', ':nohl<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>q', ':q<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '{', ':bprev<CR>', { noremap = true, silent = true })
