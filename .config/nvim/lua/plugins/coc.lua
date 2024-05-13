@@ -23,6 +23,9 @@ return {
 	"neoclide/coc.nvim",
 	branch = "release",
 	config = function()
+		-- https://github.com/xiyaowong/coc-stylua/issues/4#issuecomment-1210675034
+		os.execute("mkdir -p ~/.config/coc/extensions/coc-stylua-data")
+
 		-- Show documentation in preview window
 		local function show_documentation()
 			if vim.bo.filetype == "vim" or vim.bo.filetype == "help" then
