@@ -9,5 +9,5 @@ cat <<EOF > "${file}"
 EOF
 
 nvim "${file}"
-cat "${file}" | gtree output --two-spaces | pbcopy
-cat "${file}" | gtree output --two-spaces
+cat "${file}" | gtree output | pbcopy
+cat "${file}" | gtree output
