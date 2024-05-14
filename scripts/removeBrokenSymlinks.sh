@@ -5,6 +5,7 @@ set -e
 
 brokenSymlinks=("
 $(find "$HOME"         -mindepth 1 -maxdepth 1 -type l -exec test ! -e {} \; -print)
+$(find "$HOME/.bin" -mindepth 1 -maxdepth 3 -type l -exec test ! -e {} \; -print)
 $(find "$HOME/.config" -mindepth 1 -maxdepth 3 -type l -exec test ! -e {} \; -print)
 ")
 
