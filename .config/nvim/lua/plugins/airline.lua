@@ -5,4 +5,7 @@ vim.cmd("set laststatus=2")
 
 return {
 	"vim-airline/vim-airline",
+	dependencies = {
+		"vim-airline/vim-airline-themes",
+	},
 }
