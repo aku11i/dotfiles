@@ -7,10 +7,10 @@ function delta
     return 1
   end
 
-  if which dark-mode >/dev/null && test (dark-mode status) = "on"
-    {$delta} $argv
-  else
+  if test "$DARK" = "false"
     {$delta} --light  $argv
+  else
+    {$delta} $argv
   end
 end
 
