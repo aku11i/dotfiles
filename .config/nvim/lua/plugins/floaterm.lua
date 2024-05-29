@@ -11,5 +11,7 @@ return {
 		vim.keymap.set("n", "<leader>t[", ":FloatermPrev<CR>", { noremap = true, silent = true })
 		vim.keymap.set("n", "<leader>tw", ":FloatermKill<CR>", { noremap = true, silent = true })
 		vim.keymap.set("n", "<C-g>", ":FloatermNew lazygit<CR>", { noremap = true, silent = true })
+
+		vim.api.nvim_create_user_command("T", "FloatermNew --autoclose=0 <args>", { nargs = "*" })
 	end,
 }
