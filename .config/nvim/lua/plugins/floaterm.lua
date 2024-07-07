@@ -6,6 +6,7 @@ return {
 	"voldikss/vim-floaterm",
 	config = function()
 		vim.keymap.set("n", "<C-t>", ":FloatermToggle<CR>", { noremap = true, silent = true })
+		vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:FloatermToggle<CR>", { noremap = true, silent = true })
 		vim.keymap.set("n", "<leader>tt", ":FloatermNew<CR>", { noremap = true, silent = true })
 		vim.keymap.set("n", "<leader>t]", ":FloatermNext<CR>", { noremap = true, silent = true })
 		vim.keymap.set("n", "<leader>t[", ":FloatermPrev<CR>", { noremap = true, silent = true })
