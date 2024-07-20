@@ -17,6 +17,7 @@ vim.g.coc_global_extensions = {
 	"coc-deno",
 	"coc-sumneko-lua",
 	"coc-stylua",
+	"coc-prisma",
 }
 
 return {
