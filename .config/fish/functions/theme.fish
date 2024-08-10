@@ -63,10 +63,6 @@ function theme -d "Set terminal theme"
       set -Ux DARK "true"
       echo 'import = [ "~/.config/alacritty/themes/themes/tokyo-night-storm.toml" ]' > ~/.config/alacritty/theme.toml
   end
-
-  if which alacritty > /dev/null
-    alacritty msg reload
-  end
 end
 
 set themes 
