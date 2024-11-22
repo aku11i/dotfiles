@@ -28,11 +28,6 @@ abbr --add --global gap 'git add --patch'
 abbr --add --global gd 'git diff'
 abbr --add --global gdc 'git diff --cached'
 
-if which delta > /dev/null
-  abbr --add --global gd 'git diff | delta'
-  abbr --add --global gdc 'git diff --cached | delta'
-end
-
 abbr --add --global gsw 'git switch'
 abbr --add --global gsc 'git switch --create'
 abbr --add --global gsC 'git switch --force-create'
