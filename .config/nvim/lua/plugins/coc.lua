@@ -39,8 +39,8 @@ return {
 		vim.keymap.set("n", "<C-]>", "<Plug>(coc-definition)", { noremap = true, silent = true })
 		vim.keymap.set("n", "<Leader>r", "<Plug>(coc-rename)", { noremap = true, silent = true })
 		vim.keymap.set("n", "K", show_documentation, { noremap = true, silent = true })
-		vim.keymap.set("n", "<C-p>", "<Plug>(coc-diagnostic-prev)", { noremap = true, silent = true })
-		vim.keymap.set("n", "<C-n>", "<Plug>(coc-diagnostic-next)", { noremap = true, silent = true })
+		vim.keymap.set("n", "M", "<Plug>(coc-diagnostic-prev)", { noremap = true, silent = true })
+		vim.keymap.set("n", "m", "<Plug>(coc-diagnostic-next)", { noremap = true, silent = true })
 
 		-- nnoremap [Coc] <Nop>
 		vim.keymap.set("n", "[Coc]", "<Nop>", { noremap = true })
