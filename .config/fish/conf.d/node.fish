@@ -12,6 +12,8 @@ if test (which fnm)
 end
 
 # Aliases
+abbr --add --global np 'npm'
+abbr --add --global npi 'npm install'
 abbr --add --global npr 'npm run'
 # pnpm
 abbr --add --global pn 'pnpm'
