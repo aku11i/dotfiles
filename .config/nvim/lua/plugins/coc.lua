@@ -88,7 +88,7 @@ return {
 		vim.keymap.set("i", "<Tab>", 'coc#pum#visible() ? coc#pum#next(0) : "<Tab>"', opts)
 		vim.keymap.set("i", "<S-Tab>", 'coc#pum#visible() ? coc#pum#prev(0) : "<S-Tab>"', opts)
 		vim.keymap.set("i", "<ESC>", 'coc#pum#visible() ? coc#pum#cancel() : "<ESC>"', opts)
-		vim.keymap.set("i", "<CR>", 'coc#pum#visible() ? coc#pum#insert() : "<CR>"', opts)
+		vim.keymap.set("i", "<CR>", 'coc#pum#visible() ? coc#pum#confirm() : "<CR>"', opts)
 
 		-- Scroll suggestion
 		vim.keymap.set("i", "<C-f>", 'coc#pum#visible() ? coc#pum#scroll(1) : "<C-e>"', opts)
