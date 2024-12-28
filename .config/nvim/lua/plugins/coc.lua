@@ -18,6 +18,7 @@ vim.g.coc_global_extensions = {
 	"coc-sumneko-lua",
 	"coc-stylua",
 	"coc-prisma",
+	"@yaegassy/coc-tailwindcss3",
 }
 
 return {
