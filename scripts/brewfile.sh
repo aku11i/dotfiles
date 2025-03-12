@@ -3,20 +3,19 @@
 set -e
 
 brew install \
-  awscli \
   bat \
   deno \
   fd ffmpeg fish fnm fx fzf \
-  gcc gh ghq gibo git git-delta git-flow git-lfs glab go gron \
+  gcc gh ghq gibo git git-delta git-lfs glab go \
   htop \
   imagemagick \
-  jenv jq \
+  jq \
   lazydocker lazygit lsd \
   neovim node \
   pastel python \
-  rbenv ripgrep rsync rustup-init \
+  ripgrep rsync \
   starship \
-  tig tmux tokei translate-shell tree \
+  tig tmux tokei tree \
   zsh
 
 
@@ -28,7 +27,6 @@ brew install \
 
 if test "$(uname)" == "Darwin"; then
   brew install \
-    cocoapods \
     dark-mode
 fi
 
