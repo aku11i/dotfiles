@@ -12,6 +12,11 @@
 	diffFilter = delta --color-only
 [delta]
 	navigate = true
+[delta "dark"]
+	dark = true
+[delta "light"]
+	dark = false
+
 [merge]
 	conflictstyle = zdiff3
 

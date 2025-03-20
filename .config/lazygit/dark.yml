@@ -1,0 +1,7 @@
+git:
+  paging:
+    pager: delta --dark --paging=never
+
+gui:
+  theme:
+    lightTheme: false
