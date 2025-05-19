@@ -4,7 +4,7 @@ LC_CTYPE = "en_US.UTF-8"
 LANG = "en_US.UTF-8"
 
 [window]
-opacity = 0.85
+opacity = 0.8
 decorations = "Buttonless"
 
 padding = { x = 0, y = 0 }
@@ -12,6 +12,9 @@ padding = { x = 0, y = 0 }
 # blur = true
 
 startup_mode = "Maximized"
+
+[scrolling]
+multiplier = 1
 
 [font]
 size = 16.0
