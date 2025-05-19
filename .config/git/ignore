@@ -1,1 +1,6 @@
 .git
+.DS_Store
+
+# Claude
+.claude/settings.local.json
+CLAUDE.local.md
