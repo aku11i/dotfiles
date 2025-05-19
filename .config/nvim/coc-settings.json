@@ -12,7 +12,6 @@
   "scss.lint.unknownAtRules": "ignore",
   "git.addGBlameToVirtualText": true,
   "sumneko-lua.enableNvimLuaDev": true,
-  "svelte.enable-ts-plugin": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }

@@ -1,7 +1,5 @@
 vim.g.coc_global_extensions = {
 	"coc-tsserver",
-	"coc-vetur",
-	"coc-svelte",
 	"coc-prettier",
 	"coc-eslint",
 	"coc-html",
@@ -10,8 +8,6 @@ vim.g.coc_global_extensions = {
 	"coc-lists",
 	"coc-highlight",
 	"coc-yaml",
-	"coc-styled-components",
-	"coc-java",
 	"coc-git",
 	"coc-go",
 	"coc-deno",
