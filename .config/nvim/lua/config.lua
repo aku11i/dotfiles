@@ -35,6 +35,7 @@ vim.o.formatoptions = vim.o.formatoptions .. "mM"
 vim.o.swapfile = false
 vim.o.backup = false
 vim.o.undofile = false
+vim.o.autoread = true
 
 -- Search-related options
 vim.o.ignorecase = true
