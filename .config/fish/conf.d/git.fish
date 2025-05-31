@@ -112,13 +112,11 @@ abbr --add --global gSVr 'git svn rebase'
 abbr --add --global gSVd 'git svn dcommit'
 abbr --add --global gSVl 'git svn log'
 
-# FZF combination
-function ghf
-  if test "$argv" = "pr checkout"
-    set searchOption "is:pr is:open sort:updated-desc"
-    gh pr checkout (gh pr list --search "$searchOption" | fzf | awk '{print $1}')
-    return
-  end
+# GitHub CLI
+if test (which gh)
+  abbr --add --global ghf 'gh fzf'
+  abbr --add --global issues 'gh fzf issue'
+  abbr --add --global prs 'gh fzf pr'
+  abbr --add --global repos 'gh fzf repo'
+  abbr --add --global releases 'gh fzf release'
 end
-
-abbr --add --global ghco 'ghf pr checkout'
