@@ -120,3 +120,5 @@ function ghf
     return
   end
 end
+
+abbr --add --global ghco 'ghf pr checkout'
