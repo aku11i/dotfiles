@@ -24,3 +24,6 @@ italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 
 [cursor]
 style = { shape = "Block", blinking = "On" }
+
+[bell]
+command = { program = "afplay", args = ["/System/Library/Sounds/Morse.aiff"] }
