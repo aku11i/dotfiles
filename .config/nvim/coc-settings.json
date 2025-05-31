@@ -14,5 +14,6 @@
   "sumneko-lua.enableNvimLuaDev": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "svelte.enable-ts-plugin": false
 }
