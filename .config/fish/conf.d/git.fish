@@ -102,6 +102,12 @@ abbr --add --global gSc 'git stash create'
 abbr --add --global gSC 'git stash clear'
 abbr --add --global gSd 'git stash drop'
 
+# Git Worktree
+abbr --add --global gw 'git worktree'
+abbr --add --global gwa 'git worktree add'
+abbr --add --global gwl 'git worktree list'
+abbr --add --global gwd 'git worktree remove'
+
 # Git Cherry Pick
 abbr --add --global gcp 'git cherry-pick'
 
