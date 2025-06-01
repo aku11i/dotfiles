@@ -117,6 +117,7 @@ if test (which gh)
   abbr --add --global ghf 'gh fzf'
   abbr --add --global issues 'gh fzf issue'
   abbr --add --global prs 'gh fzf pr'
+  abbr --add --global pulls 'gh fzf pr'
   abbr --add --global repos 'gh fzf repo'
   abbr --add --global releases 'gh fzf release'
 end
