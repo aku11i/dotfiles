@@ -120,6 +120,24 @@ abbr --add --global gSVl 'git svn log'
 
 # GitHub CLI
 if test (which gh)
+  abbr --add --global ghp 'gh pr'
+  abbr --add --global ghpl 'gh pr list'
+  abbr --add --global ghplw 'gh pr list --web'
+  abbr --add --global ghpv 'gh pr view'
+  abbr --add --global ghpvc 'gh pr view --comments'
+  abbr --add --global ghpvw 'gh pr view --web'
+  abbr --add --global ghpco 'gh pr checkout'
+  abbr --add --global ghpm 'gh pr merge'
+  abbr --add --global ghpcl 'gh pr close'
+
+  abbr --add --global ghi 'gh issue'
+  abbr --add --global ghil 'gh issue list'
+  abbr --add --global ghilw 'gh issue list --web'
+  abbr --add --global ghiv 'gh issue view'
+  abbr --add --global ghivc 'gh issue view --comments'
+  abbr --add --global ghivw 'gh issue view --web'
+  abbr --add --global ghicl 'gh issue close'
+
   abbr --add --global ghf 'gh fzf'
   abbr --add --global issues 'gh fzf issue'
   abbr --add --global prs 'gh fzf pr'
