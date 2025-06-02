@@ -13,6 +13,8 @@ padding = { x = 0, y = 0 }
 
 startup_mode = "Maximized"
 
+option_as_alt = "Both"
+
 [scrolling]
 multiplier = 1
 
@@ -27,3 +29,4 @@ style = { shape = "Block", blinking = "On" }
 
 [bell]
 command = { program = "afplay", args = ["/System/Library/Sounds/Morse.aiff"] }
+
