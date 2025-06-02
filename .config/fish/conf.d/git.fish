@@ -126,6 +126,7 @@ if test (which gh)
   abbr --add --global ghpv 'gh pr view'
   abbr --add --global ghpvc 'gh pr view --comments'
   abbr --add --global ghpvw 'gh pr view --web'
+  abbr --add --global ghpo 'gh pr view --web'
   abbr --add --global ghpco 'gh pr checkout'
   abbr --add --global ghpm 'gh pr merge'
   abbr --add --global ghpcl 'gh pr close'
@@ -136,6 +137,7 @@ if test (which gh)
   abbr --add --global ghiv 'gh issue view'
   abbr --add --global ghivc 'gh issue view --comments'
   abbr --add --global ghivw 'gh issue view --web'
+  abbr --add --global ghio 'gh issue view --web'
   abbr --add --global ghicl 'gh issue close'
 
   abbr --add --global ghf 'gh fzf'
