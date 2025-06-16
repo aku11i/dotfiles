@@ -1,15 +1,22 @@
 local enabled = vim.env.THEME == "solarized-dark" or vim.env.THEME == "solarized-light"
 
 return {
-	"lifepillar/vim-solarized8",
-	config = function()
+	"maxmx03/solarized.nvim",
+	lazy = false,
+	priority = 1000,
+	---@type solarized.config
+	opts = {
+		variant = "autumn", -- "spring" | "summer" | "autumn" | "winter" (default)
+	},
+	config = function(_, opts)
+		vim.o.termguicolors = true
 		if vim.env.THEME == "solarized-light" then
-			vim.cmd("set background=light")
+			vim.o.background = "light"
 		else
-			vim.cmd("set background=dark")
+			vim.o.background = "dark"
 		end
-
-		vim.cmd("colorscheme solarized8_flat")
+		require("solarized").setup(opts)
+		vim.cmd.colorscheme("solarized")
 		vim.g.airline_theme = "solarized"
 	end,
 	enabled = enabled,
