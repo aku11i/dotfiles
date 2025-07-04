@@ -16,6 +16,14 @@
 	dark = true
 [delta "light"]
 	dark = false
+[delta "nord"]
+  syntax-theme = Nord
+[delta "solarized-light"]
+  syntax-theme = Solarized (light)
+[delta "solarized-dark"]
+  syntax-theme = Solarized (dark)
+[delta "zenburn"]
+	syntax-theme = zenburn
 
 [merge]
 	conflictstyle = zdiff3

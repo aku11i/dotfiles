@@ -67,3 +67,10 @@ end
 
 # Set up tab completion
 complete -c theme -xa "(theme)" -d "Available themes"
+
+# Delta theme
+if test "$DARK" = "true"
+  set -Ux DELTA_FEATURES "$THEME dark"
+else
+  set -Ux DELTA_FEATURES "$THEME light"
+end
