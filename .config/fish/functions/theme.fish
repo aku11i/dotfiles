@@ -17,7 +17,8 @@ function theme -d "Set terminal theme"
     "solarized-dark" "true" "~/.config/alacritty/themes/themes/solarized_dark.toml" \
     "solarized-light" "false" "~/.config/alacritty/themes/themes/solarized_light.toml" \
     "tokyo-night" "true" "~/.config/alacritty/themes/themes/tokyo-night.toml" \
-    "tokyo-night-storm" "true" "~/.config/alacritty/themes/themes/tokyo-night-storm.toml"
+    "tokyo-night-storm" "true" "~/.config/alacritty/themes/themes/tokyo-night-storm.toml" \
+    "zenburn" "true" "~/.config/alacritty/themes/themes/zenburn.toml"
 
   # Build available themes list for completion
   set -l available_themes
