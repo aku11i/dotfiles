@@ -6,7 +6,7 @@ brew install \
   bat \
   deno \
   fd ffmpeg fish fnm fx fzf \
-  gcc gh ghq gibo git git-delta git-lfs glab go \
+  gcc gh ghq gibo git git-delta git-lfs glab go go-task \
   htop \
   imagemagick \
   jq \
