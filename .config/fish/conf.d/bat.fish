@@ -1,16 +1,13 @@
 
 function bat
-  set bat (which bat)
-
-  if test -z {$bat}
+  if not command -sq bat
     echo "error: bat is not found."
     return 1
   end
 
-  if which dark-mode >/dev/null && test (dark-mode status) = "on"
-    # {$bat} --theme "Solarized (dark)" $argv
-    {$bat} --theme "Monokai Extended" $argv
+  if type -q dark-mode; and test (dark-mode status) = "on"
+    command bat --theme "Monokai Extended" $argv
   else
-    {$bat} --theme "Solarized (light)" $argv
+    command bat --theme "Solarized (light)" $argv
   end
 end
