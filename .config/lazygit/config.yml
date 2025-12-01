@@ -1,6 +1,5 @@
 gui:
   nerdFontsVersion: "3"
-
 git:
-  paging:
-    pager: delta --paging=never
+  pagers:
+    - pager: delta --paging=never

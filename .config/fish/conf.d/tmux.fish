@@ -3,10 +3,9 @@
 # Aliases
 abbr --add --global t 'tmux'
 abbr --add --global T 'tmux new-session -A -s main'
-abbr --add --global tn 'tmux new-session -A -s'
+abbr --add --global tn 'tmux new-session -A -d -s'
 abbr --add --global ta 'tmux attach'
 abbr --add --global td 'tmux detach'
-abbr --add --global tn 'tmux new-session -A -s'
 abbr --add --global tk 'tmux kill-session -t'
 abbr --add --global tK 'tmux kill-server'
 abbr --add --global tl 'tmux ls'
