@@ -1,7 +1,5 @@
 vim.g.coc_global_extensions = {
 	"coc-tsserver",
-	"coc-prettier",
-	"coc-eslint",
 	"coc-html",
 	"coc-css",
 	"coc-json",
