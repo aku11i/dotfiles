@@ -39,3 +39,5 @@
 	path = ~/ghq/github.com/uzabase/.gitconfig
 [includeIf "gitdir:~/ghq/github.com/uzabase-its/"]
 	path = ~/ghq/github.com/uzabase-its/.gitconfig
+[phantom]
+	ai = codex --full-auto
