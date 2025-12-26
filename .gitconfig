@@ -41,3 +41,4 @@
 	path = ~/ghq/github.com/uzabase-its/.gitconfig
 [phantom]
 	ai = codex --full-auto
+	worktreesDirectory = .worktrees
