@@ -10,6 +10,7 @@ return {
 		else
 			vim.o.background = "dark"
 		end
+		vim.g.lualine_theme = "nord"
 		vim.cmd.colorscheme("nord")
 	end,
 	enabled = enabled,

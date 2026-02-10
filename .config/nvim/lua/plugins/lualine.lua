@@ -6,7 +6,7 @@ return {
 		vim.opt.laststatus = 2
 		require("lualine").setup({
 			options = {
-				theme = "auto",
+				theme = vim.g.lualine_theme or "auto",
 				icons_enabled = true,
 			},
 			tabline = {

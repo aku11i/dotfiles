@@ -10,6 +10,7 @@ return {
 		else
 			vim.cmd("set background=dark")
 		end
+		vim.g.lualine_theme = "iceberg"
 		vim.cmd("colorscheme iceberg")
 	end,
 	enabled = enabled,
