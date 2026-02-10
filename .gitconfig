@@ -18,6 +18,10 @@
 	dark = false
 [delta "nord"]
   syntax-theme = Nord
+[delta "iceberg"]
+  syntax-theme = Nord
+[delta "iceberg-light"]
+  syntax-theme = GitHub
 [delta "solarized-light"]
   syntax-theme = Solarized (light)
 [delta "solarized-dark"]

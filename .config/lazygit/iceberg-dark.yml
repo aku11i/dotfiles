@@ -1,0 +1,14 @@
+gui:
+  theme:
+    activeBorderColor:
+      - blue
+      - bold
+    inactiveBorderColor:
+      - cyan
+    searchingActiveBorderColor:
+      - magenta
+      - bold
+    optionsTextColor:
+      - cyan
+    selectedLineBgColor:
+      - default

@@ -17,7 +17,6 @@ return {
 		end
 		require("solarized").setup(opts)
 		vim.cmd.colorscheme("solarized")
-		vim.g.airline_theme = "solarized"
 	end,
 	enabled = enabled,
 }

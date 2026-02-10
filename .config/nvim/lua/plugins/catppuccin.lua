@@ -15,7 +15,6 @@ return {
 		end
 
 		if vim.env.THEME == "catppuccin_latte" then
-			vim.g.airline_theme = "murmur"
 			vim.cmd("set background=light")
 			vim.cmd("colorscheme catppuccin-latte")
 		end

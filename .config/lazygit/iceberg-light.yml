@@ -1,0 +1,15 @@
+gui:
+  theme:
+    lightTheme: true
+    activeBorderColor:
+      - blue
+      - bold
+    inactiveBorderColor:
+      - "#696d80"
+    searchingActiveBorderColor:
+      - cyan
+      - bold
+    optionsTextColor:
+      - blue
+    selectedLineBgColor:
+      - default

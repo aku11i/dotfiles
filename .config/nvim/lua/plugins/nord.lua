@@ -11,7 +11,6 @@ return {
 			vim.o.background = "dark"
 		end
 		vim.cmd.colorscheme("nord")
-		vim.g.airline_theme = "nord_minimal"
 	end,
 	enabled = enabled,
 }

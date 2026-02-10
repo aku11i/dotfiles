@@ -8,7 +8,6 @@ return {
 	enabled = enabled,
 	config = function()
 		vim.cmd("set background=dark")
-		vim.g.airline_theme = "night_owl"
 
 		if vim.env.THEME == "tokyo-night" then
 			vim.cmd("colorscheme tokyonight-night")
