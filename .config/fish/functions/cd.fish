@@ -11,9 +11,4 @@ function cd -d "Overrides builtin cd command"
   else
     ls -a
   end
-
-  if test -e ./.nvmrc; or test -e ./.node-version
-    # Switch the node version to specified by .nvmrc
-    fnm use --install-if-missing
-  end
 end
