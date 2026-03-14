@@ -6,6 +6,7 @@ nix profile install \
   nixpkgs#actionlint \
   nixpkgs#awscli2 \
   nixpkgs#bat \
+  nixpkgs#devcontainer \
   nixpkgs#devenv \
   nixpkgs#delta \
   nixpkgs#direnv \
