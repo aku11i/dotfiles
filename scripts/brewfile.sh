@@ -4,9 +4,8 @@ set -e
 
 brew install \
   bat \
-  deno \
-  fd ffmpeg fish fx fzf \
-  gcc gh ghq gibo git git-delta git-lfs glab go go-task \
+  fd ffmpeg fish fzf \
+  gcc gh ghq git git-delta go go-task \
   htop \
   imagemagick \
   jq \
