@@ -3,6 +3,7 @@
 set -e
 
 nix profile install \
+  nixpkgs#actionlint \
   nixpkgs#awscli2 \
   nixpkgs#bat \
   nixpkgs#devenv \
